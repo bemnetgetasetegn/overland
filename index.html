@@ -63,12 +63,11 @@
         }
 
         /* Card background styles */
-        .card-bg {
+           .card-bg {
             background-size: cover;
             background-position: center;
             position: relative;
-            overflow: hidden;
-            color: #fff; /* Default text color for cards */
+            color: white; /* Ensure text is visible on background image */
         }
 
         .card-bg::before {
@@ -78,25 +77,53 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); /* Slight black overlay */
-            z-index: 1;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1; /* Place overlay above background image */
         }
 
-        .card-content {
+        .card-content, .arrow-button-wrapper, .read-more-button {
             position: relative;
-            z-index: 2; /* Ensure content is above the overlay */
+            z-index: 2; /* Ensure content and buttons are above the overlay */
         }
 
-        /* Hide scrollbar for carousel */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+        /* Styles for the modal overlay */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Darken background when modal is open */
         }
 
-        /* For IE, Edge and Firefox */
+        /* Hide scrollbar */
         .scrollbar-hide {
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
         }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Specific hover effects for arrow button wrapper */
+        .arrow-button-wrapper:hover {
+            border-color: #60A5FA; /* Blue-400 */
+            background-color: rgba(255, 255, 255, 0.2); /* Slight white overlay on hover */
+        }
+        /* No direct SVG color change here, handled by group-hover class in JS */
+
+        /* Hover effect for the "Read more" text */
+        .read-more-text:hover {
+            color: #ffffff; /* blue-400 */
+            text-decoration: underline;
+        }
+
+        /* Transition for hidden cards (optional, for smoother appearance) */
+        .hidden-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .hidden-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 <body class="bg-gray-100">
@@ -159,7 +186,7 @@
 
     <!-- Hero Section - Rounded with margins -->
     <div class="p-2 md:p-2">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+        <div class="relative  overflow-hidden shadow-2xl">
             <div class="hero-bg relative min-h-[90vh] bg-cover bg-center">
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black opacity-20"></div>
@@ -191,7 +218,7 @@
 
                             <!-- Action Buttons with rounded arrow circles -->
                             <div class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
-                                <button class="bg-white text-black px-4 py-2 rounded-full border border-black flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
+                                <button class="bg-white text-black px-4 py-2   border border-black flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
                                     <span class="text-sm">Plan Your Journey</span>
                                     <span class="bg-black rounded-full p-1 flex items-center justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -199,7 +226,7 @@
                                         </svg>
                                     </span>
                                 </button>
-                                <button class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full border border-white flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
+                                <button class="bg-white/20 backdrop-blur-sm text-white px-4 py-2  border border-white flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
                                     <span class="text-sm">Explore Destinations</span>
                                     <span class="bg-white rounded-full p-1 flex items-center justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -248,12 +275,12 @@
         <div class="md:w-1/2 relative p-6 md:p-12">
             <div class="relative w-full max-w-lg mx-auto">
                 <!-- Large Image -->
-                <div class="w-full h-[60vh] md:h-[70vh] rounded-3xl bg-image-main shadow-lg"></div>
+                <div class="w-full h-[60vh] md:h-[70vh]  bg-image-main shadow-lg"></div>
 
                 <!-- Overlapping Card with hover effect -->
-                <div class="absolute top-1/2 -translate-y-1/2 right-[-1rem] md:right-[-2rem] w-64 h-auto bg-white/50  border border-white backdrop-blur-sm  rounded-3xl shadow-lg p-1.5 transition-transform duration-300 hover:scale-105">
+                <div class="absolute top-1/2 -translate-y-1/2 right-[-1rem] md:right-[-2rem] w-64 h-auto bg-white/50  border border-white backdrop-blur-sm   shadow-lg p-1.5 transition-transform duration-300 hover:scale-105">
                     <!-- Card Image -->
-                    <div class="w-full h-48  rounded-2xl bg-image-card relative">
+                    <div class="w-full h-48   bg-image-card relative">
                         <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
@@ -288,9 +315,9 @@
                 </div>
 
                 <!-- 24/7 Concierge Service Card with hover effect -->
-                <div class="col-span-1 bg-white shadow-xl p-1.5 relative rounded-2xl transition-transform duration-300 hover:scale-105">
+                <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
                     <!-- Card Image -->
-                    <div class="relative w-full h-32 overflow-hidden bg-image-concierge rounded-xl">
+                    <div class="relative w-full h-32 overflow-hidden bg-image-concierge ">
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -306,9 +333,9 @@
                 </div>
                 
                 <!-- Access To Exclusive Experiences Card with hover effect -->
-                <div class="col-span-1 bg-white shadow-xl p-1.5 relative rounded-2xl transition-transform duration-300 hover:scale-105">
+                <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
                     <!-- Card Image -->
-                    <div class="relative w-full h-40 overflow-hidden bg-image-exclusive rounded-xl">
+                    <div class="relative w-full h-40 overflow-hidden bg-image-exclusive ">
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -373,328 +400,192 @@
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-semibold text-gray-900 mb-12">What We Offer</h2>
 
-        <!-- Carousel Container -->
-        <div id="carousel" class="flex overflow-x-auto scrollbar-hide scroll-smooth py-2">
-            <!-- Card 1: Private Jet Charters -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Private Jet Charters</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-private-jet">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-base">
-                        Experience The Pinnacle Of Convenience And Comfort With Our Private Jet Charters.
-                    </p>
-                </div>
-                <!-- Read More link with hover effect and z-index fix -->
-                <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-private-jet">
-                    Read more
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Card 2: Every Detail Effortlessly -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Every Detail Effortlessly</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-every-detail">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-base">
-                        Stay In Luxurious, Handpicked Accommodations At Stunning Global Locations.
-                    </p>
-                </div>
-                <!-- Read More link with hover effect and z-index fix -->
-                <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-every-detail">
-                    Read more
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Card 3: Lifetime Adventures -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Lifetime Adventures.</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-lifetime-adventures">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-base">
-                        Unlock Access To Unique And Exclusive Experiences That Few Can Offer.
-                    </p>
-                </div>
-                <!-- Read More link with hover effect and z-index fix -->
-                <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-lifetime-adventures">
-                    Read more
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Card 4: Luxury Accommodations -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Luxury Accommodations</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-luxury-accommodations">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-base">
-                        Our Handpicked Luxury Accommodations Range From Opulent Five-Star Hotels To Exclusive Private Villas.
-                    </p>
-                </div>
-                <!-- Read More link with hover effect and z-index fix -->
-                <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-luxury-accommodations">
-                    Read more
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- New Card 5: Bespoke Itineraries -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Bespoke Itineraries</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-bespoke-itineraries">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-base">
-                        Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.
-                    </p>
-                </div>
-                <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-bespoke-itineraries">
-                    Read more
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- New Card 6: Yacht Charters -->
-            <div class="flex-none w-80 mr-6 bg-white rounded-xl shadow-sm p-6 flex flex-col justify-between border border-gray-100 card-bg"
-                 style="background-image: url('/8bg.jpg');">
-                <div class="card-content">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-medium">Luxury Yacht Charters</h3>
-                        <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 arrow-button" data-modal-target="modal-yacht-charters">
-                            <svg class="w-5 h-5 text-white transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                               </svg>
-                            </div>
-                        </div>
-                        <p class="mt-2 text-base">
-                            Sail The World's Most Beautiful Waters On Our Exquisite Private Yachts.
-                        </p>
-                    </div>
-                    <button class="mt-4 text-left text-blue-300 hover:text-blue-500 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit" data-modal-target="modal-yacht-charters">
-                        Read more
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+        <!-- Grid Container for Cards - Content will be dynamically loaded here -->
+        <div id="service-cards-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Cards will be injected by JavaScript -->
         </div>
 
-        <!-- Carousel Navigation Arrows (Moved below the carousel content) -->
-        <div class="flex justify-end mt-8 gap-4 pr-4">
-            <!-- Left Arrow -->
-            <button id="carousel-prev" class="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none">
-                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-
-            <!-- Right Arrow -->
-            <button id="carousel-next" class="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none">
-                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        <!-- Show More/Show Less Button -->
+        <div class="flex justify-center mt-12">
+            <button id="show-more-less-button" class="bg-white text-black px-4 py-2 border border-black flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
+                <span id="button-text">Show More</span>
+                <svg id="button-arrow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> <!-- Downward arrow initially -->
                 </svg>
             </button>
         </div>
     </div>
 
-    <!-- Modals (Initially hidden) -->
-    <!-- Modal 1: Private Jet Charters -->
-    <div id="modal-private-jet" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="/8bg.jpg" alt="Private Jet" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Private Jet Charters</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    Experience unparalleled luxury and efficiency with our exclusive private jet charters. From executive travel to leisurely getaways, we provide bespoke services tailored to your every need. Enjoy spacious cabins, gourmet catering, and seamless boarding processes, ensuring a truly private and convenient journey.
-                </p>
-                <p class="text-lg text-gray-700">
-                    Our fleet boasts the latest in aviation technology and comfort, staffed by highly experienced pilots and cabin crew dedicated to your safety and satisfaction. Whether you're flying for business or pleasure, our private jet services redefine premium air travel.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Every Detail Effortlessly -->
-    <div id="modal-every-detail" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="/8bg.jpg" alt="Luxury Resort" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Every Detail Effortlessly Planned</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    We meticulously plan every aspect of your journey, ensuring a seamless and worry-free experience from start to finish. Our dedicated team handles all logistics, from flight bookings and ground transportation to private tours and dining reservations.
-                </p>
-                <p class="text-lg text-gray-700">
-                    With access to exclusive partnerships and a keen eye for detail, we craft personalized itineraries that exceed expectations. Focus on enjoying your trip while we take care of the rest.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: Lifetime Adventures -->
-    <div id="modal-lifetime-adventures" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="/8bg.jpg" alt="Adventure Safari" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Lifetime Adventures Unlocked</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    Embark on extraordinary journeys and create memories that last a lifetime. Our curated adventures range from thrilling wildlife safaris in remote jungles to cultural immersions in ancient cities, all designed to offer unique and authentic experiences.
-                </p>
-                <p class="text-lg text-gray-700">
-                    Discover hidden gems, encounter rare wildlife, and explore breathtaking landscapes with expert guides who bring each destination to life. These are not just trips; they are transformative experiences.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Luxury Accommodations -->
-    <div id="modal-luxury-accommodations" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="8bg.jpg" alt="Exclusive Villa" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Unrivalled Luxury Accommodations</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    Indulge in the finest accommodations selected for their exquisite design, impeccable service, and breathtaking locations. From secluded private villas with dedicated staff to opulent five-star hotel suites, every stay is an experience in pure comfort and elegance.
-                </p>
-                <p class="text-lg text-gray-700">
-                    We partner with the world's most prestigious properties to ensure your comfort and privacy are paramount. Enjoy amenities like private pools, personal chefs, and stunning panoramic views, all designed to provide an unforgettable retreat.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5: Bespoke Itineraries -->
-    <div id="modal-bespoke-itineraries" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="/8bg.jpg" alt="Custom Itinerary" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Bespoke Itineraries</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision.
-                </p>
-                <p class="text-lg text-gray-700">
-                    Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 6: Yacht Charters -->
-    <div id="modal-yacht-charters" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-            <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Yacht+Charter" alt="Yacht Charter" class="rounded-lg max-h-full max-w-full object-contain">
-            </div>
-            <div class="md:w-1/2 flex flex-col justify-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Luxury Yacht Charters</h3>
-                <p class="text-lg text-gray-700 mb-4">
-                    Embark on an unforgettable maritime adventure with our luxury yacht charters. Explore hidden coves, vibrant coastal towns, and serene islands at your own pace, with a dedicated crew catering to your every whim.
-                </p>
-                <p class="text-lg text-gray-700">
-                    Our fleet of prestigious yachts offers unparalleled comfort, privacy, and freedom. Enjoy gourmet dining, water sports, and breathtaking sunsets from the deck of your private sanctuary on the sea.
-                </p>
-            </div>
-        </div>
+    <!-- Modals Container - Modals will be dynamically loaded here -->
+    <div id="modals-container">
+        <!-- Modals will be injected by JavaScript -->
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Modal functionality
+            // Data for the service cards and modals
+            const serviceData = [
+                {
+                    id: 'private-jet',
+                    imageSrc: '/5bg.jpg',
+                    title: 'Private Jet Charters',
+                    shortDescription: 'Experience The Pinnacle Of Convenience And Comfort With Our Private Jet Charters.',
+                    longDescription: `Experience unparalleled luxury and efficiency with our exclusive private jet charters. From executive travel to leisurely getaways, we provide bespoke services tailored to your every need. Enjoy spacious cabins, gourmet catering, and seamless boarding processes, ensuring a truly private and convenient journey. Our fleet boasts the latest in aviation technology and comfort, staffed by highly experienced pilots and cabin crew dedicated to your safety and satisfaction. Whether you're flying for business or pleasure, our private jet services redefine premium air travel.`
+                },
+                {
+                    id: 'every-detail',
+                    imageSrc: '/8bg.jpg',
+                    title: 'Every Detail Effortlessly Planned',
+                    shortDescription: 'Stay In Luxurious, Handpicked Accommodations At Stunning Global Locations.',
+                    longDescription: `We meticulously plan every aspect of your journey, ensuring a seamless and worry-free experience from start to finish. Our dedicated concierge team handles everything, from booking exclusive accommodations and private transportation to arranging personalized tours and dining reservations. With our attention to detail, you can relax and immerse yourself in your adventure, knowing that every contingency has been anticipated and every preference catered to, making your travel truly effortless.`
+                },
+                {
+                    id: 'lifetime-adventures',
+                    imageSrc: '/5bg.jpg',
+                    title: 'Lifetime Adventures Unlocked',
+                    shortDescription: 'Unlock Access To Unique And Exclusive Experiences That Few Can Offer.',
+                    longDescription: `Embark on extraordinary journeys and create memories that last a lifetime. Our curated adventures range from thrilling wildlife safaris in remote jungles to cultural immersions in ancient cities, all designed to offer unique and authentic experiences. Discover hidden gems, encounter rare wildlife, and explore breathtaking landscapes with expert guides who bring each destination to life. These are not just trips; they are transformative experiences.`
+                },
+                {
+                    id: 'luxury-accommodations',
+                    imageSrc: '/8bg.jpg',
+                    title: 'Unrivalled Luxury Accommodations',
+                    shortDescription: 'Our Handpicked Luxury Accommodations Range From Opulent Five-Star Hotels To Exclusive Private Villas.',
+                    longDescription: `Indulge in the finest accommodations selected for their exquisite design, impeccable service, and breathtaking locations. From secluded private villas with dedicated staff to opulent five-star hotel suites, every stay is an experience in pure comfort and elegance. We partner with the world's most prestigious properties to ensure your comfort and privacy are paramount. Enjoy amenities like private pools, personal chefs, and stunning panoramic views, all designed to provide an unforgettable retreat.`
+                },
+                {
+                    id: 'bespoke-itineraries',
+                    imageSrc: '/5bg.jpg',
+                    title: 'Bespoke Itineraries',
+                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
+                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
+                },
+                {
+                    id: 'bespoke-itineraries',
+                    imageSrc: '/8bg.jpg',
+                    title: 'Bespoke Itineraries',
+                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
+                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
+                },
+                {
+                    id: 'bespoke-itineraries',
+                    imageSrc: '/5bg.jpg',
+                    title: 'Bespoke Itineraries',
+                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
+                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
+                },
+                {
+                    id: 'yacht-charters',
+                    imageSrc: '/8bg.jpg',
+                    title: 'Luxury Yacht Charters',
+                    shortDescription: 'Sail The World\'s Most Beautiful Waters On Our Exquisite Private Yachts.',
+                    longDescription: `Embark on an unforgettable maritime adventure with our luxury yacht charters. Explore hidden coves, vibrant coastal towns, and serene islands at your own pace, with a dedicated crew catering to your every whim. Our fleet of prestigious yachts offers unparalleled comfort, privacy, and freedom. Enjoy gourmet dining, water sports, and breathtaking sunsets from the deck of your private sanctuary on the sea.`
+                }
+            ];
+
+            const gridContainer = document.getElementById('service-cards-grid-container');
+            const modalsContainer = document.getElementById('modals-container');
+
+            // Function to create a card element
+            function createCard(data, isHidden = false) {
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add(
+                    'bg-white', 'shadow-sm', 'p-6', 'flex', 'flex-col', 'justify-between',
+                    'border', 'border-gray-100', 'card-bg',
+                    'hover:scale-105', 'transition-transform', 'duration-300', 'ease-in-out' // Card scaling on hover
+                );
+                if (isHidden) {
+                    cardDiv.classList.add('hidden', 'hidden-card');
+                }
+                cardDiv.style.backgroundImage = `url('${data.imageSrc}')`;
+
+                cardDiv.innerHTML = `
+                    <div class="card-content">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-sm font-medium">${data.title}</h3>
+                            <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 group cursor-pointer arrow-button-wrapper" data-modal-target="modal-${data.id}">
+                                <svg class="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm">
+                            ${data.shortDescription}
+                        </p>
+                    </div>
+                    <button class=" text-left text-gray-300 hover:text-gray-100 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit read-more-button" data-modal-target="modal-${data.id}">
+                        <span class="read-more-text">Read more</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                `;
+                return cardDiv;
+            }
+
+            // Function to create a modal element
+            function createModal(data) {
+                const modalDiv = document.createElement('div');
+                modalDiv.id = `modal-${data.id}`;
+                modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
+
+                modalDiv.innerHTML = `
+                    <div class="bg-white  shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
+                        <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
+                            <img src="${data.imageSrc}" alt="${data.title}" class=" max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">${data.title}</h3>
+                            <p class="text-xs text-gray-700 mb-4">
+                                ${data.longDescription}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                return modalDiv;
+            }
+
+            const initialVisibleCardsCount = 4; // Number of cards visible initially for 4-column layout
+            let showingAll = false; // State variable to track if all cards are shown
+
+            // Populate cards and modals from serviceData
+            serviceData.forEach((data, index) => {
+                const isHidden = index >= initialVisibleCardsCount;
+                gridContainer.appendChild(createCard(data, isHidden));
+                modalsContainer.appendChild(createModal(data));
+            });
+
+            // Re-select elements after dynamic creation
             const modalTriggers = document.querySelectorAll('[data-modal-target]');
             const modals = document.querySelectorAll('.modal');
+            const showMoreLessButton = document.getElementById('show-more-less-button');
+            const buttonText = document.getElementById('button-text');
+            const buttonArrow = document.getElementById('button-arrow');
+            const allCards = document.querySelectorAll('#service-cards-grid-container > div'); // All generated cards
+            const hiddenCards = Array.from(allCards).filter((card, index) => index >= initialVisibleCardsCount); // Filter out initially hidden cards
 
+            // Define arrow SVG paths
+            const arrowDownPath = "M19 9l-7 7-7-7";
+            const arrowUpPath = "M5 15l7-7 7 7";
+
+            // If there are no more cards than initialVisibleCardsCount, hide the button
+            if (serviceData.length <= initialVisibleCardsCount) {
+                showMoreLessButton.classList.add('hidden');
+            }
+
+            // Modal functionality
             modalTriggers.forEach(trigger => {
                 trigger.addEventListener('click', (event) => {
                     const modalId = event.currentTarget.dataset.modalTarget;
                     const modal = document.getElementById(modalId);
                     if (modal) {
                         modal.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling background
                     }
                 });
             });
@@ -704,55 +595,114 @@
                 if (closeButton) {
                     closeButton.addEventListener('click', () => {
                         modal.classList.add('hidden');
-                        document.body.style.overflow = '';
+                        document.body.style.overflow = ''; // Restore scrolling
                     });
                 }
+                // Close modal when clicking outside the content
                 modal.addEventListener('click', (event) => {
-                    if (event.target === modal) {
+                    if (event.target === modal) { // Check if the click was directly on the overlay
                         modal.classList.add('hidden');
-                        document.body.style.overflow = '';
+                        document.body.style.overflow = ''; // Restore scrolling
                     }
                 });
             });
 
-            // Carousel functionality
-            const carousel = document.getElementById('carousel');
-            const prevButton = document.getElementById('carousel-prev');
-            const nextButton = document.getElementById('carousel-next');
-
-            // Function to scroll the carousel
-            function scrollCarousel(direction) {
-                // Get the width of the first card plus its right margin
-                const firstCard = carousel.querySelector('.flex-none');
-                if (firstCard) {
-                    const cardWidth = firstCard.offsetWidth;
-                    // Get the computed style for 'margin-right' to accurately get the gap
-                    const cardStyle = window.getComputedStyle(firstCard);
-                    const cardMarginRight = parseFloat(cardStyle.marginRight);
-                    const scrollAmount = cardWidth + cardMarginRight;
-
-                    if (direction === 'prev') {
-                        carousel.scrollBy({
-                            left: -scrollAmount,
-                            behavior: 'smooth'
-                        });
-                    } else if (direction === 'next') {
-                        carousel.scrollBy({
-                            left: scrollAmount,
-                            behavior: 'smooth'
-                        });
-                    }
+            // Show More/Show Less functionality
+            showMoreLessButton.addEventListener('click', () => {
+                if (showingAll) {
+                    // Currently showing all, so hide the extra cards
+                    hiddenCards.forEach(card => {
+                        card.classList.add('hidden');
+                        card.classList.remove('show'); // Remove show class for transition
+                    });
+                    buttonText.textContent = 'Show More';
+                    buttonArrow.querySelector('path').setAttribute('d', arrowDownPath); // Set downward arrow
+                    showingAll = false;
+                } else {
+                    // Currently showing limited, so display all hidden cards
+                    hiddenCards.forEach(card => {
+                        card.classList.remove('hidden');
+                        card.classList.add('show'); // Add show class for transition
+                    });
+                    buttonText.textContent = 'Show Less';
+                    buttonArrow.querySelector('path').setAttribute('d', arrowUpPath); // Set upward arrow
+                    showingAll = true;
                 }
-            }
+            });
 
-            // Event listeners for carousel arrows
-            if (prevButton) {
-                prevButton.addEventListener('click', () => scrollCarousel('prev'));
-            }
-            if (nextButton) {
-                nextButton.addEventListener('click', () => scrollCarousel('next'));
-            }
+            // Add hover effects for arrow buttons
+            const allArrowButtonWrappers = document.querySelectorAll('.arrow-button-wrapper');
+            allArrowButtonWrappers.forEach(button => {
+                button.classList.add('transition-all', 'duration-200', 'ease-in-out');
+            });
+
+            // Add hover effects for "Read more" text
+            const allReadMoreButtons = document.querySelectorAll('.read-more-button');
+            allReadMoreButtons.forEach(button => {
+                button.classList.add('transition-all', 'duration-200', 'ease-in-out');
+            });
         });
     </script>
+
+
+
+<!--footer section -->
+ <!-- Footer Section -->
+    <footer class="bg-gray-200 py-10 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-semibold text-gray-900 mb-6">Get In Touch</h2>
+            <p class="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
+                We create exceptional journeys, enhancing lives through superior experiences, unmatched luxury, and thoughtful craftsmanship.
+            </p>
+
+            <!-- Email Input and Send Button -->
+            <div class="flex justify-center mb-8">
+                <div class="relative w-full max-w-sm">
+                    <input type="email" placeholder="lxtour12364@gmail.com" class="w-full pl-6 pr-12 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500 text-lg">
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-600">
+                        <svg class="w-6 h-6 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-6 mb-12">
+                <!-- Discord Icon (Placeholder SVG) -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 7.75c-3.14 0-5.73 2.56-5.75 5.7c1.37-.59 3.24-.95 5.75-.95s4.38.36 5.75.95c-.02-3.14-2.61-5.7-5.75-5.7z"/>
+                    </svg>
+                </a>
+                <!-- Facebook Icon (Placeholder SVG) -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.72 9-4.83 9-9.95z"/>
+                    </svg>
+                </a>
+                <!-- Twitter Icon (Placeholder SVG) -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22.46 6c-.77.34-1.6.57-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.77.85-2.78 1.04C18.17 4.28 17.11 4 16 4c-3.13 0-5.66 2.54-5.66 5.68 0 .44.05.87.14 1.28C7.57 10.96 4.71 9.4 2.75 7.02c-.44.75-.69 1.62-.69 2.54 0 1.75.89 3.29 2.24 4.19-.82-.02-1.59-.25-2.27-.64v.07c0 2.75 1.96 5.04 4.56 5.57-.4.11-.82.17-1.26.17-.31 0-.61-.03-.91-.09.72 2.25 2.81 3.89 5.28 3.93-1.93 1.5-4.37 2.4-7.03 2.4-.46 0-.91-.03-1.36-.08C2.92 21.36 5.38 22 8 22c7.2 0 11.16-5.96 11.16-11.16v-.5c.77-.55 1.45-1.23 1.99-2.01z"/>
+                    </svg>
+                </a>
+                <!-- Instagram Icon (Placeholder SVG) -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7.8 2h8.4C18.1 2 20 3.9 20 6.2v8.4c0 2.3-1.9 4.2-4.2 4.2h-8.4C3.9 18.8 2 16.9 2 14.6V6.2C2 3.9 3.9 2 6.2 2zm10.4 2.2c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1 1.1-.5 1.1-1.1-.5-1.1-1.1-1.1zM12 6.8c-2.8 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1 5.1-2.3 5.1-5.1-2.3-5.1-5.1-5.1zm0 8.4c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3 3.3 1.5 3.3 3.3-1.5 3.3-3.3 3.3z"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn Icon (Placeholder SVG) -->
+                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.522v-5.539c0-1.31-.024-2.996-1.824-2.996-1.825 0-2.106 1.424-2.106 2.909v5.626h-3.52V9h3.385v1.543h.047c.47-.899 1.621-1.824 3.344-1.824 3.585 0 4.242 2.352 4.242 5.409v6.324zM7.22 7.749c-1.196 0-2.167-.97-2.167-2.166 0-1.195.971-2.166 2.167-2.166 1.196 0 2.166.971 2.166 2.166 0 1.196-.97 2.166-2.166 2.166zM8.947 20.452H5.424V9H8.947v11.452z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <p class="text-gray-500 text-sm">&copy; 2024 LxTour. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
