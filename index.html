@@ -123,7 +123,127 @@
             opacity: 1;
             transform: translateY(0);
         }
+         /* Main container for the entire layout */
+        .main-container {
+            width: 100%;
+            max-width: 1400px; /* Increased max-width for better spacing on large screens */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column; /* Stack title and content vertically */
+            align-items: center;
+            gap: 2rem; /* Gap between title and content */
+        }
 
+        /* Wrapper for the three-column content row */
+        .content-row {
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Stack vertically on small screens */
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Responsive adjustments for larger screens (lg breakpoint) */
+        @media (min-width: 1024px) {
+            .content-row {
+                flex-direction: row; /* Side-by-side layout on large screens */
+                justify-content: center;
+                align-items: center; /* Vertically center the items */
+                gap: 2rem;
+            }
+        }
+
+        /* Styling for the main image card (middle section) */
+        .main-image-card {
+            background-color: #fff; /* Solid white background for clarity */
+            position: relative;
+            padding: 1.5rem;
+            width: 100%; /* Full width on mobile */
+            max-width: 450px; /* Max-width for consistency */
+            height: 600px; /* Fixed height */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the oval container */
+            overflow: hidden;
+        }
+
+        /* Container for the oval image to apply masking */
+        .oval-image-container {
+            width: 280px;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Styles for the image inside the oval container */
+        .oval-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Base styles for side sections (left and right) */
+        .side-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically by default */
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        @media (min-width: 1024px) {
+            .side-section {
+                height: 600px; /* Match height of main card */
+                justify-content: center; /* This centers the content vertically */
+                width: auto;
+            }
+            .side-section.left {
+                align-items: flex-start; /* Aligns content to the left */
+            }
+            .side-section.right {
+                align-items: flex-end; /* Aligns content to the right */
+            }
+        }
+
+        /* Animation keyframes for the "jump to middle" effect */
+        @keyframes slideInNext {
+            from {
+                opacity: 0;
+                transform: translateX(80px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes slideInPrev {
+            from {
+                opacity: 0;
+                transform: translateX(-80px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        /* Classes to trigger the animations */
+        .oval-image.animate-next {
+            animation: slideInNext 0.5s ease-out forwards;
+        }
+        .oval-image.animate-prev {
+            animation: slideInPrev 0.5s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -391,6 +511,202 @@
             if (statElement) {
                 observer.observe(statElement);
             }
+        });
+    </script>
+
+    
+<!--courousel section -->
+ <!-- Main container for the carousel -->
+    <div class="main-container">
+        
+        <div class="content-row">
+            <!-- Left Section -->
+            <div class="side-section left">
+                <!-- Destination Title - Now in the left section -->
+                <h1 class="text-4xl lg:text-5xl font-semibold text-gray-800 leading-tight text-center lg:text-left mb-8">
+                    Destinations You'll Love
+                </h1>
+                <!-- Small Image Cards -->
+                <div class="flex space-x-4">
+                    <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                        <img id="left-small-image-1" src="" alt="Previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div id="left-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                    </div>
+                    <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                        <img id="left-small-image-2" src="" alt="Further previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div id="left-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Card Section -->
+            <div class="main-image-card rounded">
+                <!-- Blurred Background for the card -->
+                <div id="blurred-background" class="absolute inset-0 z-0  bg-cover bg-center transition-all duration-500"></div>
+
+                <!-- Arrow button top right -->
+                <button id="next-top-btn" class="absolute top-6 right-6 bg-white/70 backdrop-blur-lg rounded-full p-2.5 shadow-md z-20 hover:scale-105 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+
+                <!-- Main Oval Image -->
+                <div class="oval-image-container rounded">
+                    <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Santorini';">
+                </div>
+
+                <!-- Destination Title -->
+                <h2 id="destination-title" class="text-3xl font-semibold text-gray-200 absolute bottom-8 left-0 right-0 text-center z-20"></h2>
+            </div>
+
+            <!-- Right Section -->
+            <div class="side-section right">
+                <!-- Navigation Arrows -->
+                <div class="flex space-x-4">
+                    <button id="prev-btn" class="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </button>
+                    <button id="next-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Small Image Cards -->
+                <div class="flex space-x-4">
+                    <div class="relative w-32 h-32 md:w-40 md:h-40  overflow-hidden shadow-lg">
+                        <img id="right-small-image-1" src="" alt="Next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div id="right-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                    </div>
+                    <div class="relative w-32 h-32 md:w-40 md:h-40  overflow-hidden shadow-lg">
+                        <img id="right-small-image-2" src="" alt="Further next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div id="right-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Data for the destinations (using placeholders for images)
+            const destinations = [
+                {
+                    imageUrl: "/5bg.jpg",
+                    title: "Santorini, Greece",
+                },
+                {
+                    imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070&auto=format&fit=crop",
+                    title: "Kyoto, Japan",
+                },
+                {
+                    imageUrl: "/8bg.jpg",
+                    title: "Serengeti, Tanzania",
+                },
+                {
+                    imageUrl: "/4bg.jpg",
+                    title: "Norwegian Fjords",
+                },
+                {
+                    imageUrl: "/8bg.jpg",
+                    title: "Dubai, UAE",
+                }
+            ];
+
+            let currentIndex = 0;
+
+            // Get references to the dynamic elements
+            const mainImage = document.getElementById('main-destination-image');
+            const blurredBackground = document.getElementById('blurred-background');
+            const mainTitle = document.getElementById('destination-title');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const nextTopBtn = document.getElementById('next-top-btn');
+
+            // Small image card elements
+            const smallImageElements = {
+                left: [
+                    { img: document.getElementById('left-small-image-1'), index: document.getElementById('left-small-index-1') },
+                    { img: document.getElementById('left-small-image-2'), index: document.getElementById('left-small-index-2') }
+                ],
+                right: [
+                    { img: document.getElementById('right-small-image-1'), index: document.getElementById('right-small-index-1') },
+                    { img: document.getElementById('right-small-image-2'), index: document.getElementById('right-small-index-2') }
+                ]
+            };
+
+            /**
+             * Updates the UI with the destination data at a given index.
+             * @param {number} index - The index of the destination to display.
+             * @param {string} direction - The direction of navigation ('next' or 'prev').
+             */
+            function updateCarousel(index, direction = 'next') {
+                const destination = destinations[index];
+                if (!destination) return;
+
+                // --- Update Main Card ---
+                // Remove animation classes to reset
+                mainImage.classList.remove('animate-next', 'animate-prev');
+                
+                // Use a short timeout to allow the class removal to register before re-adding it
+                setTimeout(() => {
+                    mainImage.src = destination.imageUrl;
+                    mainImage.alt = destination.title;
+                    mainTitle.textContent = destination.title;
+                    
+                    // Add the appropriate animation class
+                    mainImage.classList.add(direction === 'next' ? 'animate-next' : 'animate-prev');
+                }, 50);
+
+                // Update the blurred background image
+                blurredBackground.style.backgroundImage = `url('${destination.imageUrl}')`;
+                blurredBackground.style.filter = 'blur(20px)'; // Apply the blur filter
+
+                // --- Update Side Small Cards ---
+                const total = destinations.length;
+
+                // Update left (previous) cards
+                const prev1Index = (index - 1 + total) % total;
+                const prev2Index = (index - 2 + total) % total;
+                smallImageElements.left[0].img.src = destinations[prev1Index].imageUrl;
+                smallImageElements.left[0].index.textContent = `0${prev1Index + 1}`;
+                smallImageElements.left[1].img.src = destinations[prev2Index].imageUrl;
+                smallImageElements.left[1].index.textContent = `0${prev2Index + 1}`;
+
+                // Update right (next) cards
+                const next1Index = (index + 1) % total;
+                const next2Index = (index + 2) % total;
+                smallImageElements.right[0].img.src = destinations[next1Index].imageUrl;
+                smallImageElements.right[0].index.textContent = `0${next1Index + 1}`;
+                smallImageElements.right[1].img.src = destinations[next2Index].imageUrl;
+                smallImageElements.right[1].index.textContent = `0${next2Index + 1}`;
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % destinations.length;
+                updateCarousel(currentIndex, 'next');
+            }
+
+            function showPrevious() {
+                currentIndex = (currentIndex - 1 + destinations.length) % destinations.length;
+                updateCarousel(currentIndex, 'prev');
+            }
+
+            // --- Event Listeners ---
+            prevBtn.addEventListener('click', showPrevious);
+            nextBtn.addEventListener('click', showNext);
+            nextTopBtn.addEventListener('click', showNext);
+
+            // --- Initial Load ---
+            updateCarousel(currentIndex, 'next');
         });
     </script>
 
