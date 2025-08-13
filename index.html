@@ -244,6 +244,29 @@
         .oval-image.animate-prev {
             animation: slideInPrev 0.5s ease-out forwards;
         }
+             /* Keyframes for the carousel fade-in effect */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .carousel-item {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -959,7 +982,295 @@
             });
         });
     </script>
+<!--members section -->
+ <!-- Main Container with backdrop blur effect -->
+    <div class="bg-white/70 backdrop-blur-lg p-12 md:p-16 rounded-3xl max-w-7xl w-full">
 
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <div class="relative w-full flex items-center justify-center mb-6">
+                <hr class="w-1/4 border-t border-gray-300">
+                <h2 class="mx-4 text-2xl md:text-3xl font-semibold text-gray-800 tracking-tight">
+                    Our Members and Partners
+                </h2>
+                <hr class="w-1/4 border-t border-gray-300">
+            </div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                We are proud to partner with a diverse range of organizations that help us achieve our mission and provide exceptional services.
+            </p>
+        </div>
+
+        <!-- Animated Carousel for Logos -->
+        <div id="logo-carousel" class="relative w-full h-24 mb-6">
+            <!-- The logos will be dynamically added here by JavaScript -->
+        </div>
+
+        <!-- Carousel Navigation Dots -->
+        <div id="carousel-dots" class="flex justify-center space-x-2 mt-4">
+            <!-- Dots will be added here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logos = [
+                "/sp1 (2).png",
+                "/sp4.png",
+                "/sp5.png",
+                "/sp6.png",
+                
+            ];
+
+            const carousel = document.getElementById('logo-carousel');
+            const dotsContainer = document.getElementById('carousel-dots');
+            let currentIndex = 0;
+
+            // Create carousel items and dots
+            logos.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Partner Logo ${index + 1}`;
+                img.className = 'carousel-item absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[250px] object-contain h-full';
+                if (index === 0) {
+                    img.classList.add('active');
+                }
+                carousel.appendChild(img);
+
+                const dot = document.createElement('span');
+                dot.className = 'w-3 h-3 rounded-full bg-gray-300 cursor-pointer transition-colors duration-300';
+                if (index === 0) {
+                    dot.classList.add('bg-gray-800');
+                }
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const items = carousel.querySelectorAll('.carousel-item');
+            const dots = dotsContainer.querySelectorAll('span');
+
+            const updateActiveState = () => {
+                items.forEach((item, index) => {
+                    if (index === currentIndex) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('bg-gray-800');
+                        dot.classList.remove('bg-gray-300');
+                    } else {
+                        dot.classList.remove('bg-gray-800');
+                        dot.classList.add('bg-gray-300');
+                    }
+                });
+            };
+
+            const goToSlide = (index) => {
+                currentIndex = index;
+                updateActiveState();
+            };
+
+            const nextSlide = () => {
+                currentIndex = (currentIndex + 1) % logos.length;
+                updateActiveState();
+            };
+
+            // Start the carousel animation
+            setInterval(nextSlide, 3000); // Change image every 3 seconds
+        });
+    </script>
+
+
+
+
+
+
+<!--last content-->
+<div class="w-full max-w-6xl mx-auto p-4 md:p-8">
+        <!-- Section Header -->
+        <header class="mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Hear From Our Clients</h1>
+        </header>
+
+        <!-- Testimonials Container -->
+        <div class="flex items-center gap-4 md:gap-8">
+            
+            <!-- Main Testimonial Card: Added fixed height for medium screens and up -->
+            <div id="testimonial-card" class="flex-1 flex flex-col md:flex-row  p-6  w-full md:h-[500px]">
+                <!-- Image Section: Removed md:h-auto to allow stretching -->
+                <div class="relative w-full md:w-1/2 h-70  overflow-hidden">
+                    <img 
+                        id="main-image"
+                        src="" 
+                        alt="Client trip photo" 
+                        class="w-full h-full object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/34d399/ffffff?text=Beach';">
+                    <div class="absolute bottom-4 left-4 flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1.5 pr-4 shadow-md">
+                        <img 
+                            id="main-avatar"
+                            src="" 
+                            alt="Client avatar" 
+                            class="w-10 h-10 rounded-full object-cover border-2 border-white"
+                            onerror="this.onerror=null;this.src='https://placehold.co/40x40/000000/ffffff?text=AV';">
+                        <span id="main-name" class="ml-3 font-semibold text-gray-700"></span>
+                    </div>
+                </div>
+
+                <!-- Text Content Section: Changed justify-between to justify-center -->
+                <div class="w-full md:w-1/2 flex flex-col justify-center pt-6 md:pt-0 md:pl-8 lg:pl-12">
+                    <div>
+                        <!-- Quotation Mark Icon -->
+                        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-200">
+                            <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
+                        </svg>
+                        <p id="main-quote" class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed"></p>
+                    </div>
+                    <div class="mt-6">
+                        <p class="font-semibold text-gray-800">
+                            — <span id="main-name-quote"></span>
+                            <a id="main-status" href="#" class="ml-2 text-sm font-medium text-cyan-600 hover:text-cyan-700"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation and Next Preview -->
+            <div class="hidden lg:flex md:-mt-40 flex-col items-center justify-center gap-4">
+                <!-- Navigation Buttons -->
+                <div class="flex gap-3">
+                    <button id="prev-button" class="bg-white hover:bg-gray-200 text-gray-800 p-3 rounded-full shadow-md transition-colors duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </button>
+                    <button id="next-button" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-md transition-colors duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Pagination -->
+                <p id="pagination-text" class="text-gray-500 font-medium text-sm text-gray-600 mt-2"></p>
+                
+                <!-- Next Card Preview -->
+                <div class="relative w-36 h-42 rounded overflow-hidden shadow-lg mt-4">
+                    <img 
+                        id="next-preview-image"
+                        src="" 
+                        alt="Next client trip photo" 
+                        class="w-full h-full object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/128x160/fb923c/ffffff?text=Beach';">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- DATA (JSON-like structure) ---
+            const testimonials = [
+                {
+                    name: "Sarah L.",
+                    status: "Top customer",
+                    quote: "Our trip to the Maldives was nothing short of magical. The attention to detail, from our private villa to the personalized excursions, was impeccable.",
+                    image: "/8bg.jpg",
+                    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    name: "James R.",
+                    status: "Repeat traveler",
+                    quote: "The safari in Tanzania was a life-changing experience. Our guide was incredibly knowledgeable and we saw the Big Five up close. Unforgettable!",
+                    image: "https://images.unsplash.com/photo-1504150558240-0b4fd8946624?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    name: "Emily C.",
+                    status: "Honeymooners",
+                    quote: "We chose them for our honeymoon in Kyoto, and it was perfect. The blend of culture, food, and romance was exactly what we dreamed of.",
+                    image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    name: "Mark T.",
+                    status: "Family vacation",
+                    quote: "Exploring the ancient ruins of Rome with our kids was made easy and fun by our tour organizers. They handled everything, so we could just enjoy the history.",
+                    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ];
+
+            // --- STATE ---
+            let currentIndex = 0;
+
+            // --- ELEMENTS ---
+            const mainImage = document.getElementById('main-image');
+            const mainAvatar = document.getElementById('main-avatar');
+            const mainName = document.getElementById('main-name');
+            const mainNameQuote = document.getElementById('main-name-quote');
+            const mainQuote = document.getElementById('main-quote');
+            const mainStatus = document.getElementById('main-status');
+            const paginationText = document.getElementById('pagination-text');
+            const nextPreviewImage = document.getElementById('next-preview-image');
+            const nextPreviewAvatar = document.getElementById('next-preview-avatar');
+            const nextPreviewName = document.getElementById('next-preview-name');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const testimonialCard = document.getElementById('testimonial-card');
+
+            // --- FUNCTIONS ---
+            function updateTestimonial(index) {
+                const current = testimonials[index];
+                // The next index, looping back to 0 if at the end
+                const nextIndex = (index + 1) % testimonials.length;
+                const next = testimonials[nextIndex];
+
+                // Add fade-in animation class
+                testimonialCard.classList.remove('fade-in');
+                void testimonialCard.offsetWidth; // Trigger reflow to restart animation
+                testimonialCard.classList.add('fade-in');
+
+                // Update main card content
+                mainImage.src = current.image;
+                mainImage.alt = `Photo from ${current.name}'s trip`;
+                mainAvatar.src = current.avatar;
+                mainAvatar.alt = current.name;
+                mainName.textContent = current.name;
+                mainNameQuote.textContent = current.name;
+                mainQuote.textContent = current.quote;
+                mainStatus.textContent = current.status;
+
+                // Update pagination
+                paginationText.textContent = `${index + 1}/${testimonials.length}`;
+
+                // Update next preview card
+                nextPreviewImage.src = next.image;
+                nextPreviewImage.alt = `Photo from ${next.name}'s trip`;
+                nextPreviewAvatar.src = next.avatar;
+                nextPreviewAvatar.alt = next.name;
+                nextPreviewName.textContent = next.name;
+            }
+
+            // --- EVENT LISTENERS ---
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                updateTestimonial(currentIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                updateTestimonial(currentIndex);
+            });
+
+            // --- INITIAL LOAD ---
+            updateTestimonial(0);
+        });
+    </script>
 
 
 <!--footer section -->
