@@ -18,34 +18,34 @@
         /* Media queries to handle different image URLs for desktop and mobile, if available */
         @media (min-width: 1024px) {
             .hero-bg {
-                background-image: url('/pictures/8bg.jpg'); /* Replace with a valid image URL for desktop */
+                background-image: url('/public/5bg.jpg'); /* Replace with a valid image URL for desktop */
             }
         }
         @media (max-width: 1023px) {
             .hero-bg {
-                background-image: url('/pictures/8bg.jpgg'); /* Replace with a valid image URL for mobile */
+                background-image: url('/public/5.jpg'); /* Replace with a valid image URL for mobile */
             }
             .hero-content-container {
                 padding-bottom: 2rem; /* Add some padding on mobile to not be too close to the edge */
             }
         }
               .bg-image-main {
-            background-image: url('/pictures/8bg.jpg');
+            background-image: url('/public/9bg.avif');
             background-size: cover;
             background-position: center;
         }
         .bg-image-card {
-            background-image: url('/pictures/8bg.jpg');
+            background-image: url('/public/5bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-concierge {
-            background-image: url('/pictures/8bg.jpg');
+            background-image: url('/public/5bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-exclusive {
-            background-image: url('/pictures/8bg.jpg');
+            background-image: url('/public/7bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -1458,62 +1458,90 @@
     </script>
 
 <!--footer section -->
- <!-- Footer Section -->
-    <footer class="bg-gray-200 py-10 px-4 sm:px-6 lg:px-8 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-semibold text-gray-900 mb-6">Get In Touch</h2>
-            <p class="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
-                We create exceptional journeys, enhancing lives through superior experiences, unmatched luxury, and thoughtful craftsmanship.
-            </p>
+<footer class="bg-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <!-- Left Column: Reviews Section (Now a clickable image) -->
+            <div class="space-y-6">
+                <div class="flex gap-4"><a href="https://your-review-page-url.com" target="_blank" class="block">
+                    <img src="/pictures/Screenshot 2025-08-14 120436.png" 
+                         alt="Customer Reviews Badges" 
+                         class="w-26  h-16 rounded shadow-sm hover:shadow-md transition-shadow">
+                </a>
+                <!-- <a href="https://your-review-page-url.com" target="_blank" class="block">
+                    <img src="/public/pp2.jpg" 
+                         alt="Customer Reviews Badges" 
+                         class="w-16  h-16 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                </a> -->
+      
+            </div>
+                
+                
+                <div class="pt-4">
+                    <p class="text-sm font-medium text-gray-700">RECOMMENDED ON</p>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <span class="bg-white px-3 py-1 rounded text-sm font-medium">bookmundi</span>
+                        <span class="bg-white px-3 py-1 rounded text-sm font-medium">Absolute Ethiopia</span>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Email Input and Send Button -->
-            <div class="flex justify-center mb-8">
-                <div class="relative w-full max-w-sm">
-                    <input type="email" placeholder="lxtour12364@gmail.com" class="w-full pl-6 pr-12 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500 text-lg">
-                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-600">
-                        <svg class="w-6 h-6 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <!-- Middle Column: Contact Form -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-900">Get In Touch</h2>
+                <p class="text-gray-700">
+                    We create exceptional journeys, enhancing lives through superior experiences, unmatched luxury, and thoughtful craftsmanship.
+                </p>
+                <div class="relative w-full">
+                    <input 
+                        type="email" 
+                        placeholder="overland12364@gmail.com" 
+                        class="w-full pl-6 pr-12 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 placeholder-gray-500"
+                    >
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
                     </button>
                 </div>
             </div>
 
-            <!-- Social Media Icons -->
-            <div class="flex justify-center space-x-6 mb-12">
-                <!-- Discord Icon (Placeholder SVG) -->
-                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-3.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM12 7.75c-3.14 0-5.73 2.56-5.75 5.7c1.37-.59 3.24-.95 5.75-.95s4.38.36 5.75.95c-.02-3.14-2.61-5.7-5.75-5.7z"/>
-                    </svg>
-                </a>
-                <!-- Facebook Icon (Placeholder SVG) -->
-                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.72 9-4.83 9-9.95z"/>
-                    </svg>
-                </a>
-                <!-- Twitter Icon (Placeholder SVG) -->
-                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22.46 6c-.77.34-1.6.57-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.77.85-2.78 1.04C18.17 4.28 17.11 4 16 4c-3.13 0-5.66 2.54-5.66 5.68 0 .44.05.87.14 1.28C7.57 10.96 4.71 9.4 2.75 7.02c-.44.75-.69 1.62-.69 2.54 0 1.75.89 3.29 2.24 4.19-.82-.02-1.59-.25-2.27-.64v.07c0 2.75 1.96 5.04 4.56 5.57-.4.11-.82.17-1.26.17-.31 0-.61-.03-.91-.09.72 2.25 2.81 3.89 5.28 3.93-1.93 1.5-4.37 2.4-7.03 2.4-.46 0-.91-.03-1.36-.08C2.92 21.36 5.38 22 8 22c7.2 0 11.16-5.96 11.16-11.16v-.5c.77-.55 1.45-1.23 1.99-2.01z"/>
-                    </svg>
-                </a>
-                <!-- Instagram Icon (Placeholder SVG) -->
-                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M7.8 2h8.4C18.1 2 20 3.9 20 6.2v8.4c0 2.3-1.9 4.2-4.2 4.2h-8.4C3.9 18.8 2 16.9 2 14.6V6.2C2 3.9 3.9 2 6.2 2zm10.4 2.2c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1 1.1-.5 1.1-1.1-.5-1.1-1.1-1.1zM12 6.8c-2.8 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1 5.1-2.3 5.1-5.1-2.3-5.1-5.1-5.1zm0 8.4c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3 3.3 1.5 3.3 3.3-1.5 3.3-3.3 3.3z"/>
-                    </svg>
-                </a>
-                <!-- LinkedIn Icon (Placeholder SVG) -->
-                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.447 20.452h-3.522v-5.539c0-1.31-.024-2.996-1.824-2.996-1.825 0-2.106 1.424-2.106 2.909v5.626h-3.52V9h3.385v1.543h.047c.47-.899 1.621-1.824 3.344-1.824 3.585 0 4.242 2.352 4.242 5.409v6.324zM7.22 7.749c-1.196 0-2.167-.97-2.167-2.166 0-1.195.971-2.166 2.167-2.166 1.196 0 2.166.971 2.166 2.166 0 1.196-.97 2.166-2.166 2.166zM8.947 20.452H5.424V9H8.947v11.452z"/>
-                    </svg>
-                </a>
+            <!-- Right Column: Social Media -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-gray-800">FIND US ON</h3>
+                <div class="flex flex-wrap gap-4">
+                   
+                    <!-- Facebook -->
+                    <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.72 9-4.83 9-9.95z"/>
+                        </svg>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="#" class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-white hover:bg-sky-600 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.77.34-1.6.57-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.77.85-2.78 1.04C18.17 4.28 17.11 4 16 4c-3.13 0-5.66 2.54-5.66 5.68 0 .44.05.87.14 1.28C7.57 10.96 4.71 9.4 2.75 7.02c-.44.75-.69 1.62-.69 2.54 0 1.75.89 3.29 2.24 4.19-.82-.02-1.59-.25-2.27-.64v.07c0 2.75 1.96 5.04 4.56 5.57-.4.11-.82.17-1.26.17-.31 0-.61-.03-.91-.09.72 2.25 2.81 3.89 5.28 3.93-1.93 1.5-4.37 2.4-7.03 2.4-.46 0-.91-.03-1.36-.08C2.92 21.36 5.38 22 8 22c7.2 0 11.16-5.96 11.16-11.16v-.5c.77-.55 1.45-1.23 1.99-2.01z"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white hover:from-purple-700 hover:to-pink-700 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.17.15 4.62 1.6 4.77 4.77.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.17-1.6 4.62-4.77 4.77-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.17-.15-4.62-1.6-4.77-4.77-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.17 1.6-4.62 4.77-4.77 1.27-.06 1.65-.07 4.85-.07zm0-2.16c-3.25 0-3.68.01-4.96.07-4.08.19-5.86 1.97-6.05 6.05-.06 1.28-.07 1.71-.07 4.96s.01 3.68.07 4.96c.19 4.08 1.97 5.86 6.05 6.05 1.28.06 1.71.07 4.96.07s3.68-.01 4.96-.07c4.08-.19 5.86-1.97 6.05-6.05.06-1.28.07-1.71.07-4.96s-.01-3.68-.07-4.96c-.19-4.08-1.97-5.86-6.05-6.05-1.28-.06-1.71-.07-4.96-.07zm0 3.84c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 8.4c1.88 0 3.4-1.52 3.4-3.4s-1.52-3.4-3.4-3.4-3.4 1.52-3.4 3.4 1.52 3.4 3.4 3.4zm6.6-8.4c0 .66-.54 1.2-1.2 1.2s-1.2-.54-1.2-1.2.54-1.2 1.2-1.2 1.2.54 1.2 1.2z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center text-white hover:bg-blue-800 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.522v-5.539c0-1.31-.024-2.996-1.824-2.996-1.825 0-2.106 1.424-2.106 2.909v5.626h-3.52V9h3.385v1.543h.047c.47-.899 1.621-1.824 3.344-1.824 3.585 0 4.242 2.352 4.242 5.409v6.324zM7.22 7.749c-1.196 0-2.167-.97-2.167-2.166 0-1.195.971-2.166 2.167-2.166 1.196 0 2.166.971 2.166 2.166 0 1.196-.97 2.166-2.166 2.166zM8.947 20.452H5.424V9H8.947v11.452z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-500">&copy; 2024 overland. All rights reserved.</p>
+                </div>
             </div>
-
-            <p class="text-gray-500 text-sm">&copy; 2024 LxTour. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
