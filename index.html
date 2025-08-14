@@ -11,41 +11,41 @@
             font-family: 'Montserrat', sans-serif;
         }
         .hero-bg {
-            background-image: url('/8bg.jpg');
+            background-image: url('/pictures/8bg.jpg');
             background-size: cover;
             background-position: center;
         }
         /* Media queries to handle different image URLs for desktop and mobile, if available */
         @media (min-width: 1024px) {
             .hero-bg {
-                background-image: url('/8bg.jpg'); /* Replace with a valid image URL for desktop */
+                background-image: url('/pictures/8bg.jpg'); /* Replace with a valid image URL for desktop */
             }
         }
         @media (max-width: 1023px) {
             .hero-bg {
-                background-image: url('/8bg.jpg'); /* Replace with a valid image URL for mobile */
+                background-image: url('/pictures/8bg.jpgg'); /* Replace with a valid image URL for mobile */
             }
             .hero-content-container {
                 padding-bottom: 2rem; /* Add some padding on mobile to not be too close to the edge */
             }
         }
               .bg-image-main {
-            background-image: url('/8bg.jpg');
+            background-image: url('/pictures/8bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-card {
-            background-image: url('/8bg.jpg');
+            background-image: url('/pictures/8bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-concierge {
-            background-image: url('/8bg.jpg');
+            background-image: url('/pictures/8bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-exclusive {
-            background-image: url('/8bg.jpg');
+            background-image: url('/pictures/8bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -180,14 +180,13 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
+            margin-bottom: 30px;
         }
 
         /* Styles for the image inside the oval container */
         .oval-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center;
         }
 
         /* Base styles for side sections (left and right) */
@@ -266,6 +265,48 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+       .carousel-track {
+            display: flex;
+            transition: transform 0.75s ease-in-out;
+        }
+
+        /* Responsive styling for the carousel items */
+        .logo-item {
+            flex-shrink: 0;
+            width: 25%; /* Show 4 logos by default */
+        }
+        @media (max-width: 768px) {
+            .logo-item {
+                width: 50%; /* Show 2 logos on smaller screens */
+            }
+        }
+         .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+        /* Added for smooth transition on hidden cards */
+        .hidden-card {
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+        .show {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+        }
+         /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
         }
     </style>
 </head>
@@ -410,658 +451,698 @@
 
     <!-- about us section -->
 
+<!-- Main Container -->
+<div class="max-w-7xl mx-auto bg-white shadow-xl overflow-hidden md:flex md:items-start">
 
-        <!-- Main Container -->
-    <div class="max-w-7xl mx-auto bg-white shadow-xl overflow-hidden md:flex md:items-start">
+    <!-- Left Section - Images -->
+    <div class="md:w-1/2 relative p-6 md:p-12">
+        <div class="relative w-full max-w-lg mx-auto">
+            <!-- Large Image -->
+            <div class="w-full h-[60vh] md:h-[70vh] bg-image-main shadow-lg"></div>
 
-        <!-- Left Section - Images -->
-        <div class="md:w-1/2 relative p-6 md:p-12">
-            <div class="relative w-full max-w-lg mx-auto">
-                <!-- Large Image -->
-                <div class="w-full h-[60vh] md:h-[70vh]  bg-image-main shadow-lg"></div>
+            <!-- Overlapping Card with hover effect -->
+            <div class="absolute top-1/2 -translate-y-1/2 right-[-1rem] md:right-[-2rem] w-64 h-auto bg-white/50 border border-white backdrop-blur-sm shadow-lg p-1.5 transition-transform duration-300 hover:scale-105">
+                <!-- Card Image -->
+                <div class="w-full h-48 bg-image-card relative">
+                    <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Card Text -->
+                <div class="mt-1">
+                    <h4 class="text-sm pl-2 font-semibold text-gray-800">Authentic Experiences</h4>
+                    <p class="mt-1 pl-2 pb-2 text-xs text-gray-600">Each journey reveals Ethiopia's ancient secrets and breathtaking landscapes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Overlapping Card with hover effect -->
-                <div class="absolute top-1/2 -translate-y-1/2 right-[-1rem] md:right-[-2rem] w-64 h-auto bg-white/50  border border-white backdrop-blur-sm   shadow-lg p-1.5 transition-transform duration-300 hover:scale-105">
-                    <!-- Card Image -->
-                    <div class="w-full h-48   bg-image-card relative">
-                        <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white flex items-center justify-center">
+    <!-- Right Section - Content -->
+    <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-between">
+        <div class="">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Discover Ethiopia's Ancient Wonders
+            </h2>
+            <p class="text-gray-600 text-sm md:text-sm leading-relaxed">
+                At Overland Ethiopia Tours, we unveil a country of brilliant beauty, mystery, and extraordinary natural phenomena. Ethiopia stands proudly in the Horn of Africa as a land of great antiquity, with culture and traditions stretching back 3000 years. Home to Africa's most ancient kingdom and one of the world's first monarchies, Ethiopia boasts a unique alphabet over 2000 years old and remains the only African nation to maintain independence from European colonization.
+            </p>
+        </div>
+        
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 items-end">
+            <!-- Percentage Stat with animated number -->
+            <div class="col-span-1">
+                <h3 class="text-4xl md:text-5xl font-bold text-gray-900"><span id="animated-stat">0</span>%</h3>
+                <p class="mt-2 text-gray-500 text-xs">Satisfaction rate from our travelers</p>
+            </div>
+
+            <!-- 24/7 Guide Service Card with hover effect -->
+            <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
+                <!-- Card Image -->
+                <div class="relative w-full h-32 overflow-hidden bg-image-concierge">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
                             </svg>
                         </div>
                     </div>
-                    <!-- Card Text -->
-                    <div class="mt-1">
-                        <h4 class="text-sm pl-2  font-semibold text-gray-800">Bespoke Itineraries</h4>
-                        <p class="mt-1 pl-2 pb-2 text-xs text-gray-600">Each Journey We Curate Is A Masterpiece, Crafted With Care And Precision.</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Right Section - Content -->
-        <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-between">
-            <div class="">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
-                    Crafting Unforgettable Journeys Since 2012
-                </h2>
-                <p class="text-gray-600 text-sm md:text-sm leading-relaxed">
-                    At Luxury Travel Agency, we believe that travel should be an extraordinary experience, tailored to your unique desires and preferences. Since our inception in 2012, we have been dedicated to creating bespoke journeys that transcend the ordinary. Our commitment to luxury, personalization, and seamless execution ensures that every moment of your trip is nothing short of perfection.
-                </p>
+                <!-- Card Text -->
+                <div class="mt-2">
+                    <h4 class="text-sm font-semibold text-gray-800">Expert Local Guides</h4>
+                </div>
             </div>
             
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 items-end">
-                <!-- Percentage Stat with animated number -->
-                <div class="col-span-1">
-                    <h3 class="text-4xl md:text-5xl font-bold text-gray-900"><span id="animated-stat">0</span>%</h3>
-                    <p class="mt-2 text-gray-500 text-xs">From concept to completion</p>
-                </div>
-
-                <!-- 24/7 Concierge Service Card with hover effect -->
-                <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
-                    <!-- Card Image -->
-                    <div class="relative w-full h-32 overflow-hidden bg-image-concierge ">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
-                            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
-                                </svg>
-                            </div>
+            <!-- Access To Hidden Treasures Card with hover effect -->
+            <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
+                <!-- Card Image -->
+                <div class="relative w-full h-40 overflow-hidden bg-image-exclusive">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
+                            </svg>
                         </div>
                     </div>
-                    <!-- Card Text -->
-                    <div class="mt-2">
-                        <h4 class="text-sm font-semibold text-gray-800">24/7 Concierge Service</h4>
-                    </div>
                 </div>
-                
-                <!-- Access To Exclusive Experiences Card with hover effect -->
-                <div class="col-span-1 bg-white shadow-xl p-1.5 relative transition-transform duration-300 hover:scale-105">
-                    <!-- Card Image -->
-                    <div class="relative w-full h-40 overflow-hidden bg-image-exclusive ">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-end p-2">
-                            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6L14 10L10 14" transform="translate(0, 0) rotate(-45 12 10)"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card Text -->
-                    <div class="mt-2">
-                        <h4 class="text-sm font-semibold text-gray-800">Access To Exclusive Experiences</h4>
-                    </div>
+                <!-- Card Text -->
+                <div class="mt-2">
+                    <h4 class="text-sm font-semibold text-gray-800">Access To Hidden Treasures</h4>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- JavaScript for number animation -->
-    <script>
-        // Function to animate a number from a start value to a target value
-        function animateNumber(element, start, end, duration) {
-            let startTime = null;
+<!-- JavaScript for number animation -->
+<script>
+    // Function to animate a number from a start value to a target value
+    function animateNumber(element, start, end, duration) {
+        let startTime = null;
 
-            // The animation loop function
-            function step(currentTime) {
-                if (!startTime) startTime = currentTime;
-                const progress = currentTime - startTime;
-                const value = Math.min(progress / duration, 1) * (end - start) + start;
-                element.textContent = Math.floor(value);
+        // The animation loop function
+        function step(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const progress = currentTime - startTime;
+            const value = Math.min(progress / duration, 1) * (end - start) + start;
+            element.textContent = Math.floor(value);
 
-                if (progress < duration) {
-                    window.requestAnimationFrame(step);
-                } else {
-                    element.textContent = end; // Ensure the final value is exactly 81
-                }
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            } else {
+                element.textContent = end; // Ensure the final value is exactly 98
             }
-            window.requestAnimationFrame(step);
         }
+        window.requestAnimationFrame(step);
+    }
 
-        // Use an IntersectionObserver to trigger the animation when the element is visible
-        document.addEventListener('DOMContentLoaded', () => {
-            const statElement = document.getElementById('animated-stat');
+    // Use an IntersectionObserver to trigger the animation when the element is visible
+    document.addEventListener('DOMContentLoaded', () => {
+        const statElement = document.getElementById('animated-stat');
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateNumber(statElement, 0, 81, 1500); // Animate from 0 to 81 over 1.5 seconds
-                        observer.unobserve(entry.target); // Stop observing after the animation starts
-                    }
-                });
-            }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumber(statElement, 0, 100, 1500); // Animate from 0 to 98 over 1.5 seconds
+                    observer.unobserve(entry.target); // Stop observing after the animation starts
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
 
-            if (statElement) {
-                observer.observe(statElement);
-            }
-        });
-    </script>
+        if (statElement) {
+            observer.observe(statElement);
+        }
+    });
+</script>
 
+<!-- Main container for the carousel -->
+<div class="main-container">
     
-<!--courousel section -->
- <!-- Main container for the carousel -->
-    <div class="main-container">
-        
-        <div class="content-row">
-            <!-- Left Section -->
-            <div class="side-section left">
-                <!-- Destination Title - Now in the left section -->
-                <h1 class="text-4xl lg:text-5xl font-semibold text-gray-800 leading-tight text-center lg:text-left mb-8">
-                    Destinations You'll Love
-                </h1>
-                <!-- Small Image Cards -->
-                <div class="flex space-x-4">
-                    <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                        <img id="left-small-image-1" src="" alt="Previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div id="left-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                    </div>
-                    <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                        <img id="left-small-image-2" src="" alt="Further previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div id="left-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                    </div>
+    <div class="content-row">
+        <!-- Left Section -->
+        <div class="side-section left">
+            <!-- Destination Title - Now in the left section -->
+            <h1 class="text-4xl lg:text-5xl font-semibold text-gray-800 leading-tight text-center lg:text-left mb-8">
+                Ethiopia's Best Tour Packages
+            </h1>
+            <!-- Small Image Cards -->
+            <div class="flex space-x-4">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="left-small-image-1" src="" alt="Previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="left-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                </div>
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="left-small-image-2" src="" alt="Further previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="left-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
                 </div>
             </div>
+        </div>
 
-            <!-- Main Card Section -->
-            <div class="main-image-card rounded">
-                <!-- Blurred Background for the card -->
-                <div id="blurred-background" class="absolute inset-0 z-0  bg-cover bg-center transition-all duration-500"></div>
+        <!-- Main Card Section -->
+        <div class="main-image-card rounded">
+            <!-- Blurred Background for the card -->
+            <div id="blurred-background" class="absolute inset-0 z-0 bg-cover bg-center transition-all duration-500"></div>
 
-                <!-- Arrow button top right -->
-                <button id="next-top-btn" class="absolute top-6 right-6 bg-white/70 backdrop-blur-lg rounded-full p-2.5 shadow-md z-20 hover:scale-105 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- Arrow button top right -->
+            <button id="next-top-btn" class="absolute top-6 right-6 bg-white/70 backdrop-blur-lg rounded-full p-2.5 shadow-md z-20 hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+
+            <!-- Main Oval Image -->
+            <div class="oval-image-container rounded">
+                <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Ethiopia';">
+            </div>
+
+            <!-- Destination Title -->
+            <h2 id="destination-title" class="text-2xl font-semibold text-gray-200 absolute bottom-8 left-0 right-0 text-center z-20"></h2>
+        </div>
+
+        <!-- Right Section -->
+        <div class="side-section right">
+            <!-- Navigation Arrows -->
+            <div class="flex space-x-4">
+                <button id="prev-btn" class="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </button>
-
-                <!-- Main Oval Image -->
-                <div class="oval-image-container rounded">
-                    <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Santorini';">
-                </div>
-
-                <!-- Destination Title -->
-                <h2 id="destination-title" class="text-3xl font-semibold text-gray-200 absolute bottom-8 left-0 right-0 text-center z-20"></h2>
             </div>
 
-            <!-- Right Section -->
-            <div class="side-section right">
-                <!-- Navigation Arrows -->
-                <div class="flex space-x-4">
-                    <button id="prev-btn" class="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </svg>
-                    </button>
-                    <button id="next-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </button>
+            <!-- Small Image Cards -->
+            <div class="flex space-x-4">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="right-small-image-1" src="" alt="Next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="right-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
                 </div>
-
-                <!-- Small Image Cards -->
-                <div class="flex space-x-4">
-                    <div class="relative w-32 h-32 md:w-40 md:h-40  overflow-hidden shadow-lg">
-                        <img id="right-small-image-1" src="" alt="Next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div id="right-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                    </div>
-                    <div class="relative w-32 h-32 md:w-40 md:h-40  overflow-hidden shadow-lg">
-                        <img id="right-small-image-2" src="" alt="Further next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <div id="right-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                    </div>
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="right-small-image-2" src="" alt="Further next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="right-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Data for the destinations (using placeholders for images)
-            const destinations = [
-                {
-                    imageUrl: "/5bg.jpg",
-                    title: "Santorini, Greece",
-                },
-                {
-                    imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070&auto=format&fit=crop",
-                    title: "Kyoto, Japan",
-                },
-                {
-                    imageUrl: "/8bg.jpg",
-                    title: "Serengeti, Tanzania",
-                },
-                {
-                    imageUrl: "/4bg.jpg",
-                    title: "Norwegian Fjords",
-                },
-                {
-                    imageUrl: "/8bg.jpg",
-                    title: "Dubai, UAE",
-                }
-            ];
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Data for the Ethiopia tour packages
+        const destinations = [
+            {
+                imageUrl: "public/Photography-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                title: "Photography Tours in Ethiopia"
+            },
+            {
+                imageUrl: "public/Archaeology-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                title: "Archaeology Tours in Ethiopia"
+            },
+            {
+                imageUrl: "public/Timeket-Festival-Celebration-in-Gonder-Overland-Ethiopia-Tours.jpg",
+                title: "Timket Festival Celebration in Gonder"
+            },
+            {
+                imageUrl: "public/Christmas-Festival-Celebration-in-Lalibela-Overland-Ethiopia-Tours.jpg",
+                title: "Christmas Festival Celebration in Lalibela"
+            },
+            {
+                imageUrl: "public/Short-Tour-Danakil-Depression-Overland-Ethiopia-Tours.jpg",
+                title: "Short Tour to Danakil Depression"
+            },
+            {
+                imageUrl: "public/Bird-Watching-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                title: "Bird Watching Tours in Ethiopia"
+            },
+            {
+                imageUrl: "public/Tour-of-Saint-Mary-of-Zion-Festival-Celebration-in-Axum-Overland-Ethiopia-Tours.jpg",
+                title: "Tour of Saint Mary of Zion Festival in Axum"
+            },
+            {
+                imageUrl: "public/Community-Tourism-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                title: "Community Tourism in Ethiopia"
+            }
+        ];
 
-            let currentIndex = 0;
+        let currentIndex = 0;
 
-            // Get references to the dynamic elements
-            const mainImage = document.getElementById('main-destination-image');
-            const blurredBackground = document.getElementById('blurred-background');
-            const mainTitle = document.getElementById('destination-title');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const nextTopBtn = document.getElementById('next-top-btn');
+        // Get references to the dynamic elements
+        const mainImage = document.getElementById('main-destination-image');
+        const blurredBackground = document.getElementById('blurred-background');
+        const mainTitle = document.getElementById('destination-title');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const nextTopBtn = document.getElementById('next-top-btn');
 
-            // Small image card elements
-            const smallImageElements = {
-                left: [
-                    { img: document.getElementById('left-small-image-1'), index: document.getElementById('left-small-index-1') },
-                    { img: document.getElementById('left-small-image-2'), index: document.getElementById('left-small-index-2') }
-                ],
-                right: [
-                    { img: document.getElementById('right-small-image-1'), index: document.getElementById('right-small-index-1') },
-                    { img: document.getElementById('right-small-image-2'), index: document.getElementById('right-small-index-2') }
-                ]
-            };
+        // Small image card elements
+        const smallImageElements = {
+            left: [
+                { img: document.getElementById('left-small-image-1'), index: document.getElementById('left-small-index-1') },
+                { img: document.getElementById('left-small-image-2'), index: document.getElementById('left-small-index-2') }
+            ],
+            right: [
+                { img: document.getElementById('right-small-image-1'), index: document.getElementById('right-small-index-1') },
+                { img: document.getElementById('right-small-image-2'), index: document.getElementById('right-small-index-2') }
+            ]
+        };
 
-            /**
-             * Updates the UI with the destination data at a given index.
-             * @param {number} index - The index of the destination to display.
-             * @param {string} direction - The direction of navigation ('next' or 'prev').
-             */
-            function updateCarousel(index, direction = 'next') {
-                const destination = destinations[index];
-                if (!destination) return;
+        /**
+         * Updates the UI with the destination data at a given index.
+         * @param {number} index - The index of the destination to display.
+         * @param {string} direction - The direction of navigation ('next' or 'prev').
+         */
+        function updateCarousel(index, direction = 'next') {
+            const destination = destinations[index];
+            if (!destination) return;
 
-                // --- Update Main Card ---
-                // Remove animation classes to reset
-                mainImage.classList.remove('animate-next', 'animate-prev');
+            // --- Update Main Card ---
+            // Remove animation classes to reset
+            mainImage.classList.remove('animate-next', 'animate-prev');
+            
+            // Use a short timeout to allow the class removal to register before re-adding it
+            setTimeout(() => {
+                mainImage.src = destination.imageUrl;
+                mainImage.alt = destination.title;
+                mainTitle.textContent = destination.title;
                 
-                // Use a short timeout to allow the class removal to register before re-adding it
-                setTimeout(() => {
-                    mainImage.src = destination.imageUrl;
-                    mainImage.alt = destination.title;
-                    mainTitle.textContent = destination.title;
-                    
-                    // Add the appropriate animation class
-                    mainImage.classList.add(direction === 'next' ? 'animate-next' : 'animate-prev');
-                }, 50);
+                // Add the appropriate animation class
+                mainImage.classList.add(direction === 'next' ? 'animate-next' : 'animate-prev');
+            }, 50);
 
-                // Update the blurred background image
-                blurredBackground.style.backgroundImage = `url('${destination.imageUrl}')`;
-                blurredBackground.style.filter = 'blur(20px)'; // Apply the blur filter
+            // Update the blurred background image
+            blurredBackground.style.backgroundImage = `url('${destination.imageUrl}')`;
+            blurredBackground.style.filter = 'blur(20px)';
 
-                // --- Update Side Small Cards ---
-                const total = destinations.length;
+            // --- Update Side Small Cards ---
+            const total = destinations.length;
 
-                // Update left (previous) cards
-                const prev1Index = (index - 1 + total) % total;
-                const prev2Index = (index - 2 + total) % total;
-                smallImageElements.left[0].img.src = destinations[prev1Index].imageUrl;
-                smallImageElements.left[0].index.textContent = `0${prev1Index + 1}`;
-                smallImageElements.left[1].img.src = destinations[prev2Index].imageUrl;
-                smallImageElements.left[1].index.textContent = `0${prev2Index + 1}`;
+            // Update left (previous) cards
+            const prev1Index = (index - 1 + total) % total;
+            const prev2Index = (index - 2 + total) % total;
+            smallImageElements.left[0].img.src = destinations[prev1Index].imageUrl;
+            smallImageElements.left[0].index.textContent = `0${prev1Index + 1}`;
+            smallImageElements.left[1].img.src = destinations[prev2Index].imageUrl;
+            smallImageElements.left[1].index.textContent = `0${prev2Index + 1}`;
 
-                // Update right (next) cards
-                const next1Index = (index + 1) % total;
-                const next2Index = (index + 2) % total;
-                smallImageElements.right[0].img.src = destinations[next1Index].imageUrl;
-                smallImageElements.right[0].index.textContent = `0${next1Index + 1}`;
-                smallImageElements.right[1].img.src = destinations[next2Index].imageUrl;
-                smallImageElements.right[1].index.textContent = `0${next2Index + 1}`;
-            }
+            // Update right (next) cards
+            const next1Index = (index + 1) % total;
+            const next2Index = (index + 2) % total;
+            smallImageElements.right[0].img.src = destinations[next1Index].imageUrl;
+            smallImageElements.right[0].index.textContent = `0${next1Index + 1}`;
+            smallImageElements.right[1].img.src = destinations[next2Index].imageUrl;
+            smallImageElements.right[1].index.textContent = `0${next2Index + 1}`;
+        }
 
-            function showNext() {
-                currentIndex = (currentIndex + 1) % destinations.length;
-                updateCarousel(currentIndex, 'next');
-            }
-
-            function showPrevious() {
-                currentIndex = (currentIndex - 1 + destinations.length) % destinations.length;
-                updateCarousel(currentIndex, 'prev');
-            }
-
-            // --- Event Listeners ---
-            prevBtn.addEventListener('click', showPrevious);
-            nextBtn.addEventListener('click', showNext);
-            nextTopBtn.addEventListener('click', showNext);
-
-            // --- Initial Load ---
+        function showNext() {
+            currentIndex = (currentIndex + 1) % destinations.length;
             updateCarousel(currentIndex, 'next');
-        });
-    </script>
+        }
+
+        function showPrevious() {
+            currentIndex = (currentIndex - 1 + destinations.length) % destinations.length;
+            updateCarousel(currentIndex, 'prev');
+        }
+
+        // --- Event Listeners ---
+        prevBtn.addEventListener('click', showPrevious);
+        nextBtn.addEventListener('click', showNext);
+        nextTopBtn.addEventListener('click', showNext);
+
+        // --- Initial Load ---
+        updateCarousel(currentIndex, 'next');
+    });
+</script>
 
 
-    <!-- content -->
- <!-- Main content container -->
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-semibold text-gray-900 mb-12">What We Offer</h2>
 
-        <!-- Grid Container for Cards - Content will be dynamically loaded here -->
-        <div id="service-cards-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Cards will be injected by JavaScript -->
-        </div>
 
-        <!-- Show More/Show Less Button -->
-        <div class="flex justify-center mt-12">
-            <button id="show-more-less-button" class="bg-white text-black px-4 py-2 border border-black flex items-center justify-center space-x-2 hover:bg-white/30 transition-colors">
-                <span id="button-text">Show More</span>
-                <svg id="button-arrow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path> <!-- Downward arrow initially -->
-                </svg>
-            </button>
-        </div>
+
+
+<!--ethiopia tours-->
+
+<!-- Main content container -->
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-semibold text-gray-900 mb-12 text-center">Ethiopia Tour Packages</h2>
+
+    <!-- Grid Container for Cards - Content will be dynamically loaded here -->
+    <div id="service-cards-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Cards will be injected by JavaScript -->
     </div>
 
-    <!-- Modals Container - Modals will be dynamically loaded here -->
-    <div id="modals-container">
-        <!-- Modals will be injected by JavaScript -->
+    <!-- Show More/Show Less Button -->
+    <div class="flex justify-center mt-12">
+        <button id="show-more-less-button" class="bg-white text-black px-6 py-3 border border-black rounded-md flex items-center justify-center space-x-2 hover:bg-gray-100 transition-colors duration-300">
+            <span id="button-text">Show More</span>
+            <svg id="button-arrow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Data for the service cards and modals
-            const serviceData = [
-                {
-                    id: 'private-jet',
-                    imageSrc: '/5bg.jpg',
-                    title: 'Private Jet Charters',
-                    shortDescription: 'Experience The Pinnacle Of Convenience And Comfort With Our Private Jet Charters.',
-                    longDescription: `Experience unparalleled luxury and efficiency with our exclusive private jet charters. From executive travel to leisurely getaways, we provide bespoke services tailored to your every need. Enjoy spacious cabins, gourmet catering, and seamless boarding processes, ensuring a truly private and convenient journey. Our fleet boasts the latest in aviation technology and comfort, staffed by highly experienced pilots and cabin crew dedicated to your safety and satisfaction. Whether you're flying for business or pleasure, our private jet services redefine premium air travel.`
-                },
-                {
-                    id: 'every-detail',
-                    imageSrc: '/8bg.jpg',
-                    title: 'Every Detail Effortlessly Planned',
-                    shortDescription: 'Stay In Luxurious, Handpicked Accommodations At Stunning Global Locations.',
-                    longDescription: `We meticulously plan every aspect of your journey, ensuring a seamless and worry-free experience from start to finish. Our dedicated concierge team handles everything, from booking exclusive accommodations and private transportation to arranging personalized tours and dining reservations. With our attention to detail, you can relax and immerse yourself in your adventure, knowing that every contingency has been anticipated and every preference catered to, making your travel truly effortless.`
-                },
-                {
-                    id: 'lifetime-adventures',
-                    imageSrc: '/5bg.jpg',
-                    title: 'Lifetime Adventures Unlocked',
-                    shortDescription: 'Unlock Access To Unique And Exclusive Experiences That Few Can Offer.',
-                    longDescription: `Embark on extraordinary journeys and create memories that last a lifetime. Our curated adventures range from thrilling wildlife safaris in remote jungles to cultural immersions in ancient cities, all designed to offer unique and authentic experiences. Discover hidden gems, encounter rare wildlife, and explore breathtaking landscapes with expert guides who bring each destination to life. These are not just trips; they are transformative experiences.`
-                },
-                {
-                    id: 'luxury-accommodations',
-                    imageSrc: '/8bg.jpg',
-                    title: 'Unrivalled Luxury Accommodations',
-                    shortDescription: 'Our Handpicked Luxury Accommodations Range From Opulent Five-Star Hotels To Exclusive Private Villas.',
-                    longDescription: `Indulge in the finest accommodations selected for their exquisite design, impeccable service, and breathtaking locations. From secluded private villas with dedicated staff to opulent five-star hotel suites, every stay is an experience in pure comfort and elegance. We partner with the world's most prestigious properties to ensure your comfort and privacy are paramount. Enjoy amenities like private pools, personal chefs, and stunning panoramic views, all designed to provide an unforgettable retreat.`
-                },
-                {
-                    id: 'bespoke-itineraries',
-                    imageSrc: '/5bg.jpg',
-                    title: 'Bespoke Itineraries',
-                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
-                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
-                },
-                {
-                    id: 'bespoke-itineraries',
-                    imageSrc: '/8bg.jpg',
-                    title: 'Bespoke Itineraries',
-                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
-                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
-                },
-                {
-                    id: 'bespoke-itineraries',
-                    imageSrc: '/5bg.jpg',
-                    title: 'Bespoke Itineraries',
-                    shortDescription: 'Craft Your Dream Journey With Our Expertly Designed Personalized Itineraries.',
-                    longDescription: `Let us design a journey that truly reflects your desires. Our travel specialists work with you to create custom itineraries, ensuring every detail, from accommodation to exclusive experiences, is perfectly aligned with your vision. Whether it's a multi-country expedition or a focused cultural deep dive, our bespoke itineraries promise a journey crafted uniquely for you, filled with authentic moments and seamless transitions.`
-                },
-                {
-                    id: 'yacht-charters',
-                    imageSrc: '/8bg.jpg',
-                    title: 'Luxury Yacht Charters',
-                    shortDescription: 'Sail The World\'s Most Beautiful Waters On Our Exquisite Private Yachts.',
-                    longDescription: `Embark on an unforgettable maritime adventure with our luxury yacht charters. Explore hidden coves, vibrant coastal towns, and serene islands at your own pace, with a dedicated crew catering to your every whim. Our fleet of prestigious yachts offers unparalleled comfort, privacy, and freedom. Enjoy gourmet dining, water sports, and breathtaking sunsets from the deck of your private sanctuary on the sea.`
-                }
-            ];
+<!-- Modals Container - Modals will be dynamically loaded here -->
+<div id="modals-container">
+    <!-- Modals will be injected by JavaScript -->
+</div>
 
-            const gridContainer = document.getElementById('service-cards-grid-container');
-            const modalsContainer = document.getElementById('modals-container');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Data for the Ethiopia tour packages
+        const serviceData = [
+       {
+                id: '1',
+                imageSrc: 'public/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Historic Route with Semien Mountains',
+                shortDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
+                longDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
+                location: 'Ethiopia',
+                duration: '10 Days',
+            },
+            {
+                id: '2',
+                imageSrc: 'public/Tour-to-Danakil-Deprssion-and-Erta-Ale-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to Danakil Depression and Erta Ale',
+                shortDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
+                longDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
+                location: 'Ethiopia',
+                duration: '14 Days',
+            },
+            {
+                id: '3',
+                imageSrc: 'public/Tour-to-the-Omo-Valley-and-Historic-Route-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Omo Valley and Historic Route',
+                shortDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
+                longDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
+                location: 'Ethiopia',
+                duration: '24 Days',
+            },
+            {
+                id: '4',
+                imageSrc: 'public/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to Danakil Depression and Historic Route',
+                shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                location: 'Ethiopia',
+                duration: '22 Days',
+            },
+            {
+                id: '5',
+                imageSrc: 'public/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Omo Valley with Yabello',
+                shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                location: 'Ethiopia',
+                duration: '16 Days',
+            },
+            {
+                id: '6',
+                imageSrc: 'public/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
+                title: 'Trekking Tour to the Simien Mountains with Gonder',
+                shortDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
+                longDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
+                location: 'Ethiopia',
+                duration: '12 Days',
+            },
+            {
+                id: '7',
+                imageSrc: 'public/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
+                title: 'Trekking Tour to the Bale Mountains',
+                shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                location: 'Ethiopia',
+                duration: '14 Days',
+            },
+            {
+                id: '8',
+                imageSrc: 'public/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Omo Valley and Surma Tribe',
+                shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                location: 'Ethiopia',
+                duration: '21 Days',
+            },
+        ];
 
-            // Function to create a card element
-            function createCard(data, isHidden = false) {
-                const cardDiv = document.createElement('div');
-                cardDiv.classList.add(
-                    'bg-white', 'shadow-sm', 'p-6', 'flex', 'flex-col', 'justify-between',
-                    'border', 'border-gray-100', 'card-bg',
-                    'hover:scale-105', 'transition-transform', 'duration-300', 'ease-in-out' // Card scaling on hover
-                );
-                if (isHidden) {
-                    cardDiv.classList.add('hidden', 'hidden-card');
-                }
-                cardDiv.style.backgroundImage = `url('${data.imageSrc}')`;
+        const gridContainer = document.getElementById('service-cards-grid-container');
+        const modalsContainer = document.getElementById('modals-container');
 
-                cardDiv.innerHTML = `
+        // Function to create a card element with semi-transparent overlay
+        function createCard(data, isHidden = false) {
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add(
+                'relative', 'overflow-hidden', 'shadow-lg', 'p-6', 'rounded-lg',
+                'flex', 'flex-col', 'justify-between', 'h-64',
+                'hover:scale-105', 'transition-transform',
+                'duration-300', 'ease-in-out'
+            );
+            
+            if (isHidden) {
+                cardDiv.classList.add('hidden', 'hidden-card');
+            }
+            
+            // *** FIX: The image is now placed BEFORE the overlay. ***
+            // This ensures the overlay sits on top of the image, as they share the same z-index.
+            cardDiv.innerHTML = `
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('${data.imageSrc}')" onerror="this.style.backgroundImage='url(https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found)'"></div>
+                
+                <!-- Semi-transparent Overlay -->
+                <div class="absolute inset-0 bg-black/50 z-0"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col justify-between">
                     <div class="card-content">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-sm font-medium">${data.title}</h3>
-                            <div class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 group cursor-pointer arrow-button-wrapper" data-modal-target="modal-${data.id}">
-                                <svg class="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-semibold text-white">${data.title}</h3>
+                            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border border-white/50 group cursor-pointer arrow-button-wrapper" data-modal-target="modal-${data.id}">
+                                <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform duration-200 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </div>
                         </div>
-                        <p class="mt-2 text-sm">
-                            ${data.shortDescription}
-                        </p>
                     </div>
-                    <button class=" text-left text-gray-300 hover:text-gray-100 hover:underline flex items-center gap-1 arrow-button relative z-30 block w-fit read-more-button" data-modal-target="modal-${data.id}">
-                        <span class="read-more-text">Read more</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <div class="relative z-10">
+                         <p class="text-sm mb-2 text-white/90">${data.shortDescription}</p>
+                         <p class="text-xs text-white/70">${data.duration} • ${data.location}</p>
+                    </div>
+                </div>
+            `;
+            return cardDiv;
+        }
+
+        // Function to create a modal element
+        function createModal(data) {
+            const modalDiv = document.createElement('div');
+            modalDiv.id = `modal-${data.id}`;
+            modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
+
+            modalDiv.innerHTML = `
+                <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row relative">
+                    <button class="modal-close-button absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
-                `;
-                return cardDiv;
-            }
-
-            // Function to create a modal element
-            function createModal(data) {
-                const modalDiv = document.createElement('div');
-                modalDiv.id = `modal-${data.id}`;
-                modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
-
-                modalDiv.innerHTML = `
-                    <div class="bg-white  shadow-lg p-8 max-w-4xl w-full h-full md:h-auto flex flex-col md:flex-row relative">
-                        <button class="modal-close-button absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                        <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                            <img src="${data.imageSrc}" alt="${data.title}" class=" max-h-full max-w-full object-contain">
-                        </div>
-                        <div class="md:w-1/2 flex flex-col justify-center">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">${data.title}</h3>
-                            <p class="text-xs text-gray-700 mb-4">
-                                ${data.longDescription}
-                            </p>
-                        </div>
+                    <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
+                        <img src="${data.imageSrc}" alt="${data.title}" class="rounded-lg max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found'; this.onerror=null;">
                     </div>
-                `;
-                return modalDiv;
-            }
+                    <div class="md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">${data.title}</h3>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <span class="text-sm font-medium bg-gray-100 px-3 py-1 rounded-full">${data.duration}</span>
+                            <span class="text-sm text-gray-600">${data.location}</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            ${data.longDescription}
+                        </p>
+                    </div>
+                </div>
+            `;
+            return modalDiv;
+        }
 
-            const initialVisibleCardsCount = 4; // Number of cards visible initially for 4-column layout
-            let showingAll = false; // State variable to track if all cards are shown
+        const initialVisibleCardsCount = 4;
+        let showingAll = false;
 
-            // Populate cards and modals from serviceData
-            serviceData.forEach((data, index) => {
-                const isHidden = index >= initialVisibleCardsCount;
-                gridContainer.appendChild(createCard(data, isHidden));
-                modalsContainer.appendChild(createModal(data));
-            });
+        // Populate cards and modals from serviceData
+        serviceData.forEach((data, index) => {
+            const isHidden = index >= initialVisibleCardsCount;
+            gridContainer.appendChild(createCard(data, isHidden));
+            modalsContainer.appendChild(createModal(data));
+        });
 
-            // Re-select elements after dynamic creation
-            const modalTriggers = document.querySelectorAll('[data-modal-target]');
-            const modals = document.querySelectorAll('.modal');
-            const showMoreLessButton = document.getElementById('show-more-less-button');
-            const buttonText = document.getElementById('button-text');
-            const buttonArrow = document.getElementById('button-arrow');
-            const allCards = document.querySelectorAll('#service-cards-grid-container > div'); // All generated cards
-            const hiddenCards = Array.from(allCards).filter((card, index) => index >= initialVisibleCardsCount); // Filter out initially hidden cards
+        // Rest of the JavaScript remains the same...
+        const modalTriggers = document.querySelectorAll('[data-modal-target]');
+        const modals = document.querySelectorAll('.modal');
+        const showMoreLessButton = document.getElementById('show-more-less-button');
+        const buttonText = document.getElementById('button-text');
+        const buttonArrow = document.getElementById('button-arrow');
+        const hiddenCards = document.querySelectorAll('.hidden-card');
 
-            // Define arrow SVG paths
-            const arrowDownPath = "M19 9l-7 7-7-7";
-            const arrowUpPath = "M5 15l7-7 7 7";
+        const arrowDownPath = "M19 9l-7 7-7-7";
+        const arrowUpPath = "M5 15l7-7 7 7";
 
-            // If there are no more cards than initialVisibleCardsCount, hide the button
-            if (serviceData.length <= initialVisibleCardsCount) {
-                showMoreLessButton.classList.add('hidden');
-            }
+        if (serviceData.length <= initialVisibleCardsCount) {
+            showMoreLessButton.classList.add('hidden');
+        }
 
-            // Modal functionality
-            modalTriggers.forEach(trigger => {
-                trigger.addEventListener('click', (event) => {
-                    const modalId = event.currentTarget.dataset.modalTarget;
-                    const modal = document.getElementById(modalId);
-                    if (modal) {
-                        modal.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden'; // Prevent scrolling background
-                    }
-                });
-            });
-
-            modals.forEach(modal => {
-                const closeButton = modal.querySelector('.modal-close-button');
-                if (closeButton) {
-                    closeButton.addEventListener('click', () => {
-                        modal.classList.add('hidden');
-                        document.body.style.overflow = ''; // Restore scrolling
-                    });
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (event) => {
+                const modalId = event.currentTarget.dataset.modalTarget;
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
                 }
-                // Close modal when clicking outside the content
-                modal.addEventListener('click', (event) => {
-                    if (event.target === modal) { // Check if the click was directly on the overlay
-                        modal.classList.add('hidden');
-                        document.body.style.overflow = ''; // Restore scrolling
-                    }
-                });
-            });
-
-            // Show More/Show Less functionality
-            showMoreLessButton.addEventListener('click', () => {
-                if (showingAll) {
-                    // Currently showing all, so hide the extra cards
-                    hiddenCards.forEach(card => {
-                        card.classList.add('hidden');
-                        card.classList.remove('show'); // Remove show class for transition
-                    });
-                    buttonText.textContent = 'Show More';
-                    buttonArrow.querySelector('path').setAttribute('d', arrowDownPath); // Set downward arrow
-                    showingAll = false;
-                } else {
-                    // Currently showing limited, so display all hidden cards
-                    hiddenCards.forEach(card => {
-                        card.classList.remove('hidden');
-                        card.classList.add('show'); // Add show class for transition
-                    });
-                    buttonText.textContent = 'Show Less';
-                    buttonArrow.querySelector('path').setAttribute('d', arrowUpPath); // Set upward arrow
-                    showingAll = true;
-                }
-            });
-
-            // Add hover effects for arrow buttons
-            const allArrowButtonWrappers = document.querySelectorAll('.arrow-button-wrapper');
-            allArrowButtonWrappers.forEach(button => {
-                button.classList.add('transition-all', 'duration-200', 'ease-in-out');
-            });
-
-            // Add hover effects for "Read more" text
-            const allReadMoreButtons = document.querySelectorAll('.read-more-button');
-            allReadMoreButtons.forEach(button => {
-                button.classList.add('transition-all', 'duration-200', 'ease-in-out');
             });
         });
-    </script>
-<!--members section -->
- <!-- Main Container with backdrop blur effect -->
-    <div class="bg-white/70 backdrop-blur-lg p-12 md:p-16 rounded-3xl max-w-7xl w-full">
+
+        modals.forEach(modal => {
+            const closeButton = modal.querySelector('.modal-close-button');
+            if (closeButton) {
+                closeButton.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            }
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        showMoreLessButton.addEventListener('click', () => {
+            showingAll = !showingAll;
+            hiddenCards.forEach(card => {
+                if (showingAll) {
+                    card.classList.remove('hidden');
+                    // We need a small delay to allow the 'hidden' class to be removed before adding 'show' for the transition to work
+                    setTimeout(() => card.classList.add('show'), 10);
+                } else {
+                    card.classList.remove('show');
+                    // Listen for the transition to end before adding 'hidden' back
+                    card.addEventListener('transitionend', function handler() {
+                        if (!showingAll) {
+                           card.classList.add('hidden');
+                        }
+                        card.removeEventListener('transitionend', handler);
+                    });
+                }
+            });
+            buttonText.textContent = showingAll ? 'Show Less' : 'Show More';
+            buttonArrow.querySelector('path').setAttribute('d', showingAll ? arrowUpPath : arrowDownPath);
+        });
+    });
+</script>
+
+    <!--member-->
+   <div class=" p-6 md:p-12 rounded-3xl max-w-7xl w-full ">
 
         <!-- Title Section -->
         <div class="text-center mb-12">
             <div class="relative w-full flex items-center justify-center mb-6">
                 <hr class="w-1/4 border-t border-gray-300">
-                <h2 class="mx-4 text-2xl md:text-3xl font-semibold text-gray-800 tracking-tight">
+                <h2 class="mx-4 text-xl md:text-3xl font-semibold text-gray-800 tracking-tight">
                     Our Members and Partners
                 </h2>
                 <hr class="w-1/4 border-t border-gray-300">
             </div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
+            <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
                 We are proud to partner with a diverse range of organizations that help us achieve our mission and provide exceptional services.
             </p>
         </div>
 
         <!-- Animated Carousel for Logos -->
-        <div id="logo-carousel" class="relative w-full h-24 mb-6">
+        <div id="logo-carousel-container" class="relative w-full overflow-hidden h-24 md:h-32 mb-6">
             <!-- The logos will be dynamically added here by JavaScript -->
+            <div id="logo-carousel-track" class="carousel-track h-full items-center"></div>
         </div>
 
         <!-- Carousel Navigation Dots -->
         <div id="carousel-dots" class="flex justify-center space-x-2 mt-4">
             <!-- Dots will be added here by JavaScript -->
         </div>
+
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // These URLs are now data URIs for SVG images, which are embedded directly in the HTML.
+            // This eliminates the need for external network requests, fixing the loading errors.
             const logos = [
-                "/sp1 (2).png",
-                "/sp4.png",
-                "/sp5.png",
-                "/sp6.png",
-                
+                `/pictures/sp1 (2).png`,
+                `/pictures/sp5.png`,
+                `/pictures/sp6.png`,
+                `/pictures/sp7 (2).png`,
+                `/pictures/sp1 (2).png`,
+                `/pictures/sp5.png`,
+                `/pictures/sp6.png`,
+                `/pictures/sp7 (2).png`,
             ];
 
-            const carousel = document.getElementById('logo-carousel');
+            const carouselTrack = document.getElementById('logo-carousel-track');
             const dotsContainer = document.getElementById('carousel-dots');
-            let currentIndex = 0;
+            let currentSlide = 0;
+            let logosPerPage;
 
-            // Create carousel items and dots
-            logos.forEach((src, index) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = `Partner Logo ${index + 1}`;
-                img.className = 'carousel-item absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[250px] object-contain h-full';
-                if (index === 0) {
-                    img.classList.add('active');
-                }
-                carousel.appendChild(img);
+            // Function to set up the carousel based on screen size
+            const setupCarousel = () => {
+                const isMobile = window.innerWidth <= 768;
+                logosPerPage = isMobile ? 2 : 4;
+                
+                // Clear existing content
+                carouselTrack.innerHTML = '';
+                dotsContainer.innerHTML = '';
 
-                const dot = document.createElement('span');
-                dot.className = 'w-3 h-3 rounded-full bg-gray-300 cursor-pointer transition-colors duration-300';
-                if (index === 0) {
-                    dot.classList.add('bg-gray-800');
-                }
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
+                // Create carousel items
+                logos.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = `Partner Logo ${index + 1}`;
+                    img.className = 'logo-item object-contain h-full px-4'; // Added padding for spacing
+                    
+                    // The onerror handler now serves as a fallback for any other potential issues.
+                    img.onerror = () => {
+                        console.error(`Failed to load image: ${src}`);
+                        img.src = 'https://placehold.co/200x80/cccccc/000000?text=Image+Error';
+                    };
+
+                    carouselTrack.appendChild(img);
                 });
-                dotsContainer.appendChild(dot);
-            });
 
-            const items = carousel.querySelectorAll('.carousel-item');
-            const dots = dotsContainer.querySelectorAll('span');
-
-            const updateActiveState = () => {
-                items.forEach((item, index) => {
-                    if (index === currentIndex) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
+                // Create navigation dots
+                const numDots = Math.ceil(logos.length / logosPerPage);
+                for (let i = 0; i < numDots; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'w-3 h-3 rounded-full bg-gray-300 cursor-pointer transition-colors duration-300';
+                    if (i === 0) {
                         dot.classList.add('bg-gray-800');
+                    }
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            };
+            
+            const updateActiveDot = () => {
+                const dots = dotsContainer.querySelectorAll('span');
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
                         dot.classList.remove('bg-gray-300');
+                        dot.classList.add('bg-gray-800');
                     } else {
                         dot.classList.remove('bg-gray-800');
                         dot.classList.add('bg-gray-300');
@@ -1070,45 +1151,56 @@
             };
 
             const goToSlide = (index) => {
-                currentIndex = index;
-                updateActiveState();
+                const totalSlides = Math.ceil(logos.length / logosPerPage);
+                currentSlide = (index + totalSlides) % totalSlides; // Ensure index is within bounds
+                const translateValue = `-${currentSlide * 100}%`;
+                carouselTrack.style.transform = `translateX(${translateValue})`;
+                updateActiveDot();
             };
 
             const nextSlide = () => {
-                currentIndex = (currentIndex + 1) % logos.length;
-                updateActiveState();
+                const totalSlides = Math.ceil(logos.length / logosPerPage);
+                currentSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(currentSlide);
             };
 
+            // Initial setup
+            setupCarousel();
+
             // Start the carousel animation
-            setInterval(nextSlide, 3000); // Change image every 3 seconds
+            setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+            // Re-run setup on window resize to adjust for responsiveness
+            window.addEventListener('resize', () => {
+                setupCarousel();
+                goToSlide(currentSlide);
+            });
         });
     </script>
 
 
 
-
-
-
 <!--last content-->
-<div class="w-full max-w-6xl mx-auto p-4 md:p-8">
+ <div class="w-full max-w-6xl mx-auto p-4 md:p-8">
         <!-- Section Header -->
-        <header class="mb-8 md:mb-12">
+        <header class="mb-8 md:mb-12 text-center md:text-left">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Hear From Our Clients</h1>
+            <p class="mt-2 text-gray-500">Real stories from travelers who explored Ethiopia with us.</p>
         </header>
 
         <!-- Testimonials Container -->
-        <div class="flex items-center gap-4 md:gap-8">
+        <div class="flex items-center justify-center gap-4 md:gap-8">
             
             <!-- Main Testimonial Card: Added fixed height for medium screens and up -->
-            <div id="testimonial-card" class="flex-1 flex flex-col md:flex-row  p-6  w-full md:h-[500px]">
+            <div id="testimonial-card" class="flex-1 flex flex-col md:flex-row  overflow-hidden p-6 w-full md:h-[500px]">
                 <!-- Image Section: Removed md:h-auto to allow stretching -->
-                <div class="relative w-full md:w-1/2 h-70  overflow-hidden">
+                <div class="relative w-full md:w-1/2 h-72 md:h-full rounded overflow-hidden">
                     <img 
                         id="main-image"
                         src="" 
                         alt="Client trip photo" 
-                        class="w-full h-full object-cover"
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/34d399/ffffff?text=Beach';">
+                        class="w-full h-full object-center transition-transform duration-500 hover:scale-105"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/34d399/ffffff?text=Ethiopia';">
                     <div class="absolute bottom-4 left-4 flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1.5 pr-4 shadow-md">
                         <img 
                             id="main-avatar"
@@ -1132,22 +1224,22 @@
                     <div class="mt-6">
                         <p class="font-semibold text-gray-800">
                             — <span id="main-name-quote"></span>
-                            <a id="main-status" href="#" class="ml-2 text-sm font-medium text-cyan-600 hover:text-cyan-700"></a>
+                            <span id="main-status" class="ml-2 text-sm font-medium text-cyan-600"></span>
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- Navigation and Next Preview -->
-            <div class="hidden lg:flex md:-mt-40 flex-col items-center justify-center gap-4">
+            <div class="hidden lg:flex flex-col items-center justify-center gap-4">
                 <!-- Navigation Buttons -->
                 <div class="flex gap-3">
-                    <button id="prev-button" class="bg-white hover:bg-gray-200 text-gray-800 p-3 rounded-full shadow-md transition-colors duration-200">
+                    <button id="prev-button" class="bg-white hover:bg-gray-200 text-gray-800 p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                         </svg>
                     </button>
-                    <button id="next-button" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-md transition-colors duration-200">
+                    <button id="next-button" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
@@ -1155,17 +1247,26 @@
                 </div>
                 
                 <!-- Pagination -->
-                <p id="pagination-text" class="text-gray-500 font-medium text-sm text-gray-600 mt-2"></p>
+                <p id="pagination-text" class="text-gray-600 font-medium text-sm mt-2"></p>
                 
                 <!-- Next Card Preview -->
-                <div class="relative w-36 h-42 rounded overflow-hidden shadow-lg mt-4">
+                <div class="relative w-36 h-44 rounded-lg overflow-hidden shadow-lg mt-4 group">
                     <img 
                         id="next-preview-image"
                         src="" 
                         alt="Next client trip photo" 
-                        class="w-full h-full object-cover"
-                        onerror="this.onerror=null;this.src='https://placehold.co/128x160/fb923c/ffffff?text=Beach';">
-                  
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        onerror="this.onerror=null;this.src='https://placehold.co/144x176/fb923c/ffffff?text=Trip';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-2 left-2 flex items-center gap-2">
+                         <img 
+                            id="next-preview-avatar"
+                            src="" 
+                            alt="Next client avatar" 
+                            class="w-8 h-8 rounded-full  border-2 border-white"
+                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/ffffff/000000?text=AV';">
+                        <span id="next-preview-name" class="text-white text-xs font-bold"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1176,32 +1277,116 @@
             // --- DATA (JSON-like structure) ---
             const testimonials = [
                 {
-                    name: "Sarah L.",
-                    status: "Top customer",
-                    quote: "Our trip to the Maldives was nothing short of magical. The attention to detail, from our private villa to the personalized excursions, was impeccable.",
-                    image: "/8bg.jpg",
-                    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    name: "Linnea B.",
+                    status: "Academic, Sweden",
+                    quote: "It was a truly enjoyable and relaxing experience. As a traveler, I felt in good hands. I strongly recommend anyone considering a visit to any region in Ethiopia to use the services of Overland Ethiopia Tours!",
+                    image: "/public/pp1.jpg",
+                    avatar: "https://placehold.co/40x40/34d399/ffffff?text=LB"
                 },
                 {
-                    name: "James R.",
-                    status: "Repeat traveler",
-                    quote: "The safari in Tanzania was a life-changing experience. Our guide was incredibly knowledgeable and we saw the Big Five up close. Unforgettable!",
-                    image: "https://images.unsplash.com/photo-1504150558240-0b4fd8946624?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    name: "Josie K.",
+                    status: "Menlo Park, California",
+                    quote: "We traveled throughout Ethiopia with Overland. Haile’AB did an excellent job of listening to our requests and prepared an itinerary that was perfect for us. Thanks for a wonderful visit to your country.",
+                    image: "/public/pp2.jpg",
+                    avatar: "https://placehold.co/40x40/fb923c/ffffff?text=JK"
                 },
                 {
-                    name: "Emily C.",
-                    status: "Honeymooners",
-                    quote: "We chose them for our honeymoon in Kyoto, and it was perfect. The blend of culture, food, and romance was exactly what we dreamed of.",
-                    image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    name: "Moni & Chris",
+                    status: "London, UK",
+                    quote: "We just returned from a 28-day tour and cannot praise them enough. Our guide was extremely professional and his knowledge never failed to amaze us. I thoroughly recommend Overland Ethiopia for any journey.",
+                    image: "public/pp3.jpg",
+                    avatar: "https://placehold.co/40x40/f87171/ffffff?text=MC"
                 },
                 {
-                    name: "Mark T.",
-                    status: "Family vacation",
-                    quote: "Exploring the ancient ruins of Rome with our kids was made easy and fun by our tour organizers. They handled everything, so we could just enjoy the history.",
-                    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    name: "Abhay P.",
+                    status: "Galway, Ireland",
+                    quote: "We had a marvelous and eye-opening experience in the Omo Valley. We were able to meet people from many ethnic groups while also enjoying the beautiful plants and animals. An absolutely one-of-a-kind experience!",
+                    image: "public/pp4.jpg",
+                    avatar: "https://placehold.co/40x40/a855f7/ffffff?text=AP"
+                },
+                {
+                    name: "Julie & John",
+                    status: "Sydney, Australia",
+                    quote: "Many thanks for organizing the most amazing and memorable trip. We particularly enjoyed our trek in the Simien Mountains. Absolutely stunning scenery and wildlife. We will be recommending Ethiopia to all our friends.",
+                    image: "public/pp5.jpg",
+                    avatar: "https://placehold.co/40x40/22c55e/ffffff?text=JJ"
+                },
+                {
+                    name: "Michael",
+                    status: "Czech Republic",
+                    quote: "I enjoyed my trip in Ethiopia; altogether it was successful and interesting. My best adventures were boating in Chamo Lake full of crocodiles, pelicans and hippos and taking photos of tribes in the Omo Valley.",
+                    image: "public/pp1.jpg",
+                    avatar: "https://placehold.co/40x40/6366f1/ffffff?text=M"
+                },
+                {
+                    name: "Jan-Maarten & Astrid",
+                    status: "Netherlands",
+                    quote: "We recommend them for a well-organized trip and excellent value for money. For the whole of our trip, everything went exactly as stated in the program, there were no disruptions, no delays. Careful and reliable drivers.",
+                    image: "public/pp2.jpg",
+                    avatar: "https://placehold.co/40x40/8b5cf6/ffffff?text=JA"
+                },
+                {
+                    name: "Matt W.",
+                    status: "Colorado, USA",
+                    quote: "I headed to Bahir Dar, a very pleasant lakeside city. He arranged local guides and a boat so that I could visit the many beautiful island monasteries that dot the lake. It was a wonderful and unusual tour.",
+                    image: "public/pp3.jpg",
+                    avatar: "https://placehold.co/40x40/ec4899/ffffff?text=MW"
+                },
+                {
+                    name: "Florian",
+                    status: "Germany",
+                    quote: "Overall, we have been super happy with the Overland team. 100% reliable from airport pick-up to farewell dinner back in Addis. Well organized, well-spoken and knowledgeable guide. Great driver.",
+                    image: "public/pp4.jpg",
+                    avatar: "https://placehold.co/40x40/10b981/ffffff?text=F"
+                },
+                {
+                    name: "Marina M.",
+                    status: "Genoa, Italy",
+                    quote: "Great trip, very nice guy and perfect organization. It was a long (23 days) trip but it has been proved very flexible as we made new arrangements along the way. Would recommend him and Overland Ethiopia Tours to anyone.",
+                    image: "public/pp5.jpg",
+                    avatar: "https://placehold.co/40x40/ef4444/ffffff?text=MM"
+                },
+                {
+                    name: "Justin",
+                    status: "Los Angeles, USA",
+                    quote: "They were amazing, we only had 5 days and they managed to give us the entire northern tour using short air hops. The price was super reasonable and at every stop a guide was there waiting. They really know their stuff.",
+                    image: "public/pp1.jpg",
+                    avatar: "https://placehold.co/40x40/f59e0b/ffffff?text=J"
+                },
+                {
+                    name: "Mariann",
+                    status: "Baltimore, USA",
+                    quote: "He provided us with the best possible accommodations, very comfortable transportation, professional drivers, excellent local guides, and unique experiences that I won’t soon forget. It is a fantastic country.",
+                    image: "public/pp2.jpg",
+                    avatar: "https://placehold.co/40x40/0ea5e9/ffffff?text=M"
+                },
+                 {
+                    name: "Amy",
+                    status: "UK",
+                    quote: "I took a two-day tour to Awash National Park. My guides were knowledgeable, friendly, funny, and kind. They took me to wonderful places, and showed me lovely wildlife and landscapes. I would not hesitate to recommend them.",
+                    image: "public/pp3.jpg",
+                    avatar: "https://placehold.co/40x40/d946ef/ffffff?text=A"
+                },
+                {
+                    name: "Willemien",
+                    status: "South Africa",
+                    quote: "Mr. Haile’AB was prepared to develop a special tour at our request and provided an outstanding guide, Enoch. I can really recommend this company. We only received excellent service and knew we were in capable hands.",
+                    image: "public/pp4.jpg",
+                    avatar: "https://placehold.co/40x40/14b8a6/ffffff?text=W"
+                },
+                {
+                    name: "Martin",
+                    status: "UK",
+                    quote: "We were much impressed by our local guide, Mr. Ashenafi, who led us round his amazing country with great humor, passion and limitless energy. The travel agency executed all practical arrangements with complete success.",
+                    image: "public/pp4.jpg",
+                    avatar: "https://placehold.co/40x40/f43f5e/ffffff?text=M"
+                },
+                {
+                    name: "Fabio",
+                    status: "Verona, Italy",
+                    quote: "I had the chance of meeting his super professional staff. I now feel proud to know them not as driver and guide but simply as wonderful friends that shared with me every moment of the trip in the most perfect way!",
+                    image: "public/pp5.jpg",
+                    avatar: "https://placehold.co/40x40/f97316/ffffff?text=F"
                 }
             ];
 
@@ -1246,7 +1431,7 @@
                 mainStatus.textContent = current.status;
 
                 // Update pagination
-                paginationText.textContent = `${index + 1}/${testimonials.length}`;
+                paginationText.textContent = `${index + 1} / ${testimonials.length}`;
 
                 // Update next preview card
                 nextPreviewImage.src = next.image;
@@ -1271,7 +1456,6 @@
             updateTestimonial(0);
         });
     </script>
-
 
 <!--footer section -->
  <!-- Footer Section -->
