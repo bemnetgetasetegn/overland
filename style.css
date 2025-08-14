@@ -157,7 +157,7 @@ body {
             padding: 1.5rem;
             width: 100%; /* Full width on mobile */
             max-width: 420px; /* Max-width for consistency */
-            height: 550px; /* Fixed height */
+            height: 600px; /* Fixed height */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
             display: flex;
             flex-direction: column;
@@ -169,7 +169,7 @@ body {
         /* Container for the oval image to apply masking */
         .oval-image-container {
             width: 320px;
-            height: 420px;
+            height: 400px;
             overflow: hidden;
             display: flex;
             justify-content: center;
