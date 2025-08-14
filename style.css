@@ -1,0 +1,325 @@
+body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('/pictures/8bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative; /* Add relative positioning */
+            overflow: visible; /* Ensure overflow is visible */
+            z-index: 1; /* Ensure hero bg is behind the logo */
+        }
+        /* Media queries to handle different image URLs for desktop and mobile, if available */
+        @media (min-width: 1024px) {
+            .hero-bg {
+                background-image: url('/public/5bg.jpg'); /* Replace with a valid image URL for desktop */
+            }
+        }
+        @media (max-width: 1023px) {
+            .hero-bg {
+                position: relative; /* Add relative positioning */
+                overflow: visible; /* Ensure overflow is visible */
+                   z-index: 1; /* Ensure hero bg is behind the logo */
+                background-image: url('/public/5.jpg'); /* Replace with a valid image URL for mobile */
+            }
+            .hero-content-container {
+                padding-bottom: 2rem; /* Add some padding on mobile to not be too close to the edge */
+            }
+        }
+              .bg-image-main {
+            background-image: url('/public/9bg.avif');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-image-card {
+            background-image: url('/public/5bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-image-concierge {
+            background-image: url('/public/5bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-image-exclusive {
+            background-image: url('/public/7bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+         .arrow-button {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .arrow-button:hover {
+            transform: scale(1.1);
+        }
+        /* Modal overlay styling */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.75); /* Darker overlay */
+            backdrop-filter: blur(8px); /* Blur effect for the background */
+        }
+
+        /* Card background styles */
+           .card-bg {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white; /* Ensure text is visible on background image */
+        }
+
+        .card-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1; /* Place overlay above background image */
+        }
+
+        .card-content, .arrow-button-wrapper, .read-more-button {
+            position: relative;
+            z-index: 2; /* Ensure content and buttons are above the overlay */
+        }
+
+        /* Styles for the modal overlay */
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Darken background when modal is open */
+        }
+
+        /* Hide scrollbar */
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Specific hover effects for arrow button wrapper */
+        .arrow-button-wrapper:hover {
+            border-color: #60A5FA; /* Blue-400 */
+            background-color: rgba(255, 255, 255, 0.2); /* Slight white overlay on hover */
+        }
+        /* No direct SVG color change here, handled by group-hover class in JS */
+
+        /* Hover effect for the "Read more" text */
+        .read-more-text:hover {
+            color: #ffffff; /* blue-400 */
+            text-decoration: underline;
+        }
+
+        /* Transition for hidden cards (optional, for smoother appearance) */
+        .hidden-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .hidden-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+         /* Main container for the entire layout */
+        .main-container {
+            width: 100%;
+            max-width: 1400px; /* Increased max-width for better spacing on large screens */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column; /* Stack title and content vertically */
+            align-items: center;
+            gap: 2rem; /* Gap between title and content */
+        }
+
+        /* Wrapper for the three-column content row */
+        .content-row {
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Stack vertically on small screens */
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Responsive adjustments for larger screens (lg breakpoint) */
+        @media (min-width: 1024px) {
+            .content-row {
+                flex-direction: row; /* Side-by-side layout on large screens */
+                justify-content: center;
+                align-items: center; /* Vertically center the items */
+                gap: 2rem;
+            }
+        }
+
+        /* Styling for the main image card (middle section) */
+        .main-image-card {
+            background-color: #fff; /* Solid white background for clarity */
+            position: relative;
+            padding: 1.5rem;
+            width: 100%; /* Full width on mobile */
+            max-width: 420px; /* Max-width for consistency */
+            height: 550px; /* Fixed height */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the oval container */
+            overflow: hidden;
+        }
+
+        /* Container for the oval image to apply masking */
+        .oval-image-container {
+            width: 320px;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            margin-bottom: 30px;
+        }
+
+        /* Styles for the image inside the oval container */
+        .oval-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Base styles for side sections (left and right) */
+        .side-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically by default */
+            gap: 2rem;
+            width: 100%;
+        }
+        
+        @media (min-width: 1024px) {
+            .side-section {
+                height: 600px; /* Match height of main card */
+                justify-content: center; /* This centers the content vertically */
+                width: auto;
+            }
+            .side-section.left {
+                align-items: flex-start; /* Aligns content to the left */
+            }
+            .side-section.right {
+                align-items: flex-end; /* Aligns content to the right */
+            }
+        }
+
+        /* Animation keyframes for the "jump to middle" effect */
+        @keyframes slideInNext {
+            from {
+                opacity: 0;
+                transform: translateX(80px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes slideInPrev {
+            from {
+                opacity: 0;
+                transform: translateX(-80px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        /* Classes to trigger the animations */
+        .oval-image.animate-next {
+            animation: slideInNext 0.5s ease-out forwards;
+        }
+        .oval-image.animate-prev {
+            animation: slideInPrev 0.5s ease-out forwards;
+        }
+             /* Keyframes for the carousel fade-in effect */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .carousel-item {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+       .carousel-track {
+            display: flex;
+            transition: transform 0.75s ease-in-out;
+        }
+
+        /* Responsive styling for the carousel items */
+        .logo-item {
+            flex-shrink: 0;
+            width: 25%; /* Show 4 logos by default */
+        }
+        @media (max-width: 768px) {
+            .logo-item {
+                width: 50%; /* Show 2 logos on smaller screens */
+            }
+        }
+         .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+        /* Added for smooth transition on hidden cards */
+        .hidden-card {
+            transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+        .show {
+            max-height: 500px; /* Adjust as needed */
+            opacity: 1;
+        }
+        /* Style for the logo container to make it overflow */
+        .logo-container {
+            position: relative; /* Needed for absolute positioning of children */
+            z-index: 10; /* Ensure it's above other elements */
+            margin-top: -20px; /* Adjust as needed to move into the hero section */
+            margin-left: -10px; /* fine-tune the placement */
+        }
+         /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        /* Hero background image transition */
+        .hero-bg {
+            transition: background-image 1s ease-in-out;
+        }
+
+        /* Styling for dropdown menus - desktop dropdowns now controlled by JS */
+        .dropdown .dropdown-menu {
+            display: none; /* Hidden by default, JS will toggle */
+            transition: all 0.3s ease-in-out;
+        }
