@@ -21,7 +21,7 @@
         /* Media queries to handle different image URLs for desktop and mobile, if available */
         @media (min-width: 1024px) {
             .hero-bg {
-                background-image: url('./public/5bg.jpg'); /* Replace with a valid image URL for desktop */
+                background-image: url('./pictures/5bg.jpg'); /* Replace with a valid image URL for desktop */
             }
         }
         @media (max-width: 1023px) {
@@ -29,29 +29,29 @@
                 position: relative; /* Add relative positioning */
                 overflow: visible; /* Ensure overflow is visible */
                    z-index: 1; /* Ensure hero bg is behind the logo */
-                background-image: url('./public/5.jpg'); /* Replace with a valid image URL for mobile */
+                background-image: url('./pictures/5.jpg'); /* Replace with a valid image URL for mobile */
             }
             .hero-content-container {
                 padding-bottom: 2rem; /* Add some padding on mobile to not be too close to the edge */
             }
         }
               .bg-image-main {
-            background-image: url('./public/9bg.avif');
+            background-image: url('./pictures/9bg.avif');
             background-size: cover;
             background-position: center;
         }
         .bg-image-card {
-            background-image: url('./public/5bg.jpg');
+            background-image: url('./pictures/5bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-concierge {
-            background-image: url('./public/5bg.jpg');
+            background-image: url('./pictures/5bg.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-exclusive {
-            background-image: url('./public/7bg.jpg');
+            background-image: url('./pictures/7bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -343,7 +343,7 @@
         <div class="flex items-center justify-between w-full">
             <!-- Logo Container with padding -->
             <div class="logo-container flex-shrink-0 pl-2 pt-1">
-                <img src="./public/Overland-Ethiopia-Tours-Logo.png" alt="Logo" class="w-20 ml-4 mt-4 h-12 hover:scale-105 transition-transform duration-300">
+                <img src="./pictures/Overland-Ethiopia-Tours-Logo.png" alt="Logo" class="w-20 ml-4 mt-4 h-12 hover:scale-105 transition-transform duration-300">
             </div>
 
             <!-- Desktop Nav items - Changed to normal right-aligned nav -->
@@ -499,11 +499,11 @@
         // Hero Image Slider
         const heroBg = document.getElementById('hero-bg');
         const images = [
-            './public/5bg.jpg',
-            './public/7bg.jpg',
-            './public/6bg.jpg',
-            './public/8bg.jpg',
-            './public/7bg.jpg'
+            './pictures/5bg.jpg',
+            './pictures/7bg.jpg',
+            './pictures/6bg.jpg',
+            './pictures/8bg.jpg',
+            './pictures/7bg.jpg'
         ];
         let currentImageIndex = 0;
 
@@ -751,35 +751,35 @@
         // Data for the Ethiopia tour packages
         const destinations = [
             {
-                imageUrl: "./public/Photography-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Photography-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
                 title: "Photography Tours in Ethiopia"
             },
             {
-                imageUrl: "./public/Archaeology-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Archaeology-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
                 title: "Archaeology Tours in Ethiopia"
             },
             {
-                imageUrl: "./public/Timeket-Festival-Celebration-in-Gonder-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Timeket-Festival-Celebration-in-Gonder-Overland-Ethiopia-Tours.jpg",
                 title: "Timket Festival Celebration in Gonder"
             },
             {
-                imageUrl: "./public/Christmas-Festival-Celebration-in-Lalibela-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Christmas-Festival-Celebration-in-Lalibela-Overland-Ethiopia-Tours.jpg",
                 title: "Christmas Festival Celebration in Lalibela"
             },
             {
-                imageUrl: "./public/Short-Tour-Danakil-Depression-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Short-Tour-Danakil-Depression-Overland-Ethiopia-Tours.jpg",
                 title: "Short Tour to Danakil Depression"
             },
             {
-                imageUrl: "./public/Bird-Watching-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Bird-Watching-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
                 title: "Bird Watching Tours in Ethiopia"
             },
             {
-                imageUrl: "./public/Tour-of-Saint-Mary-of-Zion-Festival-Celebration-in-Axum-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Tour-of-Saint-Mary-of-Zion-Festival-Celebration-in-Axum-Overland-Ethiopia-Tours.jpg",
                 title: "Tour of Saint Mary of Zion Festival in Axum"
             },
             {
-                imageUrl: "./public/Community-Tourism-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
+                imageUrl: "./pictures/Community-Tourism-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
                 title: "Community Tourism in Ethiopia"
             }
         ];
@@ -911,7 +911,7 @@
         const serviceData = [
        {
                 id: '1',
-                imageSrc: './public/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to the Historic Route with Semien Mountains',
                 shortDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
                 longDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
@@ -920,7 +920,7 @@
             },
             {
                 id: '2',
-                imageSrc: './public/Tour-to-Danakil-Deprssion-and-Erta-Ale-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-Danakil-Deprssion-and-Erta-Ale-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to Danakil Depression and Erta Ale',
                 shortDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
                 longDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
@@ -929,7 +929,7 @@
             },
             {
                 id: '3',
-                imageSrc: './public/Tour-to-the-Omo-Valley-and-Historic-Route-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-the-Omo-Valley-and-Historic-Route-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to the Omo Valley and Historic Route',
                 shortDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
                 longDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
@@ -938,7 +938,7 @@
             },
             {
                 id: '4',
-                imageSrc: './public/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to Danakil Depression and Historic Route',
                 shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
                 longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
@@ -947,7 +947,7 @@
             },
             {
                 id: '5',
-                imageSrc: './public/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to the Omo Valley with Yabello',
                 shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
                 longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
@@ -956,7 +956,7 @@
             },
             {
                 id: '6',
-                imageSrc: './public/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
                 title: 'Trekking Tour to the Simien Mountains with Gonder',
                 shortDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
                 longDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
@@ -965,7 +965,7 @@
             },
             {
                 id: '7',
-                imageSrc: './public/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
                 title: 'Trekking Tour to the Bale Mountains',
                 shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
                 longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
@@ -974,7 +974,7 @@
             },
             {
                 id: '8',
-                imageSrc: './public/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
+                imageSrc: './pictures/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to the Omo Valley and Surma Tribe',
                 shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
                 longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
@@ -1172,16 +1172,16 @@
             // These URLs are now data URIs for SVG images, which are embedded directly in the HTML.
             // This eliminates the need for external network requests, fixing the loading errors.
             const logos = [
-                `./memberspictures/hp-members-partners.png`,
-                `./memberspictures/hp-members-partners2.png`,
-                                `/members pictures/hp-members-partners3.png`,
+                `./pictures/hp-members-partners.png`,
+                `./pictures/hp-members-partners2.png`,
+                                `/pictures/hp-members-partners3.png`,
 
-                                                `./memberspictures/hp-members-partners4.png`,
-                                                `./memberspictures/hp-members-partners.png`,
-                `./memberspictures/hp-members-partners2.png`,
-                                `./memberspictures/hp-members-partners3.png`,
+                                                `./pictures/hp-members-partners4.png`,
+                                                `./pictures/hp-members-partners.png`,
+                `./pictures/hp-members-partners2.png`,
+                                `./pictures/hp-members-partners3.png`,
 
-                                                `./memberspictures/hp-members-partners4.png`,
+                                                `./pictures/hp-members-partners4.png`,
 
             ];
 
@@ -1373,112 +1373,112 @@
                     name: "Linnea B.",
                     status: "Academic, Sweden",
                     quote: "It was a truly enjoyable and relaxing experience. As a traveler, I felt in good hands. I strongly recommend anyone considering a visit to any region in Ethiopia to use the services of Overland Ethiopia Tours!",
-                    image: "./testimonialsimages/11.jpeg",
+                    image: "./pictures/11ts.jpeg",
                     avatar: "https://placehold.co/40x40/34d399/ffffff?text=LB"
                 },
                 {
                     name: "Josie K.",
                     status: "Menlo Park, California",
                     quote: "We traveled throughout Ethiopia with Overland. Haile’AB did an excellent job of listening to our requests and prepared an itinerary that was perfect for us. Thanks for a wonderful visit to your country.",
-                    image: "./testimonialsimages/1.jpg",
+                    image: "./pictures/1ts.jpg",
                     avatar: "https://placehold.co/40x40/fb923c/ffffff?text=JK"
                 },
                 {
                     name: "Moni & Chris",
                     status: "London, UK",
                     quote: "We just returned from a 28-day tour and cannot praise them enough. Our guide was extremely professional and his knowledge never failed to amaze us. I thoroughly recommend Overland Ethiopia for any journey.",
-                    image: "./testimonialsimages/2.jpg",
+                    image: "./pictures/2ts.jpg",
                     avatar: "https://placehold.co/40x40/f87171/ffffff?text=MC"
                 },
                 {
                     name: "Abhay P.",
                     status: "Galway, Ireland",
                     quote: "We had a marvelous and eye-opening experience in the Omo Valley. We were able to meet people from many ethnic groups while also enjoying the beautiful plants and animals. An absolutely one-of-a-kind experience!",
-                    image: "./testimonialsimages/3.webp",
+                    image: "./pictures/3ts.webp",
                     avatar: "https://placehold.co/40x40/a855f7/ffffff?text=AP"
                 },
                 {
                     name: "Julie & John",
                     status: "Sydney, Australia",
                     quote: "Many thanks for organizing the most amazing and memorable trip. We particularly enjoyed our trek in the Simien Mountains. Absolutely stunning scenery and wildlife. We will be recommending Ethiopia to all our friends.",
-                    image: "./testimonialsimages/4.jpg",
+                    image: "./pictures/4ts.jpg",
                     avatar: "https://placehold.co/40x40/22c55e/ffffff?text=JJ"
                 },
                 {
                     name: "Michael",
-                    status: "Czech Republic",
+                    status: "Czech Repictures",
                     quote: "I enjoyed my trip in Ethiopia; altogether it was successful and interesting. My best adventures were boating in Chamo Lake full of crocodiles, pelicans and hippos and taking photos of tribes in the Omo Valley.",
-                    image: "./testimonialsimages/5.jpg",
+                    image: "./pictures/5ts.jpg",
                     avatar: "https://placehold.co/40x40/6366f1/ffffff?text=M"
                 },
                 {
                     name: "Jan-Maarten & Astrid",
                     status: "Netherlands",
                     quote: "We recommend them for a well-organized trip and excellent value for money. For the whole of our trip, everything went exactly as stated in the program, there were no disruptions, no delays. Careful and reliable drivers.",
-                    image: "./testimonialsimages/6.jpg",
+                    image: "./pictures/6ts.jpg",
                     avatar: "https://placehold.co/40x40/8b5cf6/ffffff?text=JA"
                 },
                 {
                     name: "Matt W.",
                     status: "Colorado, USA",
                     quote: "I headed to Bahir Dar, a very pleasant lakeside city. He arranged local guides and a boat so that I could visit the many beautiful island monasteries that dot the lake. It was a wonderful and unusual tour.",
-                    image: "./testimonialsimages/7.webp",
+                    image: "./pictures/7ts.webp",
                     avatar: "https://placehold.co/40x40/ec4899/ffffff?text=MW"
                 },
                 {
                     name: "Florian",
                     status: "Germany",
                     quote: "Overall, we have been super happy with the Overland team. 100% reliable from airport pick-up to farewell dinner back in Addis. Well organized, well-spoken and knowledgeable guide. Great driver.",
-                    image: "./testimonialsimages/8.jpg",
+                    image: "./pictures/8ts.jpg",
                     avatar: "https://placehold.co/40x40/10b981/ffffff?text=F"
                 },
                 {
                     name: "Marina M.",
                     status: "Genoa, Italy",
                     quote: "Great trip, very nice guy and perfect organization. It was a long (23 days) trip but it has been proved very flexible as we made new arrangements along the way. Would recommend him and Overland Ethiopia Tours to anyone.",
-                    image: "./testimonialsimages/9.jpg",
+                    image: "./pictures/9ts.jpg",
                     avatar: "https://placehold.co/40x40/ef4444/ffffff?text=MM"
                 },
                 {
                     name: "Justin",
                     status: "Los Angeles, USA",
                     quote: "They were amazing, we only had 5 days and they managed to give us the entire northern tour using short air hops. The price was super reasonable and at every stop a guide was there waiting. They really know their stuff.",
-                    image: "./testimonialsimages/6.jpg",
+                    image: "./pictures/6ts.jpg",
                     avatar: "https://placehold.co/40x40/f59e0b/ffffff?text=J"
                 },
                 {
                     name: "Mariann",
                     status: "Baltimore, USA",
                     quote: "He provided us with the best possible accommodations, very comfortable transportation, professional drivers, excellent local guides, and unique experiences that I won’t soon forget. It is a fantastic country.",
-                    image: "./testimonialsimages/11.jpeg",
+                    image: "./pictures/11ts.jpeg",
                     avatar: "https://placehold.co/40x40/0ea5e9/ffffff?text=M"
                 },
                  {
                     name: "Amy",
                     status: "UK",
                     quote: "I took a two-day tour to Awash National Park. My guides were knowledgeable, friendly, funny, and kind. They took me to wonderful places, and showed me lovely wildlife and landscapes. I would not hesitate to recommend them.",
-                    image: "./testimonialsimages/2.jpg",
+                    image: "./pictures/2ts.jpg",
                     avatar: "https://placehold.co/40x40/d946ef/ffffff?text=A"
                 },
                 {
                     name: "Willemien",
                     status: "South Africa",
                     quote: "Mr. Haile’AB was prepared to develop a special tour at our request and provided an outstanding guide, Enoch. I can really recommend this company. We only received excellent service and knew we were in capable hands.",
-                    image: "./testimonialsimages/4.jpg",
+                    image: "./pictures/4ts.jpg",
                     avatar: "https://placehold.co/40x40/14b8a6/ffffff?text=W"
                 },
                 {
                     name: "Martin",
                     status: "UK",
                     quote: "We were much impressed by our local guide, Mr. Ashenafi, who led us round his amazing country with great humor, passion and limitless energy. The travel agency executed all practical arrangements with complete success.",
-                    image: "./testimonialsimages/9.jpg",
+                    image: "./pictures/9ts.jpg",
                     avatar: "https://placehold.co/40x40/f43f5e/ffffff?text=M"
                 },
                 {
                     name: "Fabio",
                     status: "Verona, Italy",
                     quote: "I had the chance of meeting his super professional staff. I now feel proud to know them not as driver and guide but simply as wonderful friends that shared with me every moment of the trip in the most perfect way!",
-                    image: "./testimonialsimages/6.jpg",
+                    image: "./pictures/6ts.jpg",
                     avatar: "https://placehold.co/40x40/f97316/ffffff?text=F"
                 }
             ];
