@@ -166,7 +166,7 @@
             padding: 1.5rem;
             width: 100%; /* Full width on mobile */
             max-width: 420px; /* Max-width for consistency */
-            height: 600px; /* Fixed height */
+            height: 550px; /* Fixed height */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
             display: flex;
             flex-direction: column;
@@ -178,7 +178,7 @@
         /* Container for the oval image to apply masking */
         .oval-image-container {
             width: 320px;
-            height: 400px;
+            height: 370px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -833,14 +833,14 @@
 
 <!-- Main container for the carousel -->
 <div class="main-container">
-    
+     <h1 class="text-3xl  lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">
+                Ethiopia's Best Tour Packages
+            </h1>
     <div class="content-row">
         <!-- Left Section -->
         <div class="side-section left">
             <!-- Destination Title - Now in the left section -->
-            <h1 class="text-4xl lg:text-4xl font-semibold text-gray-800 leading-tight text-center lg:text-left mb-8">
-                Ethiopia's Best Tour Packages
-            </h1>
+           
             <!-- Small Image Cards -->
             <div class="flex space-x-4">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
@@ -874,7 +874,7 @@
             </div>
 
             <!-- Destination Title -->
-            <h2 id="destination-title" class="text-2xl font-semibold text-gray-200 absolute bottom-8 left-0 right-0 text-center z-20"></h2>
+            <h2 id="destination-title" class="text-sm  text-gray-100 absolute bottom-12 left-0 right-0 text-center   z-20"></h2>
         </div>
 
         <!-- Right Section -->
@@ -1047,11 +1047,11 @@
 <!--ethiopia tours-->
 
 <!-- Main content container -->
-<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <h2 class="text-4xl font-semibold text-gray-900 mb-12 text-center">Ethiopia Tour Packages</h2>
+<div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-12 text-center">Ethiopia Tour Packages</h2>
 
     <!-- Grid Container for Cards - Content will be dynamically loaded here -->
-    <div id="service-cards-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div id="service-cards-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
         <!-- Cards will be injected by JavaScript -->
     </div>
 
@@ -1152,49 +1152,55 @@
         const gridContainer = document.getElementById('service-cards-grid-container');
         const modalsContainer = document.getElementById('modals-container');
 
-        // Function to create a card element with semi-transparent overlay
         function createCard(data, isHidden = false) {
             const cardDiv = document.createElement('div');
             cardDiv.classList.add(
-                'relative', 'overflow-hidden', 'shadow-lg', 'p-6', 'rounded-lg',
-                'flex', 'flex-col', 'justify-between', 'h-64',
-                'hover:scale-105', 'transition-transform',
-                'duration-300', 'ease-in-out'
+                'rounded-xl', 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
+                'flex', 'flex-col', 'h-full', 'bg-white',
+                'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
+                'hover:shadow-2xl'
             );
             
             if (isHidden) {
                 cardDiv.classList.add('hidden', 'hidden-card');
             }
             
-            // *** FIX: The image is now placed BEFORE the overlay. ***
-            // This ensures the overlay sits on top of the image, as they share the same z-index.
             cardDiv.innerHTML = `
-                <!-- Background Image -->
-                <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('${data.imageSrc}')" onerror="this.style.backgroundImage='url(https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found)'"></div>
-                
-                <!-- Semi-transparent Overlay -->
-                <div class="absolute inset-0 bg-black/50 z-0"></div>
-                
-                <!-- Content -->
-                <div class="relative z-10 h-full flex flex-col justify-between">
-                    <div class="card-content">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-lg font-semibold text-white">${data.title}</h3>
-                            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border border-white/50 group cursor-pointer arrow-button-wrapper" data-modal-target="modal-${data.id}">
-                                <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform duration-200 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </div>
-                        </div>
+                <!-- Image Section - Placed at the top with rounded corners that match the card's container. -->
+                <div class="relative w-full h-48">
+                    <img 
+                        class="w-full h-full object-cover rounded-t" 
+                        src="${data.imageSrc}" 
+                        alt="${data.title}" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/1f2937?text=Image+Not+Found';"
+                    >
+                </div>
+
+                <!-- Content Section - Below the image, with padding and flex properties for consistent layout. -->
+                <div class="p-6 flex flex-col justify-between flex-grow">
+                    <!-- Top part of the content: Title and button -->
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-sm font-bold text-gray-900 leading-snug ">${data.title}</h3>
+                        <!-- A cleaner, more subtle button design -->
+                        <button class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer" onclick="openModal(${data.id})">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="relative z-10">
-                         <p class="text-sm text-justify mb-2 text-white/90">${data.shortDescription}</p>
-                         <p class="text-xs text-white/70">${data.duration} • ${data.location}</p>
+                    
+                    <!-- Description -->
+                    <p class="text-xs text-gray-600 mb-6 flex-grow">${data.shortDescription}</p>
+                    
+                    <!-- Bottom part of the content: Duration and Location -->
+                    <div class="mt-auto pt-4 border-t border-gray-300">
+                        <p class="text-xs text-gray-500">${data.duration} • ${data.location}</p>
                     </div>
                 </div>
             `;
             return cardDiv;
         }
+
 
         // Function to create a modal element
         function createModal(data) {
@@ -1227,7 +1233,7 @@
             return modalDiv;
         }
 
-        const initialVisibleCardsCount = 4;
+        const initialVisibleCardsCount = 3;
         let showingAll = false;
 
         // Populate cards and modals from serviceData
