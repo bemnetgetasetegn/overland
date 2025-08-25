@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overland Ethiopia Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Hide nested dropdowns until parent is hovered */
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Keep dropdowns visible on mobile for menu toggle */
+        @media (max-width: 767px) {
+            .mobile-dropdown-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-montserrat">
+
+    <!-- Header: Fixed at the top -->
+    <header class="bg-white fixed w-full top-0 left-0 z-50 shadow-sm border-b border-gray-200">
+        <nav class="flex flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto p-2">
+            <!-- Top Nav Row (Logo & Icons) -->
+            <div class="flex items-center justify-between w-full">
+                <!-- Logo Container with padding -->
+                <div class="logo-container flex-shrink-0 pl-2 pt-1">
+                    <img src="https://placehold.co/80x40/E5E7EB/6B7280?text=Logo" alt="Placeholder Logo" class="w-20 ml-4 h-10 mt-4 hover:scale-105 transition-transform duration-300 rounded-lg">
+                </div>
+
+                <!-- Desktop Nav items -->
+                <div class="hidden md:flex items-center space-x-6 pr-4">
+                    <a href="/index.html" class="text-sm text-gray-800 hover:text-gray-600 transition-colors">Home</a>
+
+                    <!-- Attractions Dropdown with Nested Menu -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Attractions</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Cultural</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo valley</a>
+                                    <a href="./pages/Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Tribes of the omo valley</a>
+                                </div>
+                            </div>
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Festival & holidays</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian NewYear</a>
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Finding of the True Cross</a>
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Feast of Saint Gabriel Kulubi Gabriel </a>
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianChristmas" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian Chrismas</a>
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.timketEthiopianEpiphany" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Timeket Ethiopian Epiphany</a>
+                                    <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianEaster" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian Easter</a>
+                                </div>
+                            </div>
+
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Historical</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Attraction.html?section=historical.addisAbaba" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Addis Ababa</a>
+                                    <a href="./pages/Attraction.html?section=historical.historicRoute" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Historic Route Of Ethiopia</a>
+                                    <a href="./pages/Attraction.html?section=historical.rockChurchesOfTigray" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Rock Churches Of Tigray</a>
+                                </div>
+                            </div>
+
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Natural</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Attraction.html?section=natural.endemicBirds" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Endemic Birds Of Ethiopia</a>
+                                    <a href="./pages/Attraction.html?section=natural.westernHighlands" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Western HighLands Of Ethiopia</a>
+                                    <a href="./pages/Attraction.html?section=natural.riftValleyLakes" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RiftValley Lakes In Ethiopia</a>
+                                    <a href="./pages/Attraction.html?section=natural.nationalParks" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">National Parks In Ethiopia</a>
+                                    <a href="./pages/Attraction.html?section=natural.ethiopianCoffee" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian Coffee</a>
+                                    <a href="./pages/Attraction.html?section=natural.endemicMammals" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Endemic Mammals Of Ethiopia</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ethiopia Dropdown with Nested Menu -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Ethiopia</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Antique Ethiopia</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Ethiopia.html?section=earliestHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Earliest History</a>
+                                    <a href="./pages/Ethiopia.html?section=ancientEthiopia" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ancient Ethiopia</a>
+                                    <a href="./pages/Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Kingdom of Axum</a>
+                                    <a href="./pages/Ethiopia.html?section=ethiopianDarkAges" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Ethiopian Dark Ages</a>
+                                    <a href="./pages/Ethiopia.html?section=zagweDynasty" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Zagwe Dynasty</a>
+                                    <a href="./pages/Ethiopia.html?section=ethiopianEmpire" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian Empire</a>
+                                    <a href="./pages/Ethiopia.html?section=abyssinianAdalWar" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Abyssinian Adal War</a>
+                                    <a href="./pages/Ethiopia.html?section=eraOfPrinces" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Era of Princes</a>
+                                </div>
+                            </div>
+                            <div class="relative group/historical">
+                                <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                                    <span>Modern Ethiopia</span>
+                                    <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                    <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">LEAVING THE MEDIEVAL WORLD</a>
+                                    <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RECENT HISTORY</a>
+                                    <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">THE DERG PERIOD</a>
+                                    <a href="./pages/Ethiopia.html?section=postDergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">POST DERG PERIOD</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activities Dropdown with Nested Menu -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Activities</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <a href="./pages/Activities.html?section=bikingAndCycling" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Biking and cycling</a>
+                            <a href="./pages/Activities.html?section=birdWatching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird watching</a>
+                            <a href="./pages/Activities.html?section=coffeeCeremony" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Coffee ceremony</a>
+                            <a href="./pages/Activities.html?section=fishing" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Fishing</a>
+                            <a href="./pages/Activities.html?section=greatEthiopianRun" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Great ethiopian run</a>
+                            <a href="./pages/Activities.html?section=honeymoon" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Honeymoon</a>
+                            <a href="./pages/Activities.html?section=horseRiding" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Horse riding</a>
+                            <a href="./pages/Activities.html?section=rafting" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Rfting</a>
+                            <a href="./pages/Activities.html?section=trekkingInEthiopia" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Trekking in ethiopia</a>
+                            <a href="./pages/Activities.html?section=trekkingToMeqdela" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Trekking in meqdela</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dynamic Tailor-Made Tours Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Tailor-made Tours</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="tailor-made-menu" class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <!-- Dropdown links will be dynamically populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Tour packages Dropdown with Nested Menu -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Tour Packages</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <a href="./pages/tour.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching </a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">city Tours</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Day Trips</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Festival & Holidays</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Fixed Departure </a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Histouric route</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bale Mountains</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo Valley</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Trekking &hiking</a>
+                        </div>
+                    </div>
+                    <!-- Aboutus Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>Aboutus</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <a href="./pages/about.html?tab=who-we-are" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Who we are</a>
+                            <a href="./pages/about.html?tab=company-profile" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Our companys profile</a>
+                            <a href="./pages/about.html?tab=terms-and-conditions" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Terms and conditions</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-sm text-gray-800 hover:text-gray-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Hamburger on mobile -->
+                <button id="mobile-menu-toggle" class="flex items-center md:hidden space-x-1 text-gray-800 text-sm pr-2">
+                    <span>MENU</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden w-full bg-white shadow-sm p-2">
+                <a href="./index.html" class="block py-2 px-2 text-sm text-gray-800 hover:bg-gray-100">Home</a>
+                <!-- Mobile Destinations Dropdown -->
+                <div class="relative">
+                    <button class="mobile-dropdown-toggle w-full text-left py-2 px-2 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
+                        <span>Destinations</span>
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content pl-3 hidden">
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">All Destinations</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Africa Tours</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Asia Tours</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Europe Tours</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">South America</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Journeys Dropdown with nested menu -->
+                <div class="relative">
+                    <button class="mobile-dropdown-toggle w-full text-left py-2 px-2 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
+                        <span>Journeys</span>
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content pl-3 hidden">
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">All Journeys</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Adventure</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Cultural</a>
+                        <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Wildlife</a>
+                        
+                        <!-- Mobile Nested Historical Dropdown -->
+                        <div class="relative pl-3">
+                            <button class="mobile-dropdown-toggle w-full text-left py-1 px-2 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                                <span>Historical</span>
+                                <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="mobile-dropdown-content pl-3 hidden">
+                                <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">Ancient Wonders</a>
+                                <a href="#" class="block py-1 px-2 text-xs text-gray-700 hover:bg-gray-100">World Heritage Sites</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-24 md:pt-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Dynamic Form Section -->
+            <section id="tailor-made-form" class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
+                <!-- Content will be dynamically populated here by JavaScript -->
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Tour data in a JSON format. This can be moved to an external file later.
+        const tourData = {
+            "budget-holidays": {
+                "title": "Budget Holidays",
+                "description": "Experience the beauty of Ethiopia without breaking the bank. Our budget-friendly tours are designed for adventurers who want to explore on a shoestring, offering authentic experiences and comfortable stays at great value.",
+                "formTitle": "Plan Your Budget Adventure",
+                "formDescription": "Tell us about your ideal budget holiday and we'll create a memorable, affordable itinerary just for you."
+            },
+            "family-holidays": {
+                "title": "Family Holidays",
+                "description": "Create lasting memories with a family-friendly Ethiopian holiday. Our itineraries are crafted to suit all ages, combining educational historical sites with fun-filled natural and cultural activities. Let's build the perfect family adventure together!",
+                "formTitle": "Design Your Family Getaway",
+                "formDescription": "Share your family's interests and we'll propose a personalized tour that everyone will love."
+            },
+            "group-adventure": {
+                "title": "Group Adventure in Ethiopia",
+                "description": "Unite with fellow explorers on an unforgettable group adventure. Our expertly guided tours are perfect for friends, clubs, or solo travelers looking to connect with others while discovering Ethiopia's highlights. Join a fixed departure or create your own group trip!",
+                "formTitle": "Organize Your Group Trip",
+                "formDescription": "Give us the details about your group and we'll handle the logistics to craft a unique adventure for everyone."
+            },
+            "luxury-holidays": {
+                "title": "Luxury Holidays",
+                "description": "Indulge in the ultimate comfort and exclusive experiences. Our luxury tours provide premium accommodation, private transfers, and personalized service, ensuring a seamless and opulent journey through Ethiopia's most spectacular destinations.",
+                "formTitle": "Request a Luxury Itinerary",
+                "formDescription": "Let us know your preferences and we'll design a bespoke luxury tour tailored to your every desire."
+            },
+            "solo-travelers": {
+                "title": "Solo Travelers",
+                "description": "Embark on a personal journey of discovery. Ethiopia is a safe and welcoming destination for solo travelers. Our tours offer a perfect balance of guided exploration and independent time, allowing you to experience the country on your own terms.",
+                "formTitle": "Start Your Solo Journey",
+                "formDescription": "Tell us what you're looking for in a solo trip, and we'll build a custom itinerary for you."
+            },
+            "student-vacations": {
+                "title": "Student Vacations",
+                "description": "Explore Ethiopia with a focus on learning and adventure. Our student vacations combine cultural immersion and historical insights with exciting activities, all while being mindful of a student's budget. Perfect for academic trips or a break from studies.",
+                "formTitle": "Plan Your Student Trip",
+                "formDescription": "Let us know your academic interests and we'll create an educational and fun tour package for your group."
+            }
+        };
+
+        // DOM elements
+        const tailorMadeMenu = document.getElementById('tailor-made-menu');
+        const formSection = document.getElementById('tailor-made-form');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Function to create a link element
+        function createLink(id, title) {
+            const link = document.createElement('a');
+            link.href = `#`; // Use a hash link for in-page navigation
+            link.classList.add('block', 'py-2', 'px-3', 'text-sm', 'text-gray-800', 'hover:bg-gray-100', 'rounded-md', 'transition-colors', 'duration-200');
+            link.textContent = title;
+            link.dataset.tourId = id;
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderForm(id);
+                // Scroll to the form section
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            return link;
+        }
+
+        // Function to dynamically render the form
+        function renderForm(tourId) {
+            const tour = tourData[tourId];
+            if (!tour) {
+                // If no tour data found, show a default message
+                formSection.innerHTML = `
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">${tourData["budget-holidays"].formTitle}</h2>
+                    <p class="text-gray-600 mb-6 text-center max-w-2xl mx-auto">${tourData["budget-holidays"].formDescription}</p>
+                    ${createFormHtml("budget-holidays")}
+                `;
+                return;
+            }
+
+            // Create the HTML for the form section
+            const formHtml = `
+                <div class="flex flex-col md:flex-row md:space-x-8">
+                    <!-- Left side: Title and description -->
+                    <div class="md:w-1/2 mb-6 md:mb-0">
+                        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">${tour.title}</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">${tour.description}</p>
+                    </div>
+
+                    <!-- Right side: The form itself -->
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">${tour.formTitle}</h3>
+                        <p class="text-sm text-gray-500 mb-6">${tour.formDescription}</p>
+                        ${createFormHtml(tourId)}
+                    </div>
+                </div>
+            `;
+            formSection.innerHTML = formHtml;
+            // After rendering the new form, attach the event listener
+            document.getElementById('tailor-made-tour-form').addEventListener('submit', handleFormSubmit);
+        }
+
+        // Function to create the core form HTML
+        function createFormHtml(tourId) {
+            return `
+                <form id="tailor-made-tour-form" class="space-y-4">
+                    <input type="hidden" name="tour-type" value="${tourId}">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+                        <input type="date" id="date" name="date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="time" class="block text-sm font-medium text-gray-700">Time</label>
+                        <input type="time" id="time" name="time" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" value="1" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+                            Submit Request
+                        </button>
+                    </div>
+                </form>
+            `;
+        }
+
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = {
+                tourType: form.elements['tour-type'].value,
+                name: form.elements['name'].value,
+                email: form.elements['email'].value,
+                date: form.elements['date'].value,
+                time: form.elements['time'].value,
+                guests: form.elements['guests'].value,
+                message: form.elements['message'].value,
+            };
+
+            // Display a message box with the form data instead of an alert
+            const messageBox = document.createElement('div');
+            messageBox.innerHTML = `
+                <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
+                        <h2 class="text-xl font-bold mb-4">Your Request Summary</h2>
+                        <p class="mb-2"><strong>Tour Type:</strong> ${tourData[formData.tourType].title}</p>
+                        <p class="mb-2"><strong>Name:</strong> ${formData.name}</p>
+                        <p class="mb-2"><strong>Email:</strong> ${formData.email}</p>
+                        <p class="mb-2"><strong>Date:</strong> ${formData.date}</p>
+                        <p class="mb-2"><strong>Time:</strong> ${formData.time}</p>
+                        <p class="mb-2"><strong>Guests:</strong> ${formData.guests}</p>
+                        <p class="mb-4"><strong>Message:</strong> ${formData.message || 'N/A'}</p>
+                        <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-150">OK</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(messageBox);
+        }
+
+        // Initial setup on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate the desktop menu
+            for (const id in tourData) {
+                if (tourData.hasOwnProperty(id)) {
+                    const title = tourData[id].title;
+                    const link = createLink(id, title);
+                    tailorMadeMenu.appendChild(link);
+                }
+            }
+
+            // Populate the mobile menu (if you had one, this would go here)
+            // Note: The mobile menu structure in your provided code is different and requires a different approach
+            // For now, let's just make sure the mobile menu toggle works.
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Render the first form by default on page load
+            renderForm("budget-holidays");
+        });
+    </script>
+</body>
+</html>

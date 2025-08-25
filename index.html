@@ -351,23 +351,7 @@
                 <div class="hidden md:flex items-center space-x-6 pr-4">
                     <a href="/index.html" class="text-sm text-gray-800 hover:text-gray-600 transition-colors">Home</a>
 
-                    <!-- Destinations Dropdown -->
-                    <div class="relative group">
-                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Destinations</span>
-                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
-                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">All Destinations</a>
-                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Africa Tours</a>
-                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Asia Tours</a>
-                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Europe Tours</a>
-                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">South America</a>
-                        </div>
-                    </div>
-                                        <!-- Attractions  Dropdown with Nested Menu -->
+                              <!-- Attractions  Dropdown with Nested Menu -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
                             <span>Attractions</span>
@@ -512,6 +496,25 @@
                          
                         </div>
                     </div>
+                       <!-- Tailor made tour  Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+                            <span>tailor-made Tours</span>
+                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                            <a href="./pages/tailormadetour.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Budget Holidays</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Famiy Holidays</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Group Adventure In Ethiopia</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Luxury Holidays</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Solo Travelers</a>
+                            <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Student Vacations</a>
+
+                        </div>
+                    </div>
+                           
 <!-- Tour packages   Dropdown with Nested Menu -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
@@ -521,7 +524,7 @@
                             </svg>
                         </button>
                         <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
-                            <a href="./pages/TourPackages.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching </a>
+                            <a href="./pages/tour.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching </a>
                             <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">city Tours</a>
                             <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
                             <a href="#" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Day Trips</a>
@@ -897,84 +900,7 @@
     });
 </script>
 
-<!-- Main container for the carousel -->
-<div class="main-container">
-     <h1 class="text-3xl  lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">
-                Ethiopia's Best Tour Packages
-            </h1>
-    <div class="content-row">
-        <!-- Left Section -->
-        <div class="side-section left">
-            <!-- Destination Title - Now in the left section -->
-           
-            <!-- Small Image Cards -->
-            <div class="flex space-x-4">
-                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                    <img id="left-small-image-1" src="" alt="Previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div id="left-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                </div>
-                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                    <img id="left-small-image-2" src="" alt="Further previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div id="left-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Main Card Section -->
-        <div class="main-image-card rounded">
-            <!-- Blurred Background for the card -->
-            <div id="blurred-background" class="absolute inset-0 z-0 bg-cover bg-center transition-all duration-500"></div>
-
-            <!-- Arrow button top right -->
-            <button id="next-top-btn" class="absolute top-6 right-6 bg-white/70 backdrop-blur-lg rounded-full p-2.5 shadow-md z-20 hover:scale-105 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </button>
-
-            <!-- Main Oval Image -->
-            <div class="oval-image-container rounded">
-                <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Ethiopia';">
-            </div>
-
-            <!-- Destination Title -->
-            <h2 id="destination-title" class="text-sm  text-gray-100 absolute bottom-12 left-0 right-0 text-center   z-20"></h2>
-        </div>
-
-        <!-- Right Section -->
-        <div class="side-section right">
-            <!-- Navigation Arrows -->
-            <div class="flex space-x-4">
-                <button id="prev-btn" class="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                </button>
-                <button id="next-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Small Image Cards -->
-            <div class="flex space-x-4">
-                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                    <img id="right-small-image-1" src="" alt="Next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div id="right-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                </div>
-                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
-                    <img id="right-small-image-2" src="" alt="Further next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div id="right-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1113,7 +1039,7 @@
 <!--ethiopia tours-->
 
 <!-- Main content container -->
-<div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+<div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8 ">
     <h2 class="text-3xl font-semibold text-gray-900 mb-12 text-center">Ethiopia Tour Packages</h2>
 
     <!-- Grid Container for Cards - Content will be dynamically loaded here -->
@@ -1123,7 +1049,7 @@
 
     <!-- Show More/Show Less Button -->
     <div class="flex justify-center mt-12">
-        <button id="show-more-less-button" class="bg-white text-black px-6 py-3 border border-black rounded-md flex items-center justify-center space-x-2 hover:bg-gray-100 transition-colors duration-300">
+        <button id="show-more-less-button" class="bg-white text-black px-6 py-3 border border-black rounded flex items-center justify-center space-x-2 hover:bg-gray-100 transition-colors duration-300">
             <span id="button-text">Show More</span>
             <svg id="button-arrow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -1221,7 +1147,7 @@
         function createCard(data, isHidden = false) {
             const cardDiv = document.createElement('div');
             cardDiv.classList.add(
-                'rounded-xl', 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
+                'rounded', 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
                 'flex', 'flex-col', 'h-full', 'bg-white',
                 'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
                 'hover:shadow-2xl'
@@ -1235,7 +1161,7 @@
                 <!-- Image Section - Placed at the top with rounded corners that match the card's container. -->
                 <div class="relative w-full h-48">
                     <img 
-                        class="w-full h-full object-cover rounded-t" 
+                        class="w-full h-full object-cover " 
                         src="${data.imageSrc}" 
                         alt="${data.title}" 
                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/1f2937?text=Image+Not+Found';"
@@ -1374,7 +1300,84 @@
         });
     });
 </script>
+<!-- Main container for the carousel -->
+<div class="main-container">
+     <h1 class="text-3xl  lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">
+                Ethiopia's Best Tour Packages
+            </h1>
+    <div class="content-row">
+        <!-- Left Section -->
+        <div class="side-section left">
+            <!-- Destination Title - Now in the left section -->
+           
+            <!-- Small Image Cards -->
+            <div class="flex space-x-4">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="left-small-image-1" src="" alt="Previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="left-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                </div>
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="left-small-image-2" src="" alt="Further previous destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="left-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Main Card Section -->
+        <div class="main-image-card rounded">
+            <!-- Blurred Background for the card -->
+            <div id="blurred-background" class="absolute inset-0 z-0 bg-cover bg-center transition-all duration-500"></div>
+
+            <!-- Arrow button top right -->
+            <button id="next-top-btn" class="absolute top-6 right-6 bg-white/70 backdrop-blur-lg rounded-full p-2.5 shadow-md z-20 hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </button>
+
+            <!-- Main Oval Image -->
+            <div class="oval-image-container rounded">
+                <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Ethiopia';">
+            </div>
+
+            <!-- Destination Title -->
+            <h2 id="destination-title" class="text-sm  text-gray-100 absolute bottom-12 left-0 right-0 text-center   z-20"></h2>
+        </div>
+
+        <!-- Right Section -->
+        <div class="side-section right">
+            <!-- Navigation Arrows -->
+            <div class="flex space-x-4">
+                <button id="prev-btn" class="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="bg-white text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Small Image Cards -->
+            <div class="flex space-x-4">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="right-small-image-1" src="" alt="Next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="right-small-index-1" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                </div>
+                <div class="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden shadow-lg">
+                    <img id="right-small-image-2" src="" alt="Further next destination" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/160x160/a7c5d0/ffffff?text=Dest..';">
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div id="right-small-index-2" class="absolute top-2 left-2 text-white text-xs font-bold"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
    <!--member-->
 <div class="bg-white p-6 md:p-12 w-full">
 
