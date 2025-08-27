@@ -303,193 +303,220 @@
     </main>
 
     <script>
-        // Tour data in a JSON format. This can be moved to an external file later.
-        const tourData = {
-            "budget-holidays": {
-                "title": "Budget Holidays",
-                "description": "Experience the beauty of Ethiopia without breaking the bank. Our budget-friendly tours are designed for adventurers who want to explore on a shoestring, offering authentic experiences and comfortable stays at great value.",
-                "formTitle": "Plan Your Budget Adventure",
-                "formDescription": "Tell us about your ideal budget holiday and we'll create a memorable, affordable itinerary just for you."
-            },
-            "family-holidays": {
-                "title": "Family Holidays",
-                "description": "Create lasting memories with a family-friendly Ethiopian holiday. Our itineraries are crafted to suit all ages, combining educational historical sites with fun-filled natural and cultural activities. Let's build the perfect family adventure together!",
-                "formTitle": "Design Your Family Getaway",
-                "formDescription": "Share your family's interests and we'll propose a personalized tour that everyone will love."
-            },
-            "group-adventure": {
-                "title": "Group Adventure in Ethiopia",
-                "description": "Unite with fellow explorers on an unforgettable group adventure. Our expertly guided tours are perfect for friends, clubs, or solo travelers looking to connect with others while discovering Ethiopia's highlights. Join a fixed departure or create your own group trip!",
-                "formTitle": "Organize Your Group Trip",
-                "formDescription": "Give us the details about your group and we'll handle the logistics to craft a unique adventure for everyone."
-            },
-            "luxury-holidays": {
-                "title": "Luxury Holidays",
-                "description": "Indulge in the ultimate comfort and exclusive experiences. Our luxury tours provide premium accommodation, private transfers, and personalized service, ensuring a seamless and opulent journey through Ethiopia's most spectacular destinations.",
-                "formTitle": "Request a Luxury Itinerary",
-                "formDescription": "Let us know your preferences and we'll design a bespoke luxury tour tailored to your every desire."
-            },
-            "solo-travelers": {
-                "title": "Solo Travelers",
-                "description": "Embark on a personal journey of discovery. Ethiopia is a safe and welcoming destination for solo travelers. Our tours offer a perfect balance of guided exploration and independent time, allowing you to experience the country on your own terms.",
-                "formTitle": "Start Your Solo Journey",
-                "formDescription": "Tell us what you're looking for in a solo trip, and we'll build a custom itinerary for you."
-            },
-            "student-vacations": {
-                "title": "Student Vacations",
-                "description": "Explore Ethiopia with a focus on learning and adventure. Our student vacations combine cultural immersion and historical insights with exciting activities, all while being mindful of a student's budget. Perfect for academic trips or a break from studies.",
-                "formTitle": "Plan Your Student Trip",
-                "formDescription": "Let us know your academic interests and we'll create an educational and fun tour package for your group."
-            }
+    // Tour data in a JSON format. This can be moved to an external file later.
+    const tourData = {
+        "budget-holidays": {
+            "title": "Budget Holidays",
+            "description": "Experience the beauty of Ethiopia without breaking the bank. Our budget-friendly tours are designed for adventurers who want to explore on a shoestring, offering authentic experiences and comfortable stays at great value.",
+            "formTitle": "Plan Your Budget Adventure",
+            "formDescription": "Tell us about your ideal budget holiday and we'll create a memorable, affordable itinerary just for you."
+        },
+        "family-holidays": {
+            "title": "Family Holidays",
+            "description": "Create lasting memories with a family-friendly Ethiopian holiday. Our itineraries are crafted to suit all ages, combining educational historical sites with fun-filled natural and cultural activities. Let's build the perfect family adventure together!",
+            "formTitle": "Design Your Family Getaway",
+            "formDescription": "Share your family's interests and we'll propose a personalized tour that everyone will love."
+        },
+        "group-adventure": {
+            "title": "Group Adventure in Ethiopia",
+            "description": "Unite with fellow explorers on an unforgettable group adventure. Our expertly guided tours are perfect for friends, clubs, or solo travelers looking to connect with others while discovering Ethiopia's highlights. Join a fixed departure or create your own group trip!",
+            "formTitle": "Organize Your Group Trip",
+            "formDescription": "Give us the details about your group and we'll handle the logistics to craft a unique adventure for everyone."
+        },
+        "luxury-holidays": {
+            "title": "Luxury Holidays",
+            "description": "Indulge in the ultimate comfort and exclusive experiences. Our luxury tours provide premium accommodation, private transfers, and personalized service, ensuring a seamless and opulent journey through Ethiopia's most spectacular destinations.",
+            "formTitle": "Request a Luxury Itinerary",
+            "formDescription": "Let us know your preferences and we'll design a bespoke luxury tour tailored to your every desire."
+        },
+        "solo-travelers": {
+            "title": "Solo Travelers",
+            "description": "Embark on a personal journey of discovery. Ethiopia is a safe and welcoming destination for solo travelers. Our tours offer a perfect balance of guided exploration and independent time, allowing you to experience the country on your own terms.",
+            "formTitle": "Start Your Solo Journey",
+            "formDescription": "Tell us what you're looking for in a solo trip, and we'll build a custom itinerary for you."
+        },
+        "student-vacations": {
+            "title": "Student Vacations",
+            "description": "Explore Ethiopia with a focus on learning and adventure. Our student vacations combine cultural immersion and historical insights with exciting activities, all while being mindful of a student's budget. Perfect for academic trips or a break from studies.",
+            "formTitle": "Plan Your Student Trip",
+            "formDescription": "Let us know your academic interests and we'll create an educational and fun tour package for your group."
+        }
+    };
+
+    // DOM elements
+    const tailorMadeMenu = document.getElementById('tailor-made-menu');
+    const formSection = document.getElementById('tailor-made-form');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        const results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Function to create a link element
+    function createLink(id, title) {
+        const link = document.createElement('a');
+        link.href = `./tailormadetour.html?tour=${id}`; // Link to the specific tour
+        link.classList.add('block', 'py-2', 'px-3', 'text-sm', 'text-gray-800', 'hover:bg-gray-100', 'rounded-md', 'transition-colors', 'duration-200');
+        link.textContent = title;
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            renderForm(id);
+            // Update URL without reloading the page
+            window.history.pushState({}, '', `?tour=${id}`);
+            // Scroll to the form section
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        return link;
+    }
+
+    // Function to dynamically render the form
+    function renderForm(tourId) {
+        const tour = tourData[tourId];
+        if (!tour) {
+            // If no tour data found, show a default message
+            formSection.innerHTML = `
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">${tourData["budget-holidays"].formTitle}</h2>
+                <p class="text-gray-600 mb-6 text-center max-w-2xl mx-auto">${tourData["budget-holidays"].formDescription}</p>
+                ${createFormHtml("budget-holidays")}
+            `;
+            return;
+        }
+
+        // Create the HTML for the form section
+        const formHtml = `
+            <div class="flex flex-col md:flex-row md:space-x-8">
+                <!-- Left side: Title and description -->
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">${tour.title}</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">${tour.description}</p>
+                </div>
+
+                <!-- Right side: The form itself -->
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">${tour.formTitle}</h3>
+                    <p class="text-sm text-gray-500 mb-6">${tour.formDescription}</p>
+                    ${createFormHtml(tourId)}
+                </div>
+            </div>
+        `;
+        formSection.innerHTML = formHtml;
+        // After rendering the new form, attach the event listener
+        document.getElementById('tailor-made-tour-form').addEventListener('submit', handleFormSubmit);
+    }
+
+    // Function to create the core form HTML
+    function createFormHtml(tourId) {
+        return `
+            <form id="tailor-made-tour-form" class=" space-y-4">
+                <input type="hidden" name="tour-type" value="${tourId}">
+                <div>
+                    <label for="name" class="block text-xs font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="email" class="block text-xs font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="date" class="block text-xs font-medium text-gray-700">Date</label>
+                    <input type="date" id="date" name="date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="time" class="block text-xs font-medium text-gray-700">Time</label>
+                    <input type="time" id="time" name="time" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+            
+                <div>
+                    <label for="message" class="block text-xs font-medium text-gray-700">Your Message</label>
+                    <textarea id="message" name="message" rows="2" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-xs"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+                        Submit Request
+                    </button>
+                </div>
+            </form>
+        `;
+    }
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const formData = {
+            tourType: form.elements['tour-type'].value,
+            name: form.elements['name'].value,
+            email: form.elements['email'].value,
+            date: form.elements['date'].value,
+            time: form.elements['time'].value,
+            guests: form.elements['guests'].value,
+            message: form.elements['message'].value,
         };
 
-        // DOM elements
-        const tailorMadeMenu = document.getElementById('tailor-made-menu');
-        const formSection = document.getElementById('tailor-made-form');
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        // Function to create a link element
-        function createLink(id, title) {
-            const link = document.createElement('a');
-            link.href = `#`; // Use a hash link for in-page navigation
-            link.classList.add('block', 'py-2', 'px-3', 'text-sm', 'text-gray-800', 'hover:bg-gray-100', 'rounded-md', 'transition-colors', 'duration-200');
-            link.textContent = title;
-            link.dataset.tourId = id;
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                renderForm(id);
-                // Scroll to the form section
-                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-            return link;
-        }
-
-        // Function to dynamically render the form
-        function renderForm(tourId) {
-            const tour = tourData[tourId];
-            if (!tour) {
-                // If no tour data found, show a default message
-                formSection.innerHTML = `
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">${tourData["budget-holidays"].formTitle}</h2>
-                    <p class="text-gray-600 mb-6 text-center max-w-2xl mx-auto">${tourData["budget-holidays"].formDescription}</p>
-                    ${createFormHtml("budget-holidays")}
-                `;
-                return;
-            }
-
-            // Create the HTML for the form section
-            const formHtml = `
-                <div class="flex flex-col md:flex-row md:space-x-8">
-                    <!-- Left side: Title and description -->
-                    <div class="md:w-1/2 mb-6 md:mb-0">
-                        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">${tour.title}</h2>
-                        <p class="text-lg text-gray-600 leading-relaxed">${tour.description}</p>
-                    </div>
-
-                    <!-- Right side: The form itself -->
-                    <div class="md:w-1/2">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">${tour.formTitle}</h3>
-                        <p class="text-sm text-gray-500 mb-6">${tour.formDescription}</p>
-                        ${createFormHtml(tourId)}
-                    </div>
+        // Display a message box with the form data instead of an alert
+        const messageBox = document.createElement('div');
+        messageBox.innerHTML = `
+            <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
+                    <h2 class="text-xl font-bold mb-4">Your Request Summary</h2>
+                    <p class="mb-2"><strong>Tour Type:</strong> ${tourData[formData.tourType].title}</p>
+                    <p class="mb-2"><strong>Name:</strong> ${formData.name}</p>
+                    <p class="mb-2"><strong>Email:</strong> ${formData.email}</p>
+                    <p class="mb-2"><strong>Date:</strong> ${formData.date}</p>
+                    <p class="mb-2"><strong>Time:</strong> ${formData.time}</p>
+                    <p class="mb-4"><strong>Message:</strong> ${formData.message || 'N/A'}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-150">OK</button>
                 </div>
-            `;
-            formSection.innerHTML = formHtml;
-            // After rendering the new form, attach the event listener
-            document.getElementById('tailor-made-tour-form').addEventListener('submit', handleFormSubmit);
+            </div>
+        `;
+        document.body.appendChild(messageBox);
+    }
+
+    // Listen for popstate events (back/forward navigation)
+    window.addEventListener('popstate', function(event) {
+        const tourParam = getUrlParameter('tour');
+        if (tourParam && tourData[tourParam]) {
+            renderForm(tourParam);
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+    });
 
-        // Function to create the core form HTML
-        function createFormHtml(tourId) {
-            return `
-                <form id="tailor-made-tour-form" class=" space-y-4">
-                    <input type="hidden" name="tour-type" value="${tourId}">
-                    <div>
-                        <label for="name" class="block text-xs font-medium text-gray-700">Full Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-xs font-medium text-gray-700">Email Address</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                    <div>
-                        <label for="date" class="block text-xs font-medium text-gray-700">Date</label>
-                        <input type="date" id="date" name="date" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                    <div>
-                        <label for="time" class="block text-xs font-medium text-gray-700">Time</label>
-                        <input type="time" id="time" name="time" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                
-                    <div>
-                        <label for="message" class="block text-xs font-medium text-gray-700">Your Message</label>
-                        <textarea id="message" name="message" rows="2" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-xs"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
-                            Submit Request
-                        </button>
-                    </div>
-                </form>
-            `;
-        }
-
-        // Function to handle form submission
-        function handleFormSubmit(event) {
-            event.preventDefault();
-
-            const form = event.target;
-            const formData = {
-                tourType: form.elements['tour-type'].value,
-                name: form.elements['name'].value,
-                email: form.elements['email'].value,
-                date: form.elements['date'].value,
-                time: form.elements['time'].value,
-                guests: form.elements['guests'].value,
-                message: form.elements['message'].value,
-            };
-
-            // Display a message box with the form data instead of an alert
-            const messageBox = document.createElement('div');
-            messageBox.innerHTML = `
-                <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
-                    <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
-                        <h2 class="text-xl font-bold mb-4">Your Request Summary</h2>
-                        <p class="mb-2"><strong>Tour Type:</strong> ${tourData[formData.tourType].title}</p>
-                        <p class="mb-2"><strong>Name:</strong> ${formData.name}</p>
-                        <p class="mb-2"><strong>Email:</strong> ${formData.email}</p>
-                        <p class="mb-2"><strong>Date:</strong> ${formData.date}</p>
-                        <p class="mb-2"><strong>Time:</strong> ${formData.time}</p>
-                        <p class="mb-4"><strong>Message:</strong> ${formData.message || 'N/A'}</p>
-                        <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-150">OK</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(messageBox);
-        }
-
-        // Initial setup on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Populate the desktop menu
-            for (const id in tourData) {
-                if (tourData.hasOwnProperty(id)) {
-                    const title = tourData[id].title;
-                    const link = createLink(id, title);
-                    tailorMadeMenu.appendChild(link);
-                }
+    // Initial setup on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Populate the desktop menu
+        for (const id in tourData) {
+            if (tourData.hasOwnProperty(id)) {
+                const title = tourData[id].title;
+                const link = createLink(id, title);
+                tailorMadeMenu.appendChild(link);
             }
+        }
 
-            // Populate the mobile menu (if you had one, this would go here)
-            // Note: The mobile menu structure in your provided code is different and requires a different approach
-            // For now, let's just make sure the mobile menu toggle works.
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+        // Check for URL parameter and navigate to the specific tour
+        const tourParam = getUrlParameter('tour');
+        if (tourParam && tourData[tourParam]) {
+            renderForm(tourParam);
             
-            // Render the first form by default on page load
+            // Scroll to the form section after a short delay to allow rendering
+            setTimeout(() => {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        } else {
+            // Render the first form by default if no parameter
             renderForm("budget-holidays");
+        }
+
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    </script>
+    });
+</script>
 </body>
 </html>
