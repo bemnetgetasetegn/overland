@@ -36,17 +36,17 @@
             }
         }
               .bg-image-main {
-            background-image: url('./pictures/9bg.avif');
+            background-image: url('./overlandpics/pano3_edited.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-card {
-            background-image: url('./pictures/5bg.jpg');
+            background-image: url('./overlandpics/pano3_edited.jpg');
             background-size: cover;
             background-position: center;
         }
         .bg-image-concierge {
-            background-image: url('./pictures/5bg.jpg');
+            background-image: url('./overlandpics/3512931332_f0c1e0d15f_o.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -165,9 +165,8 @@
             position: relative;
             padding: 1.5rem;
             width: 100%; /* Full width on mobile */
-            max-width: 420px; /* Max-width for consistency */
-            height: 550px; /* Fixed height */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            max-width: 550px; /* Max-width for consistency */
+            height: 500px; /* Fixed height */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -177,8 +176,8 @@
 
         /* Container for the oval image to apply masking */
         .oval-image-container {
-            width: 320px;
-            height: 370px;
+            width: 440px;
+            height: 500px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -186,7 +185,8 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
-            margin-bottom: 30px;
+            margin-top: 53px;
+            margin-bottom: 73px;
         }
 
         /* Styles for the image inside the oval container */
@@ -207,7 +207,7 @@
         
         @media (min-width: 1024px) {
             .side-section {
-                height: 600px; /* Match height of main card */
+                height: 400px; /* Match height of main card */
                 justify-content: center; /* This centers the content vertically */
                 width: auto;
             }
@@ -844,7 +844,7 @@
         // Data structure containing images and corresponding text
         const heroContent = [ 
            { 
-                image: './pictures/6bg.jpg', 
+                image: './overlandpics/20161013_084537-01.jpeg', 
                 heading: 'Discover The World In Luxury And Style.', 
                 subheading: 'Tailored luxury travel experiences crafted exclusively for discerning adventurers.' 
             },
@@ -854,7 +854,7 @@
                 subheading: 'Explore hidden gems and iconic sights with curated, bespoke itineraries.' 
             },
             { 
-                image: './pictures/4bg.jpg', 
+                image: './overlandpics/Addis Ababa, Ethiopia.jpg', 
                 heading: 'Adventure Awaits Around Every Corner.', 
                 subheading: 'From mountain peaks to crystal clear waters, your next adventure starts here.' 
             },
@@ -1233,7 +1233,44 @@
     document.addEventListener('DOMContentLoaded', () => {
         // Data for the Ethiopia tour packages
         const serviceData = [
-       {
+      
+        {
+                id: '7',
+                imageSrc: './pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
+                title: 'Trekking Tour to the Bale Mountains',
+                shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                location: 'Ethiopia',
+                duration: '14 Days',
+            },
+             {
+                id: '5',
+                imageSrc: './pictures/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Omo Valley with Yabello',
+                shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                location: 'Ethiopia',
+                duration: '16 Days',
+            },
+              {
+                id: '8',
+                imageSrc: './pictures/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to the Omo Valley and Surma Tribe',
+                shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                location: 'Ethiopia',
+                duration: '21 Days',
+            },
+              {
+                id: '4',
+                imageSrc: './pictures/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
+                title: 'Tour to Danakil Depression and Historic Route',
+                shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                location: 'Ethiopia',
+                duration: '22 Days',
+            },
+              {
                 id: '1',
                 imageSrc: './pictures/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
                 title: 'Tour to the Historic Route with Semien Mountains',
@@ -1260,24 +1297,8 @@
                 location: 'Ethiopia',
                 duration: '24 Days',
             },
-            {
-                id: '4',
-                imageSrc: './pictures/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to Danakil Depression and Historic Route',
-                shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
-                longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
-                location: 'Ethiopia',
-                duration: '22 Days',
-            },
-            {
-                id: '5',
-                imageSrc: './pictures/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Omo Valley with Yabello',
-                shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
-                longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
-                location: 'Ethiopia',
-                duration: '16 Days',
-            },
+          
+           
             {
                 id: '6',
                 imageSrc: './pictures/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
@@ -1287,24 +1308,8 @@
                 location: 'Ethiopia',
                 duration: '12 Days',
             },
-            {
-                id: '7',
-                imageSrc: './pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
-                title: 'Trekking Tour to the Bale Mountains',
-                shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
-                longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
-                location: 'Ethiopia',
-                duration: '14 Days',
-            },
-            {
-                id: '8',
-                imageSrc: './pictures/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Omo Valley and Surma Tribe',
-                shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
-                longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
-                location: 'Ethiopia',
-                duration: '21 Days',
-            },
+          
+          
         ];
 
         const gridContainer = document.getElementById('service-cards-grid-container');
@@ -1313,7 +1318,7 @@
         function createCard(data, isHidden = false) {
             const cardDiv = document.createElement('div');
             cardDiv.classList.add(
-                'rounded', 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
+                 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
                 'flex', 'flex-col', 'h-full', 'bg-white',
                 'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
                 'hover:shadow-2xl'
@@ -1367,7 +1372,7 @@
             modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
 
             modalDiv.innerHTML = `
-                <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row relative">
+                <div class="bg-white rounded shadow-lg p-8 max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row relative">
                     <button class="modal-close-button absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -1467,13 +1472,13 @@
     });
 </script>
 <!-- Main container for the carousel -->
-<div class="main-container">
-     <h1 class="text-3xl  lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">
+<div class="main-container bg-white">
+     <h1 class="text-3xl   lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">
                 Ethiopia's Best Tour Packages
             </h1>
-<p class="text-gray-600 text-center text-sm md:text-sm md:pl-40 md:pr-40 md:pt-4 leading-tight">
-                At Overland Ethiopia Tours, we unveil alphabet over 2000 years old and remains the only African nation to maintain independence.
-            </p>
+   <p class="text-gray-600 text-center mt-2 text-sm md:text-base max-w-2xl mx-auto">
+            We are proud to partner with a diverse range of organizations that help us achieve our mission and provide exceptional services.
+        </p>
                 <div class="content-row">
         <!-- Left Section -->
         <div class="side-section left">
@@ -1507,8 +1512,8 @@
             </button>
 
             <!-- Main Oval Image -->
-            <div class="oval-image-container rounded">
-                <img id="main-destination-image" src="" alt="Current destination" class="oval-image rounded" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Ethiopia';">
+            <div class="oval-image-container rounded ">
+                <img id="main-destination-image" src="" alt="Current destination" class="oval-image" onerror="this.onerror=null;this.src='https://placehold.co/280x420/334155/ffffff?text=Ethiopia';">
             </div>
 
             <!-- Destination Title -->
@@ -1549,7 +1554,7 @@
 </div>
 
    <!--member-->
-<div class="bg-white p-6 md:p-12 w-full">
+<div class="bg-gray-100 p-6 md:p-12 w-full">
 
     <!-- Title Section -->
     <div class="text-center mb-12">
@@ -1684,7 +1689,7 @@
 
 
 <!--last content-->
- <div class="w-full max-w-6xl mx-auto p-4 md:p-8">
+ <div class="w-full  max-w-6xl mx-auto p-4 md:p-8">
         <!-- Section Header -->
         <header class="mb-8 md:mb-12 text-center md:text-left">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Hear From Our Clients</h1>
@@ -1719,7 +1724,7 @@
                 <div class="w-full md:w-1/2 flex flex-col justify-center pt-6 md:pt-0 md:pl-8 lg:pl-12">
                     <div>
                         <!-- Quotation Mark Icon -->
-                        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-200">
+                        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-600">
                             <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
                         </svg>
                         <p id="main-quote" class="mt-4 text-lg md:text-sm text-justify text-gray-600 leading-relaxed"></p>
