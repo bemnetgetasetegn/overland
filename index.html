@@ -337,7 +337,7 @@
             color: white !important;
         }
         .nav-active:hover {
-            background-color: #dc2626 !important; /* red-600 on hover */
+            background-color: #d12b2b !important; /* red-600 on hover */
             color: white !important;
         }
      
@@ -1411,7 +1411,7 @@
                             <p class="text-gray-700 mb-4">
                                 ${data.longDescription}
                             </p>
-                            <button class="view-details-btn mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors" data-tour-id="${data.id}">
+                            <button class="view-details-btn mt-4 px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 transition-colors" data-tour-id="${data.id}">
                                 View Full Details
                             </button>
                         </div>
@@ -1737,97 +1737,86 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
 </script>
 
 
-<!--last content-->
- <div class="bg-white max-w-full mx-auto p-4 md:p-8">
-        <!-- Section Header -->
-        <header class="mb-8 md:mb-12 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Hear From Our Clients</h1>
-            <p class="mt-2 text-gray-500">Real stories from travelers who explored Ethiopia with us.</p>
-        </header>
+<div class="bg-white max-w-full mx-auto p-4 md:p-8">
+    <header class="mb-8 md:mb-12 text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Hear From Our Clients</h1>
+        <p class="mt-2 text-gray-500">Real stories from travelers who explored Ethiopia with us.</p>
+    </header>
 
-        <!-- Testimonials Container -->
-        <div class="flex items-center justify-center gap-4 md:gap-8">
-            
-            <!-- Main Testimonial Card: Added fixed height for medium screens and up -->
-            <div id="testimonial-card" class="flex-1 flex flex-col md:flex-row  overflow-hidden p-6 w-full md:h-[400px]">
-                <!-- Image Section: Removed md:h-auto to allow stretching -->
-                <div class="relative w-full md:w-1/2 h-72 md:h-full rounded overflow-hidden">
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8">
+        
+        <div id="testimonial-card" class="flex-1 flex flex-col md:flex-row bg-white  overflow-hidden p-6 w-full lg:h-[400px]">
+            <div class="relative w-full md:w-1/2 h-72 md:h-full rounded overflow-hidden">
+                <img 
+                    id="main-image"
+                    src="https://images.unsplash.com/photo-1549487922-264a78731366?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Client trip photo" 
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x600/34d399/ffffff?text=Ethiopia';">
+                <div class="absolute bottom-4 left-4 flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1.5 pr-4 shadow-md">
                     <img 
-                        id="main-image"
-                        src="" 
-                        alt="Client trip photo" 
-                        class="w-full h-full object-center transition-transform duration-500 hover:scale-105"
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/34d399/ffffff?text=Ethiopia';">
-                    <div class="absolute bottom-4 left-4 flex items-center bg-white/80 backdrop-blur-sm rounded-full p-1.5 pr-4 shadow-md">
-                        <img 
-                            id="main-avatar"
-                            src="" 
-                            alt="Client avatar" 
-                            class="w-10 h-10 rounded-full object-cover border-2 border-white"
-                            onerror="this.onerror=null;this.src='https://placehold.co/40x40/000000/ffffff?text=AV';">
-                        <span id="main-name" class="ml-3 font-semibold text-gray-700"></span>
-                    </div>
-                </div>
-
-                <!-- Text Content Section: Changed justify-between to justify-center -->
-                <div class="w-full md:w-1/2 flex flex-col justify-center pt-6 md:pt-0 md:pl-8 lg:pl-12">
-                    <div>
-                        <!-- Quotation Mark Icon -->
-                        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-600">
-                            <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
-                        </svg>
-                        <p id="main-quote" class="mt-4 text-lg md:text-sm text-justify text-gray-600 leading-relaxed"></p>
-                    </div>
-                    <div class="mt-6">
-                        <p class="font-semibold text-gray-800">
-                            — <span id="main-name-quote"></span>
-                            <span id="main-status" class="ml-2 text-sm font-medium text-red-400"></span>
-                        </p>
-                    </div>
+                        id="main-avatar"
+                        src="https://images.unsplash.com/photo-1607990281513-2c110a25bd86?q=80&w=2719&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Client avatar" 
+                        class="w-10 h-10 rounded-full object-cover border-2 border-white"
+                        onerror="this.onerror=null;this.src='https://placehold.co/40x40/000000/ffffff?text=AV';">
+                    <span id="main-name" class="ml-3 font-semibold text-gray-700">Jane Doe</span>
                 </div>
             </div>
 
-            <!-- Navigation and Next Preview -->
-            <div class="hidden lg:flex flex-col items-center justify-center gap-4">
-                <!-- Navigation Buttons -->
-                <div class="flex gap-3">
-                    <button id="prev-button" class="bg-white hover:bg-gray-200 text-gray-800 p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                        </svg>
-                    </button>
-                    <button id="next-button" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                    </button>
+            <div class="w-full md:w-1/2 flex flex-col justify-center pt-6 md:pt-0 md:pl-8 lg:pl-12">
+                <div>
+                    <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-600">
+                        <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
+                    </svg>
+                    <p id="main-quote" class="mt-4 text-lg md:text-sm text-justify text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-                
-                <!-- Pagination -->
-                <p id="pagination-text" class="text-gray-600 font-medium text-sm mt-2"></p>
-                
-                <!-- Next Card Preview -->
-                <div class="relative w-36 h-44 rounded-lg overflow-hidden shadow-lg mt-4 group">
-                    <img 
-                        id="next-preview-image"
-                        src="" 
-                        alt="Next client trip photo" 
-                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        onerror="this.onerror=null;this.src='https://placehold.co/144x176/fb923c/ffffff?text=Trip';">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-2 left-2 flex items-center gap-2">
-                         <img 
-                            id="next-preview-avatar"
-                            src="" 
-                            alt="Next client avatar" 
-                            class="w-8 h-8 rounded-full  border-2 border-white"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/ffffff/000000?text=AV';">
-                        <span id="next-preview-name" class="text-white text-xs font-bold"></span>
-                    </div>
+                <div class="mt-6">
+                    <p class="font-semibold text-gray-800">
+                        — <span id="main-name-quote">Jane Doe</span>
+                        <span id="main-status" class="ml-2 text-sm font-medium text-red-400">Trip to Ethiopia</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col  items-center justify-center gap-4 mt-6 lg:mt-0">
+            <div class="flex gap-3">
+                <button id="prev-button" class="bg-white hover:bg-gray-200 text-gray-800 p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </button>
+                <button id="next-button" class="bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <p id="pagination-text" class="text-gray-600 font-medium text-sm mt-2">1/3</p>
+            
+            <div class="relative w-36 h-44 rounded-lg overflow-hidden shadow-lg mt-4 group hidden lg:block">
+                <img 
+                    id="next-preview-image"
+                    src="https://images.unsplash.com/photo-1628155259461-8b21c430e7ba?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Next client trip photo" 
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    onerror="this.onerror=null;this.src='https://placehold.co/144x176/fb923c/ffffff?text=Trip';">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-2 left-2 flex items-center gap-2">
+                     <img 
+                        id="next-preview-avatar"
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Next client avatar" 
+                        class="w-8 h-8 rounded-full border-2 border-white"
+                        onerror="this.onerror=null;this.src='https://placehold.co/32x32/ffffff/000000?text=AV';">
+                    <span id="next-preview-name" class="text-white text-xs font-bold">John Smith</span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
