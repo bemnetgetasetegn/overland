@@ -108,14 +108,14 @@
 
         /* Specific hover effects for arrow button wrapper */
         .arrow-button-wrapper:hover {
-            border-color: #60A5FA; /* Blue-400 */
+            border-color: #60A5FA; /* red-400 */
             background-color: rgba(255, 255, 255, 0.2); /* Slight white overlay on hover */
         }
         /* No direct SVG color change here, handled by group-hover class in JS */
 
         /* Hover effect for the "Read more" text */
         .read-more-text:hover {
-            color: #ffffff; /* blue-400 */
+            color: #ffffff; /* red-400 */
             text-decoration: underline;
         }
 
@@ -331,6 +331,14 @@
         .dropdown .dropdown-menu {
             display: none; /* Hidden by default, JS will toggle */
             transition: all 0.3s ease-in-out;
+        }
+          .nav-active {
+            background-color: #ef4444 !important; /* red-500 */
+            color: white !important;
+        }
+        .nav-active:hover {
+            background-color: #dc2626 !important; /* red-600 on hover */
+            color: white !important;
         }
        
    </style>
@@ -869,6 +877,7 @@
   
          
             
+            
         
         // Function to change both the background and the text
         function changeHeroContent() { 
@@ -911,7 +920,35 @@
                 mobileMenu.classList.toggle('hidden'); 
             }); 
         }
-
+ function setActiveNav() {
+            // Remove any existing active classes
+            document.querySelectorAll('.nav-active').forEach(item => {
+                item.classList.remove('nav-active');
+            });
+            
+            // Get current URL
+            const currentUrl = window.location.href;
+            
+            // Find all nav links
+            const navLinks = document.querySelectorAll('a[href]');
+            
+            // Check each link to see if it matches current URL
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Handle index.html and root path
+                if ((href === '/index.html' || href === '/') && 
+                    (currentUrl.endsWith('/index.html') || currentUrl.endsWith('/') || currentUrl.endsWith('/#'))) {
+                    link.classList.add('nav-active');
+                    return;
+                }
+                
+                // Handle other pages
+                if (href !== '/index.html' && href !== '/' && currentUrl.includes(href)) {
+                    link.classList.add('nav-active');
+                }
+            });}
+            
             // Handle nested dropdown toggles
             const nestedToggles = document.querySelectorAll('.nested-dropdown-toggle');
             
@@ -1229,248 +1266,272 @@
     <!-- Modals will be injected by JavaScript -->
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Data for the Ethiopia tour packages
-        const serviceData = [
-      
-        {
-                id: '7',
-                imageSrc: './pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
-                title: 'Trekking Tour to the Bale Mountains',
-                shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
-                longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
-                location: 'Ethiopia',
-                duration: '14 Days',
-            },
-             {
-                id: '5',
-                imageSrc: './pictures/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Omo Valley with Yabello',
-                shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
-                longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
-                location: 'Ethiopia',
-                duration: '16 Days',
-            },
-              {
-                id: '8',
-                imageSrc: './pictures/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Omo Valley and Surma Tribe',
-                shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
-                longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
-                location: 'Ethiopia',
-                duration: '21 Days',
-            },
-              {
-                id: '4',
-                imageSrc: './pictures/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to Danakil Depression and Historic Route',
-                shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
-                longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
-                location: 'Ethiopia',
-                duration: '22 Days',
-            },
-              {
-                id: '1',
-                imageSrc: './pictures/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Historic Route with Semien Mountains',
-                shortDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
-                longDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
-                location: 'Ethiopia',
-                duration: '10 Days',
-            },
-            {
-                id: '2',
-                imageSrc: './pictures/Tour-to-Danakil-Deprssion-and-Erta-Ale-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to Danakil Depression and Erta Ale',
-                shortDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
-                longDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
-                location: 'Ethiopia',
-                duration: '14 Days',
-            },
-            {
-                id: '3',
-                imageSrc: './pictures/Tour-to-the-Omo-Valley-and-Historic-Route-Overland-Ethiopia-Tours.jpg',
-                title: 'Tour to the Omo Valley and Historic Route',
-                shortDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
-                longDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
-                location: 'Ethiopia',
-                duration: '24 Days',
-            },
-          
-           
-            {
-                id: '6',
-                imageSrc: './pictures/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
-                title: 'Trekking Tour to the Simien Mountains with Gonder',
-                shortDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
-                longDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
-                location: 'Ethiopia',
-                duration: '12 Days',
-            },
-          
-          
-        ];
 
-        const gridContainer = document.getElementById('service-cards-grid-container');
-        const modalsContainer = document.getElementById('modals-container');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Data for the Ethiopia tour packages
+            const serviceData = [
+                {
+                    id: '7',
+                    imageSrc: './pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg',
+                    title: 'Trekking Tour to the Bale Mountains',
+                    shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                    longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
+                    location: 'Ethiopia',
+                    duration: '14 Days',
+                },
+                {
+                    id: '5',
+                    imageSrc: './pictures/Tour-to-the-Omo-Valley-with-Yabello-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to the Omo Valley with Yabello',
+                    shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                    longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
+                    location: 'Ethiopia',
+                    duration: '16 Days',
+                },
+                {
+                    id: '8',
+                    imageSrc: './pictures/Tour-to-the-Omo-valley-and-Surma-Tribe-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to the Omo Valley and Surma Tribe',
+                    shortDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                    longDescription: 'The mysterious people of the Surma live in the south west of Ethiopia, due to their geographical isolation, they are able to maintain a unique and rich culture.',
+                    location: 'Ethiopia',
+                    duration: '21 Days',
+                },
+                {
+                    id: '4',
+                    imageSrc: './pictures/Tour-to-Danakil-Depression-and-Historic-Rout-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to Danakil Depression and Historic Route',
+                    shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                    longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
+                    location: 'Ethiopia',
+                    duration: '22 Days',
+                },
+                {
+                    id: '1',
+                    imageSrc: './pictures/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to the Historic Route with Semien Mountains',
+                    shortDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
+                    longDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
+                    location: 'Ethiopia',
+                    duration: '10 Days',
+                },
+                {
+                    id: '2',
+                    imageSrc: './pictures/Tour-to-Danakil-Deprssion-and-Erta-Ale-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to Danakil Depression and Erta Ale',
+                    shortDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
+                    longDescription: 'The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system.',
+                    location: 'Ethiopia',
+                    duration: '14 Days',
+                },
+                {
+                    id: '3',
+                    imageSrc: './pictures/Tour-to-the-Omo-Valley-and-Historic-Route-Overland-Ethiopia-Tours.jpg',
+                    title: 'Tour to the Omo Valley and Historic Route',
+                    shortDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
+                    longDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
+                    location: 'Ethiopia',
+                    duration: '24 Days',
+                },
+                {
+                    id: '6',
+                    imageSrc: './pictures/Trekking-Tour-to-the-Simien-Mountains-with-Gonder-Overland-Ethiopia-Tours.jpg',
+                    title: 'Trekking Tour to the Simien Mountains with Gonder',
+                    shortDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
+                    longDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
+                    location: 'Ethiopia',
+                    duration: '12 Days',
+                },
+            ];
 
-        function createCard(data, isHidden = false) {
-            const cardDiv = document.createElement('div');
-            cardDiv.classList.add(
-                 'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
-                'flex', 'flex-col', 'h-full', 'bg-white',
-                'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
-                'hover:shadow-2xl'
-            );
-            
-            if (isHidden) {
-                cardDiv.classList.add('hidden', 'hidden-card');
+            const gridContainer = document.getElementById('service-cards-grid-container');
+            const modalsContainer = document.getElementById('modals-container');
+
+            function createCard(data, isHidden = false) {
+                const cardDiv = document.createElement('div');
+                cardDiv.classList.add(
+                    'overflow-hidden', 'shadow-xl', 'border', 'border-gray-200',
+                    'flex', 'flex-col', 'h-full', 'bg-white',
+                    'transform', 'transition-transform', 'duration-300', 'hover:scale-105',
+                    'hover:shadow-2xl'
+                );
+                
+                if (isHidden) {
+                    cardDiv.classList.add('hidden', 'hidden-card');
+                }
+                
+                cardDiv.innerHTML = `
+                    <!-- Image Section - Placed at the top with rounded corners that match the card's container. -->
+                    <div class="relative w-full h-48">
+                        <img 
+                            class="w-full h-full object-cover" 
+                            src="${data.imageSrc}" 
+                            alt="${data.title}" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/1f2937?text=Image+Not+Found';"
+                        >
+                    </div>
+
+                    <!-- Content Section - Below the image, with padding and flex properties for consistent layout. -->
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <!-- Top part of the content: Title and button -->
+                        <div class="flex items-start justify-between mb-4">
+                            <h3 class="text-sm font-bold text-gray-900 leading-snug">${data.title}</h3>
+                            <!-- A cleaner, more subtle button design -->
+                            <button class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer" onclick="openModal(${data.id})">
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Description -->
+                        <p class="text-xs text-gray-600 mb-6 flex-grow">${data.shortDescription}</p>
+                        
+                        <!-- Bottom part of the content: Duration and Location -->
+                        <div class="mt-auto pt-4 border-t border-gray-300">
+                            <p class="text-xs text-gray-500">${data.duration} • ${data.location}</p>
+                        </div>
+                    </div>
+                `;
+                return cardDiv;
             }
-            
-            cardDiv.innerHTML = `
-                <!-- Image Section - Placed at the top with rounded corners that match the card's container. -->
-                <div class="relative w-full h-48">
-                    <img 
-                        class="w-full h-full object-cover " 
-                        src="${data.imageSrc}" 
-                        alt="${data.title}" 
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/1f2937?text=Image+Not+Found';"
-                    >
-                </div>
 
-                <!-- Content Section - Below the image, with padding and flex properties for consistent layout. -->
-                <div class="p-6 flex flex-col justify-between flex-grow">
-                    <!-- Top part of the content: Title and button -->
-                    <div class="flex items-start justify-between mb-4">
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug ">${data.title}</h3>
-                        <!-- A cleaner, more subtle button design -->
-                        <button class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200 cursor-pointer" onclick="openModal(${data.id})">
-                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            // Function to create a modal element
+            function createModal(data) {
+                const modalDiv = document.createElement('div');
+                modalDiv.id = `modal-${data.id}`;
+                modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
+
+                modalDiv.innerHTML = `
+                    <div class="bg-white rounded shadow-lg p-8 max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row relative">
+                        <button class="modal-close-button absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none" data-tour-id="${data.id}">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
-                    </div>
-                    
-                    <!-- Description -->
-                    <p class="text-xs text-gray-600 mb-6 flex-grow">${data.shortDescription}</p>
-                    
-                    <!-- Bottom part of the content: Duration and Location -->
-                    <div class="mt-auto pt-4 border-t border-gray-300">
-                        <p class="text-xs text-gray-500">${data.duration} • ${data.location}</p>
-                    </div>
-                </div>
-            `;
-            return cardDiv;
-        }
-
-
-        // Function to create a modal element
-        function createModal(data) {
-            const modalDiv = document.createElement('div');
-            modalDiv.id = `modal-${data.id}`;
-            modalDiv.classList.add('modal', 'fixed', 'inset-0', 'z-50', 'flex', 'items-center', 'justify-center', 'p-4', 'modal-overlay', 'hidden');
-
-            modalDiv.innerHTML = `
-                <div class="bg-white rounded shadow-lg p-8 max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row relative">
-                    <button class="modal-close-button absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                    <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
-                        <img src="${data.imageSrc}" alt="${data.title}" class="rounded-lg max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found'; this.onerror=null;">
-                    </div>
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">${data.title}</h3>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <span class="text-sm font-medium bg-gray-100 px-3 py-1 rounded-full">${data.duration}</span>
-                            <span class="text-sm text-gray-600">${data.location}</span>
+                        <div class="md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:pr-8">
+                            <img src="${data.imageSrc}" alt="${data.title}" class="rounded-lg max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found'; this.onerror=null;">
                         </div>
-                        <p class="text-gray-700 mb-4">
-                            ${data.longDescription}
-                        </p>
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-2">${data.title}</h3>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="text-sm font-medium bg-gray-100 px-3 py-1 rounded-full">${data.duration}</span>
+                                <span class="text-sm text-gray-600">${data.location}</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                ${data.longDescription}
+                            </p>
+                            <button class="view-details-btn mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors" data-tour-id="${data.id}">
+                                View Full Details
+                            </button>
+                        </div>
                     </div>
-                </div>
-            `;
-            return modalDiv;
-        }
-
-        const initialVisibleCardsCount = 3;
-        let showingAll = false;
-
-        // Populate cards and modals from serviceData
-        serviceData.forEach((data, index) => {
-            const isHidden = index >= initialVisibleCardsCount;
-            gridContainer.appendChild(createCard(data, isHidden));
-            modalsContainer.appendChild(createModal(data));
-        });
-
-        // Rest of the JavaScript remains the same...
-        const modalTriggers = document.querySelectorAll('[data-modal-target]');
-        const modals = document.querySelectorAll('.modal');
-        const showMoreLessButton = document.getElementById('show-more-less-button');
-        const buttonText = document.getElementById('button-text');
-        const buttonArrow = document.getElementById('button-arrow');
-        const hiddenCards = document.querySelectorAll('.hidden-card');
-
-        const arrowDownPath = "M19 9l-7 7-7-7";
-        const arrowUpPath = "M5 15l7-7 7 7";
-
-        if (serviceData.length <= initialVisibleCardsCount) {
-            showMoreLessButton.classList.add('hidden');
-        }
-
-        modalTriggers.forEach(trigger => {
-            trigger.addEventListener('click', (event) => {
-                const modalId = event.currentTarget.dataset.modalTarget;
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        modals.forEach(modal => {
-            const closeButton = modal.querySelector('.modal-close-button');
-            if (closeButton) {
-                closeButton.addEventListener('click', () => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                });
+                `;
+                return modalDiv;
             }
-            modal.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
 
-        showMoreLessButton.addEventListener('click', () => {
-            showingAll = !showingAll;
-            hiddenCards.forEach(card => {
-                if (showingAll) {
-                    card.classList.remove('hidden');
-                    // We need a small delay to allow the 'hidden' class to be removed before adding 'show' for the transition to work
-                    setTimeout(() => card.classList.add('show'), 10);
-                } else {
-                    card.classList.remove('show');
-                    // Listen for the transition to end before adding 'hidden' back
-                    card.addEventListener('transitionend', function handler() {
-                        if (!showingAll) {
-                           card.classList.add('hidden');
-                        }
-                        card.removeEventListener('transitionend', handler);
+            // Function to redirect to tour details page
+            function redirectToTourDetails(tourId) {
+                // Map your tour IDs to the corresponding tour IDs in the destination page
+                const tourIdMap = {
+                    '1': 'OLET306', // Tour to the Historic Route with Semien Mountains
+                    '2': 'OLET4002', // Tour to Danakil Depression and Erta Ale
+                    '3': 'OLET4000', // Tour to the Omo Valley and Historic Route
+                    '4': 'OLET4002', // Tour to Danakil Depression and Historic Route
+                    '5': 'OLET505', // Tour to the Omo Valley with Yabello
+                    '6': 'OLET2001', // Trekking Tour to the Simien Mountains with Gonder
+                    '7': 'OLET801', // Trekking Tour to the Bale Mountains
+                    '8': 'OLET500'  // Tour to the Omo Valley and Surma Tribe
+                };
+                
+                const destinationTourId = tourIdMap[tourId] || tourId;
+                window.location.href = `/pages/tourfinal.html?tour=${destinationTourId}`;
+            }
+
+            const initialVisibleCardsCount = 3;
+            let showingAll = false;
+
+            // Populate cards and modals from serviceData
+            serviceData.forEach((data, index) => {
+                const isHidden = index >= initialVisibleCardsCount;
+                gridContainer.appendChild(createCard(data, isHidden));
+                modalsContainer.appendChild(createModal(data));
+            });
+
+            // Rest of the JavaScript remains the same...
+            const modals = document.querySelectorAll('.modal');
+            const showMoreLessButton = document.getElementById('show-more-less-button');
+            const buttonText = document.getElementById('button-text');
+            const buttonArrow = document.getElementById('button-arrow');
+            const hiddenCards = document.querySelectorAll('.hidden-card');
+
+            const arrowDownPath = "M19 9l-7 7-7-7";
+            const arrowUpPath = "M5 15l7-7 7 7";
+
+            if (serviceData.length <= initialVisibleCardsCount) {
+                showMoreLessButton.classList.add('hidden');
+            }
+
+            // Add event listeners to modals
+            modals.forEach(modal => {
+                const closeButton = modal.querySelector('.modal-close-button');
+                const viewDetailsBtn = modal.querySelector('.view-details-btn');
+                
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = '';
                     });
                 }
+                
+                if (viewDetailsBtn) {
+                    viewDetailsBtn.addEventListener('click', (e) => {
+                        const tourId = e.currentTarget.getAttribute('data-tour-id');
+                        redirectToTourDetails(tourId);
+                    });
+                }
+                
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                });
             });
-            buttonText.textContent = showingAll ? 'Show Less' : 'Show More';
-            buttonArrow.querySelector('path').setAttribute('d', showingAll ? arrowUpPath : arrowDownPath);
+
+            showMoreLessButton.addEventListener('click', () => {
+                showingAll = !showingAll;
+                hiddenCards.forEach(card => {
+                    if (showingAll) {
+                        card.classList.remove('hidden');
+                        // We need a small delay to allow the 'hidden' class to be removed before adding 'show' for the transition to work
+                        setTimeout(() => card.classList.add('show'), 10);
+                    } else {
+                        card.classList.remove('show');
+                        // Listen for the transition to end before adding 'hidden' back
+                        card.addEventListener('transitionend', function handler() {
+                            if (!showingAll) {
+                               card.classList.add('hidden');
+                            }
+                            card.removeEventListener('transitionend', handler);
+                        });
+                    }
+                });
+                buttonText.textContent = showingAll ? 'Show Less' : 'Show More';
+                buttonArrow.querySelector('path').setAttribute('d', showingAll ? arrowUpPath : arrowDownPath);
+            });
         });
-    });
-</script>
+
+        // Global function to open modal
+        function openModal(id) {
+            const modal = document.getElementById(`modal-${id}`);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    </script>
 <!-- Main container for the carousel -->
 <div class="main-container bg-white">
      <h1 class="text-3xl   lg:text-3xl font-semibold text-gray-800 leading-tight text-center lg:text-center mt-8 -mb-8">

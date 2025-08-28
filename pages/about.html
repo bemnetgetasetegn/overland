@@ -77,6 +77,14 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
+         .nav-active {
+            background-color: #ef4444 !important; /* red-500 */
+            color: white !important;
+        }
+        .nav-active:hover {
+            background-color: #dc2626 !important; /* red-600 on hover */
+            color: white !important;
+        }
     </style>
 </head>
 <body>
@@ -517,45 +525,115 @@
             </div>
         </nav>
     </header>
-<script>
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
-    const mobileMenu = document.getElementById('mobile-menu'); 
-    
-    if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() { 
-            mobileMenu.classList.toggle('hidden'); 
-        }); 
-    }
-    
-    // Handle dropdown toggles - consolidated version
-    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle, .nested-dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            // Prevent event from bubbling if it's a nested toggle
-            if (this.classList.contains('nested-dropdown-toggle')) {
-                e.stopPropagation();
-            }
+
+    <script>
+        // Function to set active nav item
+        function setActiveNav() {
+            // Remove any existing active classes
+            document.querySelectorAll('.nav-active').forEach(item => {
+                item.classList.remove('nav-active');
+            });
             
-            const content = this.nextElementSibling;
-            if (content) {
-                content.classList.toggle('hidden');
+            // Get current URL
+            const currentUrl = window.location.href;
+            
+            // Find all nav links
+            const navLinks = document.querySelectorAll('a[href]');
+            
+            // Check each link to see if it matches current URL
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
                 
-                // Only toggle active class for mobile dropdowns
-                if (this.classList.contains('mobile-dropdown-toggle')) {
-                    content.classList.toggle('active');
+                // Handle index.html and root path
+                if ((href === '/index.html' || href === '/') && 
+                    (currentUrl.endsWith('/index.html') || currentUrl.endsWith('/') || currentUrl.endsWith('/#'))) {
+                    link.classList.add('nav-active');
+                    return;
                 }
                 
-                // Rotate arrow icon if present
-                const icon = this.querySelector('svg');
-                if (icon) {
-                    icon.classList.toggle('rotate-90');
+                // Handle other pages
+                if (href !== '/index.html' && href !== '/' && currentUrl.includes(href)) {
+                    link.classList.add('nav-active');
                 }
+            });
+            
+            // Also check for URL parameters for deeper navigation
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get('section');
+            const category = urlParams.get('category');
+            const tour = urlParams.get('tour');
+            
+            if (section || category || tour) {
+                // If we have URL parameters, highlight the parent dropdown
+                const parentLinks = document.querySelectorAll('.relative.group > button');
+                parentLinks.forEach(button => {
+                    button.classList.add('nav-active');
+                });
             }
+        }
+        
+        // Set active nav on page load
+        document.addEventListener('DOMContentLoaded', setActiveNav);
+        
+        // Also set active nav when navigating (for single page applications)
+        window.addEventListener('popstate', setActiveNav);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
+        const mobileMenu = document.getElementById('mobile-menu'); 
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() { 
+                mobileMenu.classList.toggle('hidden'); 
+            }); 
+        }
+        
+        // Handle dropdown toggles - consolidated version
+        const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle, .nested-dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                // Prevent event from bubbling if it's a nested toggle
+                if (this.classList.contains('nested-dropdown-toggle')) {
+                    e.stopPropagation();
+                }
+                
+                const content = this.nextElementSibling;
+                if (content) {
+                    content.classList.toggle('hidden');
+                    
+                    // Only toggle active class for mobile dropdowns
+                    if (this.classList.contains('mobile-dropdown-toggle')) {
+                        content.classList.toggle('active');
+                    }
+                    
+                    // Rotate arrow icon if present
+                    const icon = this.querySelector('svg');
+                    if (icon) {
+                        icon.classList.toggle('rotate-90');
+                    }
+                }
+            });
         });
-    });
-</script>
+        
+        // Add click event to all nav links to update active state
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                // Remove all active classes
+                document.querySelectorAll('.nav-active').forEach(item => {
+                    item.classList.remove('nav-active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('nav-active');
+                
+                // For mobile menu, close after selection
+                if (window.innerWidth < 768) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
     <main>
         <!-- Hero Section -->
         <section class="hero-section text-white flex items-center justify-center relative ">
@@ -860,11 +938,6 @@
                 btn.classList.remove('bg-blue-600', 'text-white');
             });
 
-            // Add active class to the clicked button
-            const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
-            if (activeButton) {
-                activeButton.classList.add('bg-blue-600', 'text-white');
-            }
 
             // Apply fade-out and fade-in effect
             contentContainer.style.opacity = '0';
