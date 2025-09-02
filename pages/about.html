@@ -11,8 +11,6 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
         }
 
         /* Responsive Hero Section */
@@ -77,6 +75,14 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
+         a {
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+            /* white-space: nowrap; */
+        }
+
       
     </style>
 </head>
@@ -121,7 +127,7 @@
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Festival & holidays</span>
+                                    <span class="whitespace-nowrap text-[11px]">Festival & holidays</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -188,7 +194,7 @@
                           
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Antique Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Antique Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -206,7 +212,7 @@
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Modern Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Modern Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -502,7 +508,7 @@
                 <!-- Aboutus Mobile Dropdown -->
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
-                        <span>Aboutus</span>
+                        <span>About us</span>
                         <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
@@ -1041,5 +1047,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     });
     </script>
+    <script src="../nav-active.js"></script>
 </body>
 </html>

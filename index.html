@@ -148,6 +148,14 @@
             align-items: center;
             gap: 2rem;
         }
+        a {
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+        }
+
+        
 
         /* Responsive adjustments for larger screens (lg breakpoint) */
         @media (min-width: 1024px) {
@@ -418,8 +426,8 @@
 <body class="bg-gray-100">
 
 <!-- Header: Fixed at the top -->
-    <header class="bg-white fixed w-full top-0 left-0 z-50 shadow-sm border-b border-gray-200">
-        <nav class="flex  flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto p-2">
+    <header class="bg-white fixed w-full top-0 left-0 z-50 shadow-sm">
+        <nav class="flex flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto p-2 md:p-4">
             <!-- Top Nav Row (Logo & Icons) -->
             <div class="flex items-center justify-between w-full">
                 <!-- Logo Container with padding -->
@@ -434,7 +442,7 @@
                               <!-- Attractions  Dropdown with Nested Menu -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Attractions</span>
+                            <span class="uppercase">Attractions</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
@@ -449,19 +457,19 @@
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
-                                    <a href="./pages/Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo valley</a>
-                                    <a href="./pages/Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Tribes of the omo valley</a>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
+                                    <a href="./pages/Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Omo valley</a>
+                                    <a href="./pages/Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Tribes of the omo valley</a>
                                 </div>
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Festival & holidays</span>
+                                    <span class="whitespace-nowrap text-[11px]">Festival & holidays</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
                                     <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian NewYear</a>
                                     <a href="./pages/Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Finding of the True Cross</a>
                                     <a href="./pages/Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Feast of Saint Gabriel Kulubi Gabriel </a>
@@ -523,12 +531,12 @@
                           
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Antique Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Antique Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
                                     <a href="./pages/Ethiopia.html?section=earliestHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Earliest History</a>
                                     <a href="./pages/Ethiopia.html?section=ancientEthiopia" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ancient Ethiopia</a>
                                     <a href="./pages/Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Kingdom of Axum</a>
@@ -541,16 +549,16 @@
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Modern Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Modern Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
                                 <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
-                                    <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">LEAVING THE MEDIEVAL WORLD</a>
-                                    <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RECENT HISTORY</a>
-                                    <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">THE DERG PERIOD</a>
-                                    <a href="./pages/Ethiopia.html?section=postDergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">POST DERG PERIOD</a>
+                                    <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Leaving The Medival World</a>
+                                    <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Recent History</a>
+                                    <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Derg Period</a>
+                                    <a href="./pages/Ethiopia.html?section=postDergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Post Derg Period</a>
 
                                 </div>
                             </div>
@@ -564,7 +572,7 @@
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
                             <a href="./pages/Activities.html?section=bikingAndCycling" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Biking and cycling</a>
                             <a href="./pages/Activities.html?section=birdWatching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird watching</a>
                             <a href="./pages/Activities.html?section=coffeeCeremony" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Coffee ceremony</a>
@@ -604,7 +612,7 @@
             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
     </button>
-    <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+    <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
         <a href="./pages/tourfinal.html?category=bird-watching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching</a>
         <a href="./pages/tourfinal.html?category=city-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">City Tours</a>
         <a href="./pages/tourfinal.html?category=combinations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
@@ -620,12 +628,12 @@
                     <!-- Aboutus Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Aboutus</span>
+                            <span>About us</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
                             <a href="./pages/about.html?tab=who-we-are" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Who we are</a>
                             <a href="./pages/about.html?tab=company-profile" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Our companys profile</a>
                             <a href="./pages/about.html?tab=terms-and-conditions" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Terms and conditions</a>
@@ -744,7 +752,7 @@
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <div class="nested-dropdown-content pl-4 hidden">
+                            <div class="nested-dropdown-content pl-4 hidden capitalize">
                                 <a href="./pages/Ethiopia.html?section=earliestHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Earliest History</a>
                                 <a href="./pages/Ethiopia.html?section=ancientEthiopia" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ancient Ethiopia</a>
                                 <a href="./pages/Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Kingdom of Axum</a>
@@ -764,11 +772,11 @@
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <div class="nested-dropdown-content pl-4 hidden">
-                                <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">LEAVING THE MEDIEVAL WORLD</a>
-                                <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">RECENT HISTORY</a>
-                                <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">THE DERG PERIOD</a>
-                                <a href="./pages/Ethiopia.html?section=postDergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">POST DERG PERIOD</a>
+                            <div class="nested-dropdown-content pl-4 hidden ">
+                                <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 ">Leaving The Medival World</a>
+                                <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Recent History</a>
+                                <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">The Derg Period</a>
+                                <a href="./pages/Ethiopia.html?section=postDergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Post Derg Period</a>
                             </div>
                         </div>
                     </div>
@@ -782,7 +790,7 @@
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
+                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden capitalize">
                         <a href="./pages/Activities.html?section=bikingAndCycling" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Biking and cycling</a>
                         <a href="./pages/Activities.html?section=birdWatching" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Bird watching</a>
                         <a href="./pages/Activities.html?section=coffeeCeremony" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Coffee ceremony</a>
@@ -839,12 +847,12 @@
                 <!-- Aboutus Mobile Dropdown -->
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
-                        <span>Aboutus</span>
+                        <span>About us</span>
                         <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
+                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden capitalize">
                         <a href="./pages/about.html?tab=who-we-are" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Who we are</a>
                         <a href="./pages/about.html?tab=company-profile" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Our companys profile</a>
                         <a href="./pages/about.html?tab=terms-and-conditions" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Terms and conditions</a>
@@ -2152,7 +2160,7 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
            <!-- Footer Links Grid -->
 <div class="mt-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
     <!-- Column 1: Links -->
-    <div class="space-y-4">
+    <div class="space-y-4 capitalize">
         <p class="text-gray-200 text-sm font-semibold uppercase tracking-wider">Links</p>
         <ul class="space-y-2 text-xs text-gray-400">
             <li><a href="/index.html" class="hover:underline hover:text-gray-300">Home</a></li>
@@ -2263,5 +2271,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
 });
 </script>
+<script src="./nav-active.js"></script>
 </body>
 </html>

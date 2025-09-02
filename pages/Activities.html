@@ -33,6 +33,13 @@
     background-size: 100% 100%;
     animation: loading 1.5s infinite;
 }
+ a {
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+            /* white-space: nowrap; */
+        }
 
 @keyframes loading {
     0% {
@@ -178,7 +185,7 @@
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100   transition-colors duration-200">
-                                    <span>Festival & holidays</span>
+                                    <span class="whitespace-nowrap text-[11px]">Festival & holidays</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -245,7 +252,7 @@
                           
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100  rounded transition-colors duration-200">
-                                    <span>Antique Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Antique Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -263,7 +270,7 @@
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100  rounded transition-colors duration-200">
-                                    <span>Modern Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Modern Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -341,7 +348,7 @@
             <!-- Aboutus Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Aboutus</span>
+                            <span>About us</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
@@ -870,5 +877,6 @@ const loadContent = (periodKey) => {
         loadContent(sectionParam || 'bikingAndCycling');
     });
 </script>
+<script src="../nav-active.js"></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-        body {
-            font-family: 'Inter', sans-serif;
+         body {
+            font-family: 'Montserrat', sans-serif;
         }
 html{
     scroll-padding-top: 100px;
@@ -58,6 +58,13 @@ html{
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+         a {
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+            /* white-space: nowrap; */
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-montserrat">
@@ -100,7 +107,7 @@ html{
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Festival & holidays</span>
+                                    <span class="whitespace-nowrap text-[11px]">Festival & holidays</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -167,7 +174,7 @@ html{
                           
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Antique Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Antique Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -185,7 +192,7 @@ html{
                             </div>
                                <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Modern Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Modern Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -263,7 +270,7 @@ html{
             <!-- Aboutus Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Aboutus</span>
+                            <span>About us</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
@@ -702,7 +709,7 @@ html{
             </div>
         </div>
     </footer>
-
+<script src="../nav-active.js"></script>
     <script>
         // JSON data for bird watching tours
         const birdWatchingTours = [
@@ -992,7 +999,7 @@ html{
         transport: "ALL THE WAY SURFACE",
         category: "day-trips",
         description: "Lake Langano, a bilharzias free lake is the resort popular for its water sport facilitates and for sailing trip. Lake Abiata, provides stunning views of colorful carpets of Birds, lake Shalla, the breeding place of Abiata's birds it has a spectacular untouched natural beauty. Here we can see numerous spices of birds, like Ostrich, lesser and greater Flamingos, Pelicans, African Fish Eagle, Darter, Abyssinian Roller and more... besides both lakes hosts seasonal European migratory birds.",
-        image: "/overlandpics/trekking-in-meqdela-2-scaled.jpg",
+        image: ["/overlandpics/Lake-Langano.jpg","/overlandpics/Lake-Abijata.jpg", "/overlandpics/Lake-Shalla.jpg"],
         days: [
             { 
                 day: 1, 
@@ -1050,7 +1057,7 @@ html{
         transport: "ALL THE WAY SURFACE",
         category: "day-trips",
         description: "52km south of Addis Ababa is located an archeological site of Melka Kunture. Stone Age tools aging 1.7 million years and remains of Homo Erectus 600,000 years old which the earliest humans left behind are excavated in Melka Kunture. At Tiya, 80km from the capital, 36 prehistoric monoliths or stelaes are found, 30 of them decorated with carving. Addadi Mariam Church is believed to have been constructed by King Lalibela and differs from Lalibela's churches in Lasta.",
-        image: "/overlandpics/trekking-in-meqdela-2-scaled.jpg",
+        image: "/overlandpics/ARCHAEOLOGY/20160720_130122.jpg",
         days: [
             { 
                 day: 1, 
@@ -1223,7 +1230,7 @@ html{
         transport: "ALL THE WAY SURFACE",
         category: "festival-holidays",
         description: "The main highlight of this Ethiopia tour is to visit the celebration of Timiket, Ethiopian Epiphany, in Lalibela which is one of the holy towns in the country. The festival commemorates Jesus Christ's baptism by Saint John in the Jordan River. Lalibela is the best place to attend Timket festival as it is celebrated colorfully and uniquely here.",
-        image: "/overlandpics/timket in lalibela.jpg",
+        image: "/overlandpics/timket-in-lalibela.jpg",
         festivalDates: "January 19 (Annual)",
         days: [
             { day: 1, date: "January 14", title: "Arrive at Addis Ababa", description: "Arrival at Bole International Airport and transfer to hotel. Briefing about the Timket Festival tour in Lalibela.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
@@ -1252,7 +1259,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. The boat cruise on Lake Tana to visit the aged monasteries and the scenic drive to Tiss Issat village for the fabulous red Nile falls and the famous royal compound of Gonder known as the Camelot of Africa can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Bahir+Dar+Gonder",
+        image: ["/overlandpics/timketingondar.jpg", "/overlandpics/earliesthistory.jpg"],
         days: [
             { day: 1, title: "Arrival Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Flight to Bahir Dar; then visit the surrounding", description: "Fly to Bahir Dar. Visit the red Nile Falls and take a boat cruise on Lake Tana to visit ancient island monasteries.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Bahir+Dar" },
@@ -1267,7 +1274,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. The boat cruise on Lake Tana to visit the aged monasteries and the scenic drive to Tiss Issat village for the fabulous red Nile falls and the 12th and 13th century monolithic rock hewn churches of Lalibela can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Bahir+Dar+Lalibela",
+        image: ["/overlandpics/Attractions-historical-BAHIR-DAR-overland-ethiopia-tour.jpg", "/overlandpics/monolithchurchlalibela.jpg"],
         days: [
             { day: 1, title: "Arrival Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Fly to Bahir Dar and visit the tourist attractions", description: "Fly to Bahir Dar. Visit the red Nile Falls and take a boat cruise on Lake Tana to visit ancient island monasteries.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Bahir+Dar" },
@@ -1283,7 +1290,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. In addition to the famous royal compound of Gonder known as the Camelot of Africa, the ancient Stelae, church and tombs of the Axumite kings can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Gonder+Axum",
+        image: ["/overlandpics/Attractions-historical-GONDER-overland-ethiopia-tour.jpg", "/overlandpics/DSC_2681-780x518.jpg"],
         days: [
             { day: 1, title: "Arrival Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Fly to Gonder; and visit palaces and churches", description: "Fly to Gonder. Visit the royal castle complex, Debre Berhan Selassie Church, and Fasilidas' Bath.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Gonder+Castles" },
@@ -1298,7 +1305,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. In addition to the famous royal compound of Gonder known as the Camelot of Africa, the 12th and 13th century monolithic rock hewn churches of Lalibela can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Gonder+Lalibela",
+        image: ["/overlandpics/earliesthistory.jpg", "/overlandpics/monolithchurchlalibela.jpg"],
         days: [
             { day: 1, title: "Arrival Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Fly to Gonder; and visit palaces and churches", description: "Fly to Gonder. Visit the royal castle complex, Debre Berhan Selassie Church, and Fasilidas' Bath.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Gonder+Castles" },
@@ -1314,7 +1321,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. In addition to the ancient Stelae, church and tombs of the Axumite kings, the 12th and 13th century monolithic rock hewn churches of Lalibela can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Axum+Lalibela",
+        image: ["/overlandpics/Aksum-Ethiopian-name-city.jpg", "/overlandpics/Lalibela_1-e1463087983712.jpg"],
         days: [
             { day: 1, title: "Arrival at Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Flight to Axum; and visit the heritages of Axum", description: "Fly to Axum. Visit the stelae field, Church of St. Mary of Zion, Queen of Sheba's Bath, and archaeological museum.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Axum+Sights" },
@@ -1330,7 +1337,7 @@ html{
         transport: "BY AIR",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. The boat cruise on Lake Tana to visit the aged monasteries and the scenic drive to Tiss Issat village for the fabulous red Nile falls, the famous royal compound of Gonder known as the Camelot of Africa, the ancient Stelae, church and tombs of the Axumite kings, the 12th and 13th century monolithic rock hewn churches of Lalibela can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Complete+Historic+Route",
+        image:  ["/overlandpics/Attractions-historical-GONDER-overland-ethiopia-tour.jpg", "/overlandpics/monolithchurchlalibela.jpg", "/overlandpics/Aksum-Ethiopian-name-city.jpg"],
         days: [
             { day: 1, title: "Arrival Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the complete historic route tour.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Flight to Bahir Dar and visit nearby attractions", description: "Fly to Bahir Dar. Visit the red Nile Falls and take a boat cruise on Lake Tana to visit ancient island monasteries.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Bahir+Dar" },
@@ -1370,7 +1377,7 @@ html{
         transport: "BY AIR AND SURFACE",
         category: "historic-route",
         description: "This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas. The boat cruise on Lake Tana to visit the aged monasteries and the scenic drive to Tiss Issat village for the fabulous red Nile falls, the famous royal compound of Gonder known as the Camelot of Africa, the ancient Stelae, church and tombs of the Axumite kings, the cliff top rock churches of Tigrai, those are dating back to the 4th – 15th century, the 12th and 13th century monolithic rock hewn churches of Lalibela, as well as historically significant town of Harar, which is regarded as the 4th Muslim sacred city of the world next to Jerusalem, Mecca and Medina can be visited.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Historic+Route+Harar",
+        image: "/overlandpics/Attractions-historical-harar1-overland-ethiopia-tour.jpg",
         days: [
             { day: 1, title: "Arrival at Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the extended historic route tour including Harar.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Fly to Bahir Dar; explore the tourist attractions", description: "Fly to Bahir Dar. Visit the red Nile Falls and take a boat cruise on Lake Tana to visit ancient island monasteries.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Bahir+Dar" },
@@ -1479,7 +1486,7 @@ html{
         transport: "ALL THE WAY SURFACE",
         category: "historic-route",
         description: "The Danakil Depression is one of the remotest, lowest and unique land formations of the world in the Great Rift Valley system. Still it is part of the earth which is unstable and pulling each other. In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression [116 below sea level] extremely hottest and inhospitable place but enjoyable and extraordinary colorful landscape. It is famous for its fascinating fumaroles amazing rock formations, crystal and mineral deposits.",
-        image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Historic+Route+Danakil",
+        image: "/overlandpics/NATURE/danakil_3.jpg",
         days: [
             { day: 1, title: "Arrive at Addis Ababa Bole International Airport", description: "Arrive at Bole International Airport and transfer to your hotel. Briefing about the adventure tour including Danakil Depression.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Arrival" },
             { day: 2, title: "Time to explore the sightseeing of Addis Ababa", description: "City tour of Addis Ababa including National Museum, Merkato market, and Mount Entoto for panoramic views.", image: "https://placehold.co/400x300/4F46E5/FFFFFF?text=Addis+Sightseeing" },
@@ -1828,7 +1835,7 @@ html{
     transport: "AIR AND SURFACE",
     category: "trekking-hiking",
     description: "Simien Mountains is a registered National Park by UNESCO as a World Heritage site. There are over 20 peaks towering 4000m as a result of this Ethiopia is known as the 'Roof of Africa'. Our trek includes climbing Ras Dashen the highest peak in Ethiopia at 4260m. We combine this exceptional trek with a journey across a land dotted with rock hewn churches, medieval castles and ancient obelisks reflecting a culture dating back over 3000 years. After visiting the Monasteries scattered over Lake Tana, the red Nile Falls and the medieval castles at Gondar, we head into the Simien Mountains for a spectacular trek.",
-    image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Simien+Trekking+Historic",
+    image: "/pictures/Tour-to-the-Historic-Route-with-Semien-Mountains-Overland-Ethiopia-Tours.jpg",
     difficulty: "Challenging",
     maxElevation: "4,620m (Ras Dashen)",
     days: [
@@ -1888,7 +1895,7 @@ html{
     transport: "ALL THE WAY SURFACE",
     category: "trekking-hiking",
     description: "Trekking in the Bale Mountains National Park is one of the best Ethiopia trekking experiences. In this trek, you will see the endemic wild animals like Ethiopian Wolf, Mountain Nyala, Menelik's bushbuck and many species of birds. The Bale Mountains of south central Ethiopia support the most extensive area of Afro alpine and sub alpine Ericaceous vegetation in Africa. They have the highest rate of animal endemicity of any terrestrial habitat in the world, which was the principal reason for the creation of the Bale Mountains National Park in 1970.",
-    image: "https://placehold.co/600x400/4F46E5/FFFFFF?text=Bale+Mountains+Trek",
+    image: "/pictures/Trekking-Tour-to-the-Bale-Mountains-Overland-Ethiopia-Tours.jpg",
     difficulty: "Moderate to Challenging",
     maxElevation: "4,377m (Tullu Dimtu)",
     days: [
@@ -2201,201 +2208,7 @@ days: [
 }
         ];
         // Function to get category display name
-function getCategoryDisplayName(category) {
-    const categoryNames = {
-        'bird-watching': 'Bird Watching Tours',
-        'city-tour': 'City Tours',
-        'combinations': 'Combination Tours',
-        'day-trips': 'Day Trips',
-        'festival-holidays': 'Festival & Holidays Tours',
-        'festival-tour': 'Fixed Departure Tours',
-        'historic-route': 'Historic Route Tours',
-        'bale-mountains': 'Bale Mountains Tours',
-        'omo-valley': 'Omo Valley Tours',
-        'trekking-hiking': 'Trekking & Hiking Tours'
-    };
-    return categoryNames[category] || 'Tour Packages';
-}
-
-   // Function to get URL parameters
-        function getUrlParams() {
-            const params = {};
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            
-            for (const [key, value] of urlParams) {
-                params[key] = value;
-            }
-            return params;
-        }
-
-        // Function to filter tours by category
-        function filterToursByCategory(category) {
-            if (!category) return birdWatchingTours;
-            return birdWatchingTours.filter(tour => tour.category === category);
-        }
-
-        // Function to find a tour by ID
-        function findTourById(tourId) {
-            return birdWatchingTours.find(tour => tour.id === tourId);
-        }
-
-        // Function to render tours
-        function renderTours() {
-            const toursContainer = document.getElementById('tours-container');
-            toursContainer.innerHTML = '';
-
-            // Get parameters from URL
-            const params = getUrlParams();
-            const category = params.category || null;
-            const tourId = params.tour || null;
-            
-            // Update the page title with the category name
-    const pageTitle = document.querySelector('h1');
-    pageTitle.textContent = category ? getCategoryDisplayName(category) : 'Tour Packages';
-    
-            // Filter tours based on category
-            const filteredTours = filterToursByCategory(category);
-
-            // Show message if no tours found for category
-            if (filteredTours.length === 0) {
-                toursContainer.innerHTML = `
-                    <div class="bg-white rounded-lg shadow-md p-8 text-center">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">No tours found</h3>
-                        <p class="text-gray-600">There are no tours available for the selected category.</p>
-                        <a href="./pages/tour.html" class="inline-block mt-4 px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors">
-                            View All Tours
-                        </a>
-                    </div>
-                `;
-                return;
-            }
-
-            filteredTours.forEach(tour => {
-                const tourElement = document.createElement('div');
-                tourElement.className = 'bg-white rounded-lg shadow-md overflow-hidden tour-accordion-item';
-                tourElement.id = `tour-${tour.id}`;
-                
-                // Check if this is the tour we need to expand
-                const shouldExpand = tourId === tour.id;
-                
-                tourElement.innerHTML = `
-                    <div class="tour-accordion-header flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-6 cursor-pointer">
-                        <div class="w-full md:w-1/3 mb-4 md:mb-0">
-                            <img src="${tour.image}" alt="${tour.title}" class="w-full h-48 md:h-56 object-cover rounded-lg">
-                        </div>
-                        <div class="flex-1 md:px-6">
-                            <h2 class="text-xl font-bold text-gray-800">${tour.title}</h2>
-                            <p class="text-sm text-gray-600 mt-1">Tour Code: ${tour.id} | Duration: ${tour.duration}</p>
-                            <p class="text-sm text-gray-600">Transport: ${tour.transport}</p>
-                        </div>
-                        <svg class="h-5 w-5 transform transition-transform mt-4 md:mt-0 ${shouldExpand ? 'rotate-180' : ''}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="tour-accordion-content overflow-y-auto transition-all duration-300 ${shouldExpand ? '' : 'max-h-0'}" ${shouldExpand ? 'style="max-height: ' + (tour.days.length * 200 + 400) + 'px;"' : ''}>
-                        <div class="p-4 md:p-6 border-t border-gray-200">
-                            <div class="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
-                                <div class="w-full">
-                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Tour Overview</h3>
-                                    <p class="text-gray-600">${tour.description}</p>
-                                </div>
-                            </div>
-                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Itinerary</h3>
-                            <div class="space-y-3" id="days-container-${tour.id}">
-                                <!-- Days will be populated here -->
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                toursContainer.appendChild(tourElement);
-                
-                // Add days for this tour
-                const daysContainer = document.getElementById(`days-container-${tour.id}`);
-                tour.days.forEach(day => {
-                    const dayElement = document.createElement('div');
-                    dayElement.className = 'day-accordion-item bg-gray-50 rounded-lg';
-                    
-                    dayElement.innerHTML = `
-                        <div class="day-accordion-header flex justify-between items-center p-3 md:p-4 cursor-pointer">
-                            <div class="flex items-center">
-                                <span class="bg-red-100 text-red-800 text-sm font-medium mr-3 px-2.5 py-0.5 rounded">Day ${day.day}</span>
-                                <span class="text-gray-700 text-sm md:text-base">${day.title}</span>
-                            </div>
-                            <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <div class="day-accordion-content overflow-hidden transition-all duration-300 max-h-0">
-                            <div class="p-3 md:p-4 border-t border-gray-200">
-                                <div class="flex flex-col md:flex-row gap-4">
-                                    <div class="w-full">
-                                        <p class="text-gray-600 text-sm md:text-base">${day.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    
-                    daysContainer.appendChild(dayElement);
-                });
-                
-                // If this is the tour we need to expand, scroll to it
-                if (shouldExpand) {
-                    setTimeout(() => {
-                        tourElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100);
-                }
-            });
-            
-            // Add event listeners for accordions
-            setupAccordions();
-        }
-
-        // Function to setup accordion functionality
-        function setupAccordions() {
-            // Tour accordions
-            const tourHeaders = document.querySelectorAll('.tour-accordion-header');
-            tourHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    const icon = header.querySelector('svg');
-                    
-                    // Toggle the content
-                    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                        content.style.maxHeight = '0';
-                        icon.classList.remove('rotate-180');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        icon.classList.add('rotate-180');
-                    }
-                });
-            });
-            
-            // Day accordions
-            const dayHeaders = document.querySelectorAll('.day-accordion-header');
-            dayHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    const icon = header.querySelector('svg');
-                    
-                    // Toggle the content
-                    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                        content.style.maxHeight = '0';
-                        icon.classList.remove('rotate-180');
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        icon.classList.add('rotate-180');
-                    }
-                });
-            });
-        }
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', () => {
-            renderTours();
-        });
     </script>
+    <script src="../tour.js"></script>
 </body>
 </html>

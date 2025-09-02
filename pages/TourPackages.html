@@ -7,10 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
+         body {
             font-family: 'Montserrat', sans-serif;
         }
-        
         /* Style the main content area with a custom scrollbar */
         #main-content-container {
             overflow-y: auto;
@@ -37,6 +36,15 @@
         html {
             scroll-behavior: smooth;
         }
+         a {
+            text-transform: uppercase;
+        }
+        span {
+            text-transform: uppercase;
+            /* white-space: nowrap; */
+        }
+        
+
     </style>
 </head>
 <body class="bg-gray-100 antialiased">
@@ -231,7 +239,7 @@
                             </div>
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Festival & holidays</span>
+                                    <span class="whitespace-nowrap text-[11px]">Festival & holidays</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -287,7 +295,7 @@
                         <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Antique Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Antique Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -305,7 +313,7 @@
                             </div>
                             <div class="relative group/historical">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                                    <span>Modern Ethiopia</span>
+                                    <span class="whitespace-nowrap text-[11px]">Modern Ethiopia</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
@@ -954,5 +962,6 @@
             </div>
         </div>
     </div>
+    <script src="../nav-active.js"></script>
 </body>
 </html>
