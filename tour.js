@@ -177,7 +177,7 @@ function renderTours() {
                     </div>
                 </div>
                 <div class="flex-1 md:px-6">
-                    <h2 class="text-xl font-bold text-gray-800">${tour.title}</h2>
+                    <h2 class="text-xl font-bold text-[#ee3054]">${tour.title}</h2>
                     <p class="text-sm text-gray-600 mt-1">Tour Code: ${tour.id} | Duration: ${tour.duration}</p>
                     <p class="text-sm text-gray-600">Transport: ${tour.transport}</p>
                 </div>

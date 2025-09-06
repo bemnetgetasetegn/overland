@@ -3,96 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overland Ethiopia Tours | About Us</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Facts</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Responsive Hero Section */
-        .hero-section {
-            background-image: url('/pictures/5bg.jpg');
-            background-position: center;
-            min-height:400px;
-            position: relative;
-        }
-
-        /* Hero Text Container */
-        .hero-text {
-            position: absolute;
-            left: 5%;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            padding: 1rem;
-            max-width: 500px;
-        }
-
-        /* Responsive Mobile Menu Button */
-        #mobile-menu-toggle {
-            transition: transform 0.3s ease;
-        }
-
-        #mobile-menu-toggle.active svg {
-            transform: rotate(90deg);
-        }
-
-        /* Tab Transition Animation */
-        .tab-content {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .tab-content.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Simple fade-in animation for content */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Horizontal scrolling for mobile tabs */
-        .tabs-container {
-            display: flex;
-            overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-        }
-        
-        .tabs-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari and Opera */
-        }
-        
-        .tab-button {
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        .tab-button.active {
-        background-color: #ee3054;
-        color: white;
-        }
-
-         a {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+   body {
+        font-family: 'Montserrat', sans-serif;
+    }
+     a {
             text-transform: uppercase;
         }
         span {
             text-transform: uppercase;
-            /* white-space: nowrap; */
         }
-
-      
-    </style>
-</head>
+</style>
 <body>
-
     <!-- Header: Fixed at the top -->
     <header class="bg-white fixed w-full top-0 left-0 z-50 shadow-sm">
         <div class="w-full bg-gray-900 text-white text-sm">
@@ -117,7 +44,7 @@
             </div>
 
             <!-- Right side: Social & Link -->
-            <div class="hidden md:flex items-center gap-6">
+            <div class="flex items-center gap-6">
                 <div class="flex gap-3">
                     <!-- Facebook SVG -->
                     <a href="#" class="hover:text-[#ee3054] transition-colors">
@@ -139,20 +66,22 @@
         <!-- Bottom red line -->
         <!-- <div class="h-0.5 bg-[#ee3054]"></div> -->
     </div>
-    
-        <nav class="flex flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto p-2 md:p-2">
+        <nav class="flex flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto">
             <!-- Top Nav Row (Logo & Icons) -->
             <div class="flex items-center justify-between w-full">
                 <!-- Logo Container with padding -->
-                <div class="logo-container flex-shrink-0 pl-2">
-                    <img src="/pictures/Overland-Ethiopia-Tours-Logo.png" alt="Overland Ethiopia Tours Logo" class="w-20 ml-4 h-12 hover:scale-105 transition-transform duration-300">
+                <div class="logo-container flex-shrink-0 pl-2 pt-1">
+                    <img src="/pictures/Overland-Ethiopia-Tours-Logo.png" alt="Placeholder Logo" class="w-20 ml-4 h-10 mt-4 hover:scale-105 transition-transform duration-300 rounded-lg">
                 </div>
-       
-          <!-- Desktop Nav items -->
-                <div class="hidden md:flex items-center space-x-6 pr-4">
+
+                <!-- Desktop Nav items -->
+                <div class="hidden md:flex items-center space-x-6 pr-4 ">
                     <a href="/index.html" class="text-sm text-gray-800 hover:text-gray-600 transition-colors">Home</a>
 
-                              
+                              <!-- Attractions  Dropdown with Nested Menu -->
+
+
+
                     <!-- Ethiopia  Dropdown with Nested Menu -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
@@ -171,7 +100,7 @@
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
                                     <a href="./Ethiopia.html?section=earliestHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Earliest History</a>
                                     <a href="./Ethiopia.html?section=ancientEthiopia" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ancient Ethiopia</a>
                                     <a href="./Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Kingdom of Axum</a>
@@ -190,33 +119,34 @@
                                     </svg>
                                 </button>
                                 <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
-                                    <a href="./Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">LEAVING THE MEDIEVAL WORLD</a>
-                                    <a href="./Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RECENT HISTORY</a>
-                                    <a href="./Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">THE DERG PERIOD</a>
-                                    <a href="./Ethiopia.html?section=postDergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">POST DERG PERIOD</a>
-
+                                    <a href="./Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Leaving The Medival World</a>
+                                    <a href="./Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Recent History</a>
+                                    <a href="./Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Derg Period</a>
+                                    <a href="./Ethiopia.html?section=postDergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Post Derg Period</a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
+                    
+                    
+                    <!-- Aboutus Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>About Us</span>
+                            <span>About us</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 top-full mt-1 hidden group-hover:block bg-white shadow-md p-2 w-48 z-40 rounded-lg">
-                            <a href="#tab-who-we-are" class="block py-1 px-2 text-xs text-gray-800 hover:bg-gray-100 rounded-lg about-us-link" data-tab="who-we-are">Who We Are</a>
-                            <a href="#tab-company-profile" class="block py-1 px-2 text-xs text-gray-800 hover:bg-gray-100 rounded-lg about-us-link" data-tab="company-profile">Company Profile</a>
-                            <a href="#tab-terms-and-conditions" class="block py-1 px-2 text-xs text-gray-800 hover:bg-gray-100 rounded-lg about-us-link" data-tab="terms-and-conditions">Terms & Conditions</a>
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
+                            <a href="./about.html?tab=who-we-are" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Who we are</a>
+                            <a href="./about.html?tab=company-profile" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Our companys profile</a>
+                            <a href="./about.html?tab=terms-and-conditions" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Terms and conditions</a>
                         </div>
                     </div>
-
-
-
+                    
+                    
+                    
                     <!-- Activities  Dropdown with Nested Menu -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
@@ -225,7 +155,7 @@
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
+                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
                             <a href="./Activities.html?section=bikingAndCycling" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Biking and cycling</a>
                             <a href="./Activities.html?section=birdWatching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird watching</a>
                             <a href="./Activities.html?section=coffeeCeremony" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Coffee ceremony</a>
@@ -240,10 +170,11 @@
                         </div>
                     </div>
 
-                    <!-- Attractions  Dropdown with Nested Menu -->
+                    <!-- Activities drop down -->
+
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Attractions</span>
+                            <span class="uppercase">Attractions</span>
                             <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
@@ -251,16 +182,16 @@
                         <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
                       
                           
-                            <div class="relative group/historical">
+                            <div class="relative group/historical capitalize-nav">
                                 <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                                     <span>Cultural</span>
                                     <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
-                                    <a href="./Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo valley</a>
-                                    <a href="./Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Tribes of the omo valley</a>
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
+                                    <a href="./Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Omo valley</a>
+                                    <a href="./Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Tribes of the omo valley</a>
                                 </div>
                             </div>
                                <div class="relative group/historical">
@@ -270,7 +201,7 @@
                                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2">
+                                <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
                                     <a href="./Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian NewYear</a>
                                     <a href="./Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Finding of the True Cross</a>
                                     <a href="./Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Feast of Saint Gabriel Kulubi Gabriel </a>
@@ -320,9 +251,7 @@
                         </div>
                     </div>
 
-
-
-                          <!-- Tailor made tour  Dropdown -->
+                       <!-- Tailor made tour  Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
                             <span>Tailor-made Tours</span>
@@ -331,44 +260,42 @@
                             </svg>
                         </button>
                         <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
-                            <a href="./tailormadetour.html?tour=budget-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Budget Holidays</a>
-                            <a href="./tailormadetour.html?tour=family-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Family Holidays</a>
-                            <a href="./tailormadetour.html?tour=group-adventure" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Group Adventure In Ethiopia</a>
-                            <a href="./tailormadetour.html?tour=luxury-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Luxury Holidays</a>
-                            <a href="./tailormadetour.html?tour=solo-travelers" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Solo Travelers</a>
-                            <a href="./tailormadetour.html?tour=student-vacations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Student Vacations</a>
-                        </div>
+    <a href="./tailormadetour.html?tour=budget-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Budget Holidays</a>
+    <a href="./tailormadetour.html?tour=family-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Family Holidays</a>
+    <a href="./tailormadetour.html?tour=group-adventure" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Group Adventure In Ethiopia</a>
+    <a href="./tailormadetour.html?tour=luxury-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Luxury Holidays</a>
+    <a href="./tailormadetour.html?tour=solo-travelers" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Solo Travelers</a>
+    <a href="./tailormadetour.html?tour=student-vacations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Student Vacations</a>
+</div>
                     </div>
+                           
                   <!-- Tour packages Dropdown with Nested Menu -->
-                    <div class="relative group">
-                        <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
-                            <span>Tour Packages</span>
-                            <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2">
-                            <a href="./tourfinal.html?category=bird-watching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching</a>
-                            <a href="./tourfinal.html?category=city-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">City Tours</a>
-                            <a href="./tourfinal.html?category=combinations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
-                            <a href="./tourfinal.html?category=day-trips" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Day Trips</a>
-                            <a href="./tourfinal.html?category=festival-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Festival & Holidays</a>
-                            <a href="./tourfinal.html?category=festival-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Fixed Departure</a>
-                            <a href="./tourfinal.html?category=historic-route" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Historic Route</a>
-                            <a href="./tourfinal.html?category=bale-mountains" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bale Mountains</a>
-                            <a href="./tourfinal.html?category=omo-valley" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo Valley</a>
-                            <a href="./tourfinal.html?category=trekking-hiking" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Trekking & Hiking</a>
-                        </div>
-                    </div>
-
-
-                    <!-- New "About Us" Dropdown -->
-                    
+<div class="relative group">
+    <button class="flex items-center space-x-1 text-sm text-gray-800 hover:text-gray-600 transition-colors">
+        <span>Tour Packages</span>
+        <svg class="h-3 w-3 transform transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+    </button>
+    <div class="absolute right-0 top-full mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 z-40 rounded-lg border border-gray-200 pointer-events-none group-hover:pointer-events-auto w-48 bg-white shadow-lg p-2 capitalize">
+        <a href="./tourfinal.html?category=bird-watching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching</a>
+        <a href="./tourfinal.html?category=city-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">City Tours</a>
+        <a href="./tourfinal.html?category=combinations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
+        <a href="./tourfinal.html?category=day-trips" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Day Trips</a>
+        <a href="./tourfinal.html?category=festival-holidays" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Festival & Holidays</a>
+        <a href="./tourfinal.html?category=festival-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Fixed Departure</a>
+        <a href="./tourfinal.html?category=historic-route" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Historic Route</a>
+        <a href="./tourfinal.html?category=bale-mountains" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bale Mountains</a>
+        <a href="./tourfinal.html?category=omo-valley" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Omo Valley</a>
+        <a href="./tourfinal.html?category=trekking-hiking" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Trekking & Hiking</a>
+    </div>
+</div>
 
                     <a href="./contact.html" class="text-sm text-gray-800 hover:text-gray-600 transition-colors">Contact</a>
                 </div>
 
-                 <!--mobile dropdown-->
+
+                <!--mobile dropdown-->
                  <!-- Hamburger on mobile -->
                 <button id="mobile-menu-toggle" class="flex items-center md:hidden space-x-1 text-gray-800 text-sm pr-2">
                     <span>MENU</span>
@@ -384,13 +311,13 @@
                 
                 <!-- Attractions Mobile Dropdown -->
                 <div class="relative border-b border-gray-100">
-                    <button class="mobile-dropdown-toggle  w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
+                    <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Attractions</span>
                         <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 hidden">
+                    <div class="mobile-dropdown-content bg-gray-50">
                         <!-- Cultural -->
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
@@ -400,9 +327,9 @@
                                 </svg>
                             </button>
                             <div class="nested-dropdown-content pl-4 hidden">
-                              <a href="./Attraction.html?section=cultural.omoValley" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Omo valley</a>
+                                <a href="./Attraction.html?section=cultural.omoValley" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Omo valley</a>
                                 <a href="./Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Tribes of the omo valley</a>
-                             </div>
+                            </div>
                         </div>
                         
                         <!-- Festival & holidays -->
@@ -414,13 +341,13 @@
                                 </svg>
                             </button>
                             <div class="nested-dropdown-content pl-4 hidden">
-                               <a href="./Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ethiopian NewYear</a>
+                                <a href="./Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ethiopian NewYear</a>
                                 <a href="./Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Finding of the True Cross</a>
                                 <a href="./Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Feast of Saint Gabriel Kulubi Gabriel</a>
                                 <a href="./Attraction.html?section=festivalAndHolidays.ethiopianChristmas" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ethiopian Chrismas</a>
                                 <a href="./Attraction.html?section=festivalAndHolidays.timketEthiopianEpiphany" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Timeket Ethiopian Epiphany</a>
                                 <a href="./Attraction.html?section=festivalAndHolidays.ethiopianEaster" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ethiopian Easter</a>
-                             </div>
+                            </div>
                         </div>
                         
                         <!-- Historical -->
@@ -432,7 +359,7 @@
                                 </svg>
                             </button>
                             <div class="nested-dropdown-content pl-4 hidden">
-                               <a href="./Attraction.html?section=historical.addisAbaba" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Addis Ababa</a>
+                                <a href="./Attraction.html?section=historical.addisAbaba" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Addis Ababa</a>
                                 <a href="./Attraction.html?section=historical.historicRoute" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Historic Route Of Ethiopia</a>
                                 <a href="./Attraction.html?section=historical.rockChurchesOfTigray" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Rock Churches Of Tigray</a>
                             </div>
@@ -447,7 +374,7 @@
                                 </svg>
                             </button>
                             <div class="nested-dropdown-content pl-4 hidden">
-                                 <a href="./Attraction.html?section=natural.endemicBirds" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Endemic Birds Of Ethiopia</a>
+                                <a href="./Attraction.html?section=natural.endemicBirds" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Endemic Birds Of Ethiopia</a>
                                 <a href="./Attraction.html?section=natural.westernHighlands" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Western HighLands Of Ethiopia</a>
                                 <a href="./Attraction.html?section=natural.riftValleyLakes" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">RiftValley Lakes In Ethiopia</a>
                                 <a href="./Attraction.html?section=natural.nationalParks" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">National Parks In Ethiopia</a>
@@ -467,7 +394,7 @@
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 hidden">
+                    <div class="mobile-dropdown-content bg-gray-50">
                         <!-- Antique Ethiopia -->
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
@@ -476,8 +403,8 @@
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <div class="nested-dropdown-content pl-4 hidden">
-                                  <a href="./Ethiopia.html?section=earliestHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Earliest History</a>
+                            <div class="nested-dropdown-content pl-4 hidden capitalize">
+                                <a href="./Ethiopia.html?section=earliestHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Earliest History</a>
                                 <a href="./Ethiopia.html?section=ancientEthiopia" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Ancient Ethiopia</a>
                                 <a href="./Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Kingdom of Axum</a>
                                 <a href="./Ethiopia.html?section=ethiopianDarkAges" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">The Ethiopian Dark Ages</a>
@@ -496,11 +423,11 @@
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <div class="nested-dropdown-content pl-4 hidden">
-                                 <a href="./Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">LEAVING THE MEDIEVAL WORLD</a>
-                                <a href="./Ethiopia.html?section=recentHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">RECENT HISTORY</a>
-                                <a href="./Ethiopia.html?section=dergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">THE DERG PERIOD</a>
-                                <a href="./Ethiopia.html?section=postDergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">POST DERG PERIOD</a>
+                            <div class="nested-dropdown-content pl-4 hidden ">
+                                <a href="./Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 ">Leaving The Medival World</a>
+                                <a href="./Ethiopia.html?section=recentHistory" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Recent History</a>
+                                <a href="./Ethiopia.html?section=dergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">The Derg Period</a>
+                                <a href="./Ethiopia.html?section=postDergPeriod" class="block py-2 px-6 text-xs text-gray-700 hover:bg-gray-100">Post Derg Period</a>
                             </div>
                         </div>
                     </div>
@@ -514,8 +441,8 @@
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
-                          <a href="./Activities.html?section=bikingAndCycling" class="block py-2 px-4 text-xs text-gray-极00 hover:bg-gray-100">Biking and cycling</a>
+                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden capitalize">
+                        <a href="./Activities.html?section=bikingAndCycling" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Biking and cycling</a>
                         <a href="./Activities.html?section=birdWatching" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Bird watching</a>
                         <a href="./Activities.html?section=coffeeCeremony" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Coffee ceremony</a>
                         <a href="./Activities.html?section=fishing" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Fishing</a>
@@ -524,8 +451,8 @@
                         <a href="./Activities.html?section=horseRiding" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Horse riding</a>
                         <a href="./Activities.html?section=rafting" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Rafting</a>
                         <a href="./Activities.html?section=trekkingInEthiopia" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Trekking in ethiopia</a>
-                        <a href="./Activities.html?section=trekkingToMeqdela" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-极00">Trekking in meqdela</a>
-                     </div>
+                        <a href="./Activities.html?section=trekkingToMeqdela" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Trekking in meqdela</a>
+                    </div>
                 </div>
 
                 <!-- Tailor-made Tours Mobile Dropdown -->
@@ -539,7 +466,7 @@
                     <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
                         <a href="./tailormadetour.html?tour=budget-holidays" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Budget Holidays</a>
                         <a href="./tailormadetour.html?tour=family-holidays" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Family Holidays</a>
-                        <a href="./tailormadetour.html?tour=group-adventure" class="block py-2 px-4 text-xs text-gray-700 hover:极g-gray-100">Group Adventure In Ethiopia</a>
+                        <a href="./tailormadetour.html?tour=group-adventure" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Group Adventure In Ethiopia</a>
                         <a href="./tailormadetour.html?tour=luxury-holidays" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Luxury Holidays</a>
                         <a href="./tailormadetour.html?tour=solo-travelers" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Solo Travelers</a>
                         <a href="./tailormadetour.html?tour=student-vacations" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Student Vacations</a>
@@ -555,17 +482,17 @@
                         </svg>
                     </button>
                     <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
-                         <a href="./tourfinal.html?category=bird-watching" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Bird Watching</a>
-                        <a href="./tourfinal.html?category=city-t极ur" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">City Tours</a>
+                        <a href="./tourfinal.html?category=bird-watching" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Bird Watching</a>
+                        <a href="./tourfinal.html?category=city-tour" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">City Tours</a>
                         <a href="./tourfinal.html?category=combinations" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Combinations</a>
                         <a href="./tourfinal.html?category=day-trips" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Day Trips</a>
                         <a href="./tourfinal.html?category=festival-holidays" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Festival & Holidays</a>
-                        <a href="./tourfinal.html?极ategory=festival-tour" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Fixed Departure</a>
+                        <a href="./tourfinal.html?category=festival-tour" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Fixed Departure</a>
                         <a href="./tourfinal.html?category=historic-route" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Historic Route</a>
                         <a href="./tourfinal.html?category=bale-mountains" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Bale Mountains</a>
                         <a href="./tourfinal.html?category=omo-valley" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Omo Valley</a>
                         <a href="./tourfinal.html?category=trekking-hiking" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Trekking & Hiking</a>
-                     </div>
+                    </div>
                 </div>
 
                 <!-- Aboutus Mobile Dropdown -->
@@ -576,8 +503,8 @@
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden">
-                         <a href="./about.html?tab=who-we-are" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Who we are</a>
+                    <div class="mobile-dropdown-content bg-gray-50 pl-4 hidden capitalize">
+                        <a href="./about.html?tab=who-we-are" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Who we are</a>
                         <a href="./about.html?tab=company-profile" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Our companys profile</a>
                         <a href="./about.html?tab=terms-and-conditions" class="block py-2 px-4 text-xs text-gray-700 hover:bg-gray-100">Terms and conditions</a>
                     </div>
@@ -588,9 +515,20 @@
         </nav>
     </header>
 
-    <script>
-        // Function to set active nav item
-        function setActiveNav() {
+
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () { 
+    // Mobile Menu Toggle (from original code, kept for completeness)
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
+        const mobileMenu = document.getElementById('mobile-menu'); 
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() { 
+                mobileMenu.classList.toggle('hidden'); 
+            }); 
+        }
+ function setActiveNav() {
             // Remove any existing active classes
             document.querySelectorAll('.nav-active').forEach(item => {
                 item.classList.remove('nav-active');
@@ -617,129 +555,273 @@
                 if (href !== '/index.html' && href !== '/' && currentUrl.includes(href)) {
                     link.classList.add('nav-active');
                 }
-            });
+            });}
             
-            // Also check for URL parameters for deeper navigation
-            const urlParams = new URLSearchParams(window.location.search);
-            const section = urlParams.get('section');
-            const category = urlParams.get('category');
-            const tour = urlParams.get('tour');
+            // Handle nested dropdown toggles
+            const nestedToggles = document.querySelectorAll('.nested-dropdown-toggle');
             
-            if (section || category || tour) {
-                // If we have URL parameters, highlight the parent dropdown
-                const parentLinks = document.querySelectorAll('.relative.group > button');
-                parentLinks.forEach(button => {
-                    button.classList.add('nav-active');
-                });
-            }
-        }
-        
-        // Set active nav on page load
-        document.addEventListener('DOMContentLoaded', setActiveNav);
-        
-        // Also set active nav when navigating (for single page applications)
-        window.addEventListener('popstate', setActiveNav);
-        
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
-        const mobileMenu = document.getElementById('mobile-menu'); 
-        
-        if (mobileMenuToggle && mobileMenu) {
-            mobileMenuToggle.addEventListener('click', function() { 
-                mobileMenu.classList.toggle('hidden'); 
-            }); 
-        }
-        
-        // Handle dropdown toggles - consolidated version
-        const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle, .nested-dropdown-toggle');
-        
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                // Prevent event from bubbling if it's a nested toggle
-                if (this.classList.contains('nested-dropdown-toggle')) {
-                    e.stopPropagation();
-                }
-                
-                const content = this.nextElementSibling;
-                if (content) {
+            nestedToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
                     content.classList.toggle('hidden');
                     
-                    // Only toggle active class for mobile dropdowns
-                    if (this.classList.contains('mobile-dropdown-toggle')) {
-                        content.classList.toggle('active');
-                    }
-                    
-                    // Rotate arrow icon if present
+                    // Rotate arrow icon
                     const icon = this.querySelector('svg');
-                    if (icon) {
-                        icon.classList.toggle('rotate-90');
-                    }
-                }
-            });
-        });
-        
-        // Add click event to all nav links to update active state
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                // Remove all active classes
-                document.querySelectorAll('.nav-active').forEach(item => {
-                    item.classList.remove('nav-active');
+                    icon.classList.toggle('rotate-90');
                 });
-                
-                // Add active class to clicked link
-                this.classList.add('nav-active');
-                
-                // For mobile menu, close after selection
-                if (window.innerWidth < 768) {
-                    mobileMenu.classList.add('hidden');
-                }
             });
-        });
-    </script>
+        // Mobile Dropdown Toggles (from original code, kept for completeness)
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle'); 
+        mobileDropdownToggles.forEach(toggle => { 
+            toggle.addEventListener('click', function() { 
+                const content = this.nextElementSibling; 
+                if (content) {
+                    content.classList.toggle('hidden'); 
+                    this.querySelector('svg').classList.toggle('rotate-90'); 
+                }
+            }); 
+        }); 
+    }); 
+</script>
 
+<!-- Main Content -->
+    <main class="pt-32 pb-12 px-6 md:px-16 lg:px-24 max-w-6xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+            Ethiopia Travel Facts
+        </h1>
 
-
-
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section text-white flex items-center justify-center relative ">
-            <div class="absolute inset-0 bg-black opacity-50 "></div>
-            <div class=" relative z-10 text-center">
-                <h1 class="text-3xl md:text-5xl font-bold mt-12 mb-4">About <span class="text-[#ee3054]">Us</span></h1>
-                <p class="text-sm text-center md:text-lg ">Discover our story, our values, and our commitment to your journey.</p>
-            </div>
-        </section>
-
-        <!-- Main Content Section -->
-        <section class="container mx-auto px-4  md:py-16">
-            <div class="max-w-6xl mx-auto bg-white  shadow-xl overflow-hidden">
-                <!-- Tab Navigation Buttons -->
-                <div class="tabs-container bg-gray-100  border rounded   border-gray-200">
-                    <button id="tab-who-we-are" data-tab="who-we-are" class="tab-button py-4 px-6 text-center text-sm md:text-base font-medium transition-colors duration-300 ease-in-out hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                        Who We Are
-                    </button>
-                    <button id="tab-company-profile" data-tab="company-profile" class="tab-button py-4 px-6 text-center text-sm md:text-base font-medium transition-colors duration-300 ease-in-out hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                        Company Profile
-                    </button>
-                    <button id="tab-terms-and-conditions" data-tab="terms-and-conditions" class="tab-button py-4 px-6 text-center text-sm md:text-base font-medium transition-colors duration-300 ease-in-out hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                        Terms & Conditions
-                    </button>
+        <!-- Quick Facts Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#ee3054]">
+                <div class="w-12 h-12 bg-[#ee3054] rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-globe-africa text-xl text-white"></i>
                 </div>
-
-                <!-- Content Container -->
-                <div id="content-container" class="p-6 md:p-10 text-gray-700 text-xs leading-relaxed">
-                    <!-- Dynamic content will be loaded here -->
-                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Location</h3>
+                <p class="text-gray-600 text-sm">Horn of Africa, bordering Eritrea, Djibouti, Somalia, Kenya, Sudan, and South Sudan</p>
             </div>
-        </section>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#ee3054]">
+                <div class="w-12 h-12 bg-[#ee3054] rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-mountain text-xl text-white"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Area</h3>
+                <p class="text-gray-600 text-sm">1,112,000 sq km (size of France and Spain combined)</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#ee3054]">
+                <div class="w-12 h-12 bg-[#ee3054] rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-users text-xl text-white"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Population</h3>
+                <p class="text-gray-600 text-sm">Approximately 90 million people with diverse cultures</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#ee3054]">
+                <div class="w-12 h-12 bg-[#ee3054] rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-language text-xl text-white"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Languages</h3>
+                <p class="text-gray-600 text-sm">Amharic (official), Oromo, Tigrinya, Somali, and many others</p>
+            </div>
+        </div>
+
+        <!-- Detailed Facts Sections -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <!-- Location -->
+            <section id="location" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">1</span>
+                    Location
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The Federal Democratic Republic of Ethiopia is located in the Eastern part of Africa, neighboring Eritrea to the north, and Kenya to the south and southwest, Somalia to the east and southeast, Djibouti to the east and the Sudan and south Sudan to the west and northwest. This area is popularly known as the horn of Africa.
+                </p>
+            </section>
+
+            <!-- Land -->
+            <section id="land" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">2</span>
+                    Land
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Ethiopia, as large as France and Spain combined, has an area of 1,112,000 sq km. About 65 per cent of the land is arable, with 15 percent presently cultivated.
+                </p>
+            </section>
+
+            <!-- Topography -->
+            <section id="topography" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">3</span>
+                    Topography
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The Ethiopian landscape is dominated by the volcanically formed Abyssinian highlands, a region often but somewhat misleadingly referred as a plateau, since it is in fact dramatically mountainous. The central plateau is isolated in three sides by low lying semi desert or desert, has an average altitude of above 2000m and includes 20 peaks of 4000m or higher. The Ethiopia highlands are bisected by the rift valley, which starts at Red Sea, and then continues through the Denakil Depression, a desert area that contains one of the lowest points on the earth's surface, and through Ethiopia to Mozambique in southern Africa. This part of the rift valley south of Addis Ababa is notable for its string of seven lakes.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The most extensive mountain ranges on the highlands are the Simien, which lies directly north of the historical town of Gonder and rise to the fourth highest peak in Africa, Ras Deshen, whose height is 4620 meter above sea level. Another significant range is the Bale Mountains, which lie in the southern highlands to the east of the rift valley. The Ethiopia highlands form the source of four major river system, the best known of this is the Blue Nile locally know as Abay, which rises near Lake Tana in the northwestern and supply most of the water that flows in to Egypt's Nile valley.
+                </p>
+            </section>
+
+            <!-- Climate -->
+            <section id="climate" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">4</span>
+                    Climate
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The country is found within the tropics 3 degree north to 16-degree north latitude and 33 degree east to 48-degree east longitude. In Ethiopia, there are about four seasons:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-4 pl-4">
+                    <li class="mb-2"><strong>Winter:</strong> June, July and August</li>
+                    <li class="mb-2"><strong>Summer:</strong> September, October and December</li>
+                    <li class="mb-2"><strong>Spring:</strong> January, February and March</li>
+                    <li class="mb-2"><strong>Autumn:</strong> April, May and July</li>
+                </ul>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    As a result, there are three principal climate groups in Ethiopia:
+                </p>
+                <ol class="list-decimal list-inside text-gray-700 mb-4 pl-4">
+                    <li class="mb-2">Tropical Rainy Climate</li>
+                    <li class="mb-2">Dry Climate</li>
+                    <li class="mb-2">Warm rainy temperate climate</li>
+                </ol>
+                <p class="text-gray-700 leading-relaxed">
+                    Ethiopia's climatic conditions are termed in the traditional fashion as follows:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">WORCH</h4>
+                        <p class="text-gray-600 text-sm">Chilly, medium to low rainfall Afro-alpine regions (3,200 – 3500m)</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">DEGA</h4>
+                        <p class="text-gray-600 text-sm">Cool temperate highlands over 2,500 meters above sea level</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">WOYNA DEGA</h4>
+                        <p class="text-gray-600 text-sm">Moderate warm lands lying between 2,500 to 1,500 meters above sea level</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">KOLLA</h4>
+                        <p class="text-gray-600 text-sm">Hot lowlands lying below 1,500 meters</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg md:col-span-2">
+                        <h4 class="font-semibold text-gray-800">BEREHA</h4>
+                        <p class="text-gray-600 text-sm">Hot and arid desert lowlands that typically lie below 500m</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Language -->
+            <section id="language" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">5</span>
+                    Language
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Ethiopia is a multi ethnic state with a great variety of languages spoken in the country, of which there are 83 with 200 dialects. Amharic with its unique Ge'ez alphabets is the official language. English is also widely spoken, other languages Arabic, French and Italian also spoken.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The Ethiopian languages are divided into four major language groups:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Semitic</h4>
+                        <p class="text-gray-600 text-sm">Spoken in northern, central and eastern Ethiopia using the unique Ge'ez script</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Cushitic</h4>
+                        <p class="text-gray-600 text-sm">Mostly spoken in central, southern and eastern Ethiopia</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Omotic</h4>
+                        <p class="text-gray-600 text-sm">Predominantly spoken between the lakes of the Southern Rift Valley and the Omo River</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Nilo-Saharan</h4>
+                        <p class="text-gray-600 text-sm">Largely spoken in the western part of the country along the border with Sudan</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Religion -->
+            <section id="religion" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">6</span>
+                    Religion
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    The main religions in Ethiopia are Christianity, Islam, Judaism and Paganism. Ethiopia is a predominantly Christian country and the majority of Christians are Orthodox Tewahedo Christians, who belong to the Ethiopian Orthodox Tewahedo Church.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Christianity</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Christianity began in Ethiopia when two Syrian Christians (Frumentius and Aedissius) came to Aksum and started to tell people about Jesus Christ and the Christian faith. They influenced King Ezana, who ruled Aksum in the early part of the fourth century, and successfully converted him to Christianity. Immediately after King Ezana converted to Christianity, he officially decreed Christianity as the main faith of his kingdom in 341 AD.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Judaism</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Even though, the Aksumite kingdom had accepted Christianity, the Ethiopian Jews known as Felashas or Beta Israel refused to accept Christianity and continued to practice their Old Testament faith which they still do today. The population of Felashas (Beta Israel) is concentrated in Northwest Ethiopia.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Islam</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Muslim religion was introduced to Ethiopia in 615 AD when the followers of Prophet Mohammed, including his wife sought refuge in Aksum. The king of Aksum welcomed them, respected their religion and offered them protection. They later settled in Negash, east of Tigray, which became the foundation and one of the most important places for the Islamic faith in Ethiopia.
+                </p>
+                
+                <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Paganism or Indigenous Beliefs</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Paganism or indigenous religious beliefs are widely practiced in Gambella, Southern Peoples' State, and Oromia administrative regions. These regions also contain considerable animist communities.
+                </p>
+            </section>
+
+            <!-- Additional sections would continue here with the same pattern -->
+            <!-- Economy -->
+            <section id="economy" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">7</span>
+                    Economy
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Agriculture is the rock bed of Ethiopian's economy; it plays a key role in the development of the nations as well as in the wellbeing of its people. Agriculture employs about 85% of the total population. On other word 90% of the country's foreign currency generates from export merchandise trade of agricultural products like coffee, oil seeds, pulses, flowers, fruits and vegetables.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Among these agricultural products, Coffee is by far the major source of foreign currency, out of the various products Ethiopia exports, over 60% of the income is generated by coffee alone. Coffee Arabica which originated in Ethiopia has been grown for century's way before any other part of the world.
+                </p>
+            </section>
+
+            <!-- Population -->
+            <section id="population" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">8</span>
+                    Population
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    The population is estimated about 90 million, over 50 percent of who are under 20 years old. The average number of inhabitants per square kilometer is 49.
+                </p>
+            </section>
+
+            <!-- When to Visit -->
+            <section id="when-to-visit" class="fact-section mb-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-[#ee3054] rounded-full flex items-center justify-center text-white mr-3">9</span>
+                    When to Visit
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Ethiopia can be visited at any time of year. Travelers are often advised against traveling during the rainy season, which normally runs from June until end of September. A lovely time of year is September through to early October, when the whole country is a riot of wild Meskel flowers.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    The most popular time to visit Ethiopia is between October and January, when the rains are over but the countryside is still quite green. Many travelers try to schedule their trip to coincide with important festivals such as Ethiopian New Year, Ethiopian Christmas, and Ethiopian Epiphany know as Timket or Meskel.
+                </p>
+            </section>
+
+            <!-- Additional content sections would follow the same pattern -->
+            
+            <!-- Back to Top Button -->
+        </div>
     </main>
 
-
-
-
-
-    
  <!-- Professional Footer Section -->
     <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8">
                 
@@ -856,142 +938,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // JavaScript object to hold the content
-            const contentData = {
-                'who-we-are': `
-                    <h2 class="text-2xl font-bold text-[#ee3054] mb-4">Who We Are</h2>
-                    <p class="mb-4">OVERLAND Ethiopia Tours is a well-experienced travel and tour operator to Ethiopia's cultural, historical, natural, and wildlife attractions. We are a private, fully Ethiopian-owned company run by young, flexible, energetic, and highly skilled personnel who know and love Ethiopia. We are a fully licensed inbound tour operator in Ethiopia by the Federal Democratic Republic of Ethiopia Ministry of Culture and Tourism as well as by the Ministry of Trade.</p>
-                    <p class="mb-4">OVERLAND Ethiopia was established on a strong foundation with the aim of giving efficient and effective services to its esteemed customers. We have years of work experience and have escorted our clients to the four corners of this breathtaking country. We can design some of the best tailor-made, individual, group, fixed departure, and holiday tours as well as an enormous range of tour activities, including self-drive itineraries, trekking, biking, horse riding, and wildlife viewing opportunities.</p>
-                    <p class="mb-4">We will propose the perfect itinerary for you, depending on your budget and interest, whether you prefer historical, cultural, archaeological, ornithological safari, wildlife viewing, trekking, and hiking, horse riding, biking, and more . . . we know how to serve and gratify our clients. Our knowledge is consummate and our professional tour operators are awaiting your email or call to discuss your requirements and to answer any questions you may have. We are in Ethiopia looking forward to sharing our love of the country with you!</p>
-                    
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2 ">SERVICES</h3>
-                    <p class="mb-4">OVERLAND Ethiopia provides a range of services such as car rental, hotel, lodge and guesthouse bookings, international and domestic air ticket reservation, preparing and planning comprehensive tour packages, running meticulously planned trips along the historical, cultural, natural and geographical routes of Ethiopia and organizing adventure cruises, active volcanoes tours, arrangement for documentary films, archaeological tours, biblical holidays, bicycle tours and mountain biking, bird watching safaris, bus tours and coach excursion, culinary vacation, cultural safari, eco and community tourism vacation, educational travel, family travel, camping expeditions, gap year adventure, trekking and hiking adventures, historical holidays, horse back trips and trail rides, mountain and rock climbing, multi sport adventure, off road safari, photography expedition, pilgrimage and holiday tours, resort, spa and retreats vacation, running vacation, sailing vacation, special interest holidays, whitewater rafting expeditions, wildlife viewing expeditions as well as women's travel. The company organizes tours for individuals and groups depending on their interests and budget and lead by its professional multilingual tour guides.</p>
 
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2 ">TOUR</h3>
-                    <p class="mb-4">OVERLAND Ethiopia Tours offers package tours to international travelers without any limitation, and depending on the interests of travelers the company offers tailor made tours, pilgrimage tours, holiday getaways, adventure tours, biking, trekking, horse riding, walking, city excursions and so on. The ultimate program of all nature, culture, festivals and ecotourism are offered. Our company has professional multilingual tour guides with a deep experience and knowledge of the historical, cultural, natural as well as geographical tourist destinations of Ethiopia and speaks different international languages such as English, Spanish, Italian, Germany, French, Chinese and Russian.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">VEHICLE RENTAL</h3>
-                    <p class="mb-4">On all tours; OVERLAND Ethiopia Tours offers only excellent condition cars suitable to the rough roads and climate of the countryside of Ethiopia. As such, our company has a variety of fully maintained 4WD Land Cruisers, Coaster and Minibus vehicles suited for the rough outdoors drive in any part of the country; as a result, travelers would not face any form of discomfort while making their tour in Ethiopia with OVERLAND Ethiopia. In addition to tourist vehicles, our company also possesses small cars of various types, renting on a self or chauffer driven basis for city use, for weekend getaways and various occasions. The drivers assigned to each vehicle too are professionals, good mannered and friendly.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">SPECIALIZATIONS</h3>
-                    <p>We specialized in all kinds of tours and travel which includes adventure cruises, active volcanoes tours, arrangement for documentary films, archaeological tours, biblical holidays, bicycle tours and mountain biking, bird watching safaris, bus tours and coach excursion, culinary vacation, cultural safari, eco and community tourism vacation, educational travel, family travel, camping expeditions, gap year adventure, trekking and hiking adventures, historical holidays, horse back trips and trail rides, mountain and rock climbing, multi sport adventure, off road safari, photography expedition, pilgrimage and holiday tours, resort, spa and retreats vacation, running vacation, sailing vacation, special interest holidays, whitewater rafting expeditions, wildlife viewing expeditions as well as women's travel.</p>
-                `,
-                'company-profile': `
-                    <h2 class="text-2xl font-bold text-[#ee3054] mb-4">Company Profile</h2>
-                    <p class="mb-4"><strong>Destination Management Company in Ethiopia</strong></p>
-                    <p class="mb-4">OVERLAND Ethiopia Tours is one of the well-organized tour operators and destination Management Company in Ethiopia, providing quality tailor-made tours and travel services for groups and individual travelers from all over the world.</p>
-                    <p class="mb-4">With headquarters in Addis Ababa and satellite offices along the historic route, OVERLAND Ethiopia Tours is a fully licensed inbound tour operator by the Federal Democratic Republic of Ethiopia Ministry of Culture and Tourism as well as by the Federal Democratic Republic of Ethiopia Ministry of Trade. Our company is working with different outbound tour operators from different parts of the world and we are active members in sustainable projects, with diverse associations and foundations.</p>
-                    
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">VISION</h3>
-                    <p class="mb-4">To be innovators, leaders and creative in the concepts of travel; positioning ourselves in the market within the best tourism companies in Ethiopia, being recognized for our professionalism and high quality products.</p>
-                    
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">MISSION</h3>
-                    <p class="mb-4">Provide our client's unforgettable travel, enjoyable with guaranteed services that exceed their expectations, and also contribute to our sustainable tourism destinations.</p>
-                    
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">VALUE</h3>
-                    <ul class="list-disc list-inside space-y-2 mb-4">
-                        <li>Direct and open communication</li>
-                        <li>Speed</li>
-                        <li>Teamwork</li>
-                        <li>Flexibility and willingness to accept change</li>
-                        <li>Recognizing and learning from mistakes</li>
-                        <li>Risk-taking</li>
-                        <li>Quality care</li>
-                    </ul>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">TEAM</h3>
-                    <p class="mb-4">We believe that no matter how great a place is; only an experienced travel expert can help you discover its unique and amazing qualities. OVERLAND Ethiopia team of specialists works with great passion, discipline and knowledge not only to show you the best of Ethiopia, but to allow you to feel it with all your senses. The professional and experienced guides of the company speak different languages such us English, Germany, Spanish, Italian, French, Russian and Chinese. They have deep knowledge on the country's history, culture, geography, wildlife and resort areas.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">TRANSPORTATION</h3>
-                    <p class="mb-4">Our priority is to ensure our clients a 100% safe and comfortable trip. This is why we continually invest in flotillas of Toyota mini buses, Toyota Coaster Buses and 4WD Toyota Land Cruisers which are equipped with Microphone, seat belts and comprehensive insurance and maintained on a daily basis. Our experienced drivers know the Ethiopian roads pretty well and drive with strict safety measures.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">ACCOMMODATION</h3>
-                    <p class="mb-4">We only feature hotels and lodges that we have stayed in and we believe to be the best in their area, always looking for value, character, and good service. In some of the secluded and undeveloped regions, the obvious trappings of comfort may not be immediately apparent, but something special is everywhere: a unique style, a remarkable setting, wholesome comforts, and a dedication to protect their natural setting and to please every guest.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">SUSTAINABLE TOURISM</h3>
-                    <p class="mb-4">OVERLAND Ethiopia Tours believes in the right of future generations having a healthy environment and natural resources that contribute to a better quality of life. No matter where you go or how you travel, you will have an effect on the environment and the people you visit. Our company also believes that you can have a more authentic and meaningful trip when sustainable tourism practices are applied.</p>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">OUR TRIPS</h3>
-                    <p>Our trips are carefully designed to combine historical, cultural and natural riches with comfort, safety, luxury and adventure to create trips our guests will talk about for a long time. We have 4 key components; discovery, value, pace and choice.</p>
-                `,
-                'terms-and-conditions': `
-                    <h2 class="text-2xl font-bold text-[#ee3054] mb-4">Terms and Conditions</h2>
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">LIABILITY</h3>
-                    <ol class="list-decimal list-inside space-y-2 mb-4">
-                        <li>OVERLAND Ethiopia and its agents act only as agents of passengers in all matters relating to hotel accommodation, transport of tour by vehicle, aircraft, boat or any other means of transportation, and shall not be liable for injury, schedule change or delay, loss or damage arising from any cause and in any manner whatsoever.</li>
-                        <li>OVERLAND Ethiopia's liability to passengers carried in its own vehicles is governed by the laws of Ethiopia, and all claims are subject to the jurisdiction of the court of Ethiopia in which the cause of action arises.</li>
-                        <li>OVERLAND Ethiopia reserves the right to employ subcontractors to carry out any or all parts of the services agreed to be supplied, and in any event of the exercise of such right the terms of clause (B) relating to OVERLAND Ethiopia liability shall apply.</li>
-                        <li>While every care is taken, OVERLAND Ethiopia cannot be held responsible for loss or damage to baggage or other personal belongings.</li>
-                    </ol>
-
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">REQUEST, CONFIRMATION AND PAYMENT</h3>
-                    <ol class="list-decimal list-inside space-y-2 mb-4">
-                        <li>OVERLAND Ethiopia shall accept agency or individual requests for tours, safaris, car hire, hotel and air ticket reservation . . . and more in good faith.</li>
-                        <li>On confirmation of tours, agencies or individuals making bookings with OVERLAND Ethiopia shall make payments as follows:
-                            <ul class="list-disc list-inside mt-2 ml-4">
-                                <li>All booking requests must be confirmed after 30% of the total cost has been paid as an advance payment.</li>
-                                <li>The balance of 70% should be remitted definitely thirty days before the departure date to Addis Ababa, Ethiopia.</li>
-                                <li>If complete payment has not been made as per the above-mentioned statements, OVERLAND Ethiopia is not obliged to accept the client and conduct the tour unless alternative payment arrangements have been made beforehand.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    
-                    <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">CANCELLATIONS</h3>
-                    <p class="mb-2">Cancellation of tour bookings must be made in writing, and are subject to the following charges:</p>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>From 30 days to 15 days prior to departure, an administrative fee of USD 200.00 per group will be made.</li>
-                        <li>15 days to 7 days prior to departure, a fee of 50% of the total tour price will be charged.</li>
-                        <li>Cancellations made within the last 5 days prior to departure, no refund will be made.</li>
-                        <li>Trip cancellation and baggage insurance is recommended.</li>
-                    </ul>
-                `
-            };
-
-            const contentContainer = document.getElementById('content-container');
-            const tabButtons = document.querySelectorAll('.tab-button');
-
-            // Function to display the selected content
-            const displayContent = (tabId) => {
-                // Remove active class from all buttons
-                tabButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                // Add active class to the clicked button
-                document.getElementById(`tab-${tabId}`).classList.add('active');
-
-                // Apply fade-out and fade-in effect
-                contentContainer.style.opacity = '0';
-                contentContainer.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                    contentContainer.innerHTML = contentData[tabId] || '<p>Content not found</p>';
-                    contentContainer.style.opacity = '1';
-                    contentContainer.style.transform = 'translateY(0)';
-                    
-                    // Update URL with the tab parameter
-                    const urlParams = new URLSearchParams(window.location.search);
-                    urlParams.set('tab', tabId);
-                    window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
-                }, 300);
-            };
-
-            // Add event listeners to the tab buttons
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabId = button.dataset.tab;
-                    displayContent(tabId);
-                });
-            });
-
-            // Load content based on URL parameter or default to who-we-are
-            const urlParams = new URLSearchParams(window.location.search);
-            const tabParam = urlParams.get('tab');
-            const initialTab = tabParam && contentData[tabParam] ? tabParam : 'who-we-are';
-            displayContent(initialTab);
-        });
-    </script>
-    <script src="../nav-active.js"></script>
 </body>
 </html>
