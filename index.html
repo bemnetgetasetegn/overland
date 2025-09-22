@@ -1410,74 +1410,6 @@
 
 
 
-<!-- Stats Section -->
-<section class="relative py-1 text-white"
-         style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./overlandpics/20161021_133718-01.jpeg'); background-size: cover; background-position: center;">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-  <!-- Content -->
-  <div class="relative max-w-7xl mx-auto py-16 px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    
-    <div class="flex flex-col items-center">
-  <h2 class="text-4xl font-bold counter" data-target="100">0</h2>
-  <p class="mt-2 text-sm md:text-base">Satisfied Customers</p>
-</div>
-
-<div class="flex flex-col items-center">
-  <h2 class="text-4xl font-bold counter" data-target="50">0</h2>
-  <p class="mt-2 text-sm md:text-base">Destinations</p>
-</div>
-
-<div class="flex flex-col items-center">
-  <h2 class="text-4xl font-bold counter" data-target="50">0</h2>
-  <p class="mt-2 text-sm md:text-base">Photos</p>
-</div>
-
-<div class="flex flex-col items-center">
-  <h2 class="text-4xl font-bold counter" data-target="10">0</h2>
-  <p class="mt-2 text-sm md:text-base">Videos</p>
-</div>
-
-</section>
-
-<script>
-   document.addEventListener('DOMContentLoaded', () => {
-  const counters = document.querySelectorAll('.counter');
-
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target'); // target value
-      const count = +counter.innerText.replace('+', ''); // remove any existing '+'
-      const increment = target / 100; // adjust speed
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count + increment) + '+';
-        setTimeout(updateCount, 20); // repeat every 20ms
-      } else {
-        counter.innerText = target + '+'; // ensure it ends exactly at target
-      }
-    };
-
-    // Animate only when in viewport
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateCount();
-          observer.unobserve(counter); // only run once
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(counter);
-  });
-});
-
-
-
-
-</script>
-
 
 
 <!--ethiopia tours-->
@@ -1788,57 +1720,103 @@
         }
     </script>
 
-<!-- YouTube Video Section -->
-<section id="youtube-section" class="py-16 bg-white opacity-0 translate-y-10 transition-all duration-1000">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 uppercase">
-                Discover Ethiopia's <span class="text-[#ee3054]">Beauty</span>
-            </h2>
-            <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
-                Experience the wonders of Ethiopia through our immersive video journey showcasing the country's breathtaking landscapes and rich cultural heritage.
-            </p>
-        </div>
+<section class="bg-gray-50 py-16" >
 
-        <!-- Video Container -->
-        <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl" style="padding-top: 56.25%;">
-            <iframe 
-                src="https://www.youtube.com/embed/yXxwa4BVLjA" 
-                title="Discover Ethiopia - Overland Ethiopia Tours"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                class="absolute top-0 left-0 w-full h-full">
-            </iframe>
-        </div>
+    <!-- Section Intro Title -->
+  <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-16 text-center mb-12">
+    <h2 class="text-4xl font-extrabold mb-4">
+      Discover <span class="text-[#ee3054]">Ethiopia</span> With Us
+    </h2>
+    <p class="text-gray-600 text-lg">
+      Creating unforgettable journeys filled with adventure, culture, and connection.
+    </p>
+  </div>
+  
+  <!-- Video on top -->
+<div class="relative flex justify-center mb-12">
+  <div class="w-3/4 h-96 md:h-[500px] overflow-hidden rounded-lg shadow-lg">
+    <iframe 
+      src="https://www.youtube.com/embed/yXxwa4BVLjA?autoplay=1&mute=1&loop=1&playlist=yXxwa4BVLjA" 
+      title="Discover Ethiopia - Overland Ethiopia Tours"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      class="w-full h-full">
+    </iframe>
+  </div>
+</div>
 
-        <!-- Call to Action -->
-        <div class="text-center mt-8">
-            <a href="./pages/tourfinal.html" class="inline-flex items-center bg-[#ee3054] text-white px-6 py-3 rounded-md hover:bg-black transition-colors duration-300">
-                <span class="mr-2">Start Your Ethiopian Adventure</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-            </a>
-        </div>
+
+  <!-- Text section below -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 mt-12" >
+    <h2 class="text-3xl font-bold text-center mb-12">WHY TRAVEL <span class="text-[#ee3054]"> WITH US</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+
+      <!-- Over 35 years of adventure -->
+      <div class="space-y-4 animate-fade-in-up delay-100">
+        <h3 class="text-4xl font-bold counter" data-target="100">0+</h3>
+        <p class="text-gray-600">Satisfied Customers</p>
+      </div>
+
+      <!-- Like-minded travellers -->
+      <div class="space-y-4 animate-fade-in-up delay-200">
+        <h3 class="text-4xl font-bold counter" data-target="50">0+</h3>
+        <p class="text-gray-600">Destinations</p>
+      </div>
+
+      <!-- Flexible bookings -->
+      <div class="space-y-4 animate-fade-in-up delay-300">
+        <h3 class="text-4xl font-bold counter" data-target="50">0+</h3>
+        <p class="text-gray-600">Photos</p>
+      </div>
+
+      <!-- The right trip for you -->
+      <div class="space-y-4 animate-fade-in-up delay-400">
+        <h3 class="text-4xl font-bold counter" data-target="10">0+</h3>
+        <p class="text-gray-600">Videos</p>
+      </div>
+
     </div>
+  </div>
 </section>
 
+<!-- Counter Animation Script -->
 <script>
-    // Fade-in on scroll
-    const section = document.getElementById('youtube-section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                section.classList.remove('opacity-0', 'translate-y-10');
-                section.classList.add('opacity-100', 'translate-y-0');
-            }
-        });
-    }, { threshold: 0.2 });
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
 
-    observer.observe(section);
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target'); 
+      const count = +counter.innerText.replace('+', ''); 
+      const increment = target / 100; // adjust speed
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment) + '+'; 
+        setTimeout(updateCount, 20); 
+      } else {
+        counter.innerText = target + '+'; // ensure exact target with +
+      }
+    };
+
+    // Animate only when in viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter); // only run once per counter
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+  });
+});
 </script>
+
+
+
 
 <!-- Main container for the carousel -->
 <div class="main-container bg-gray-100 max-w-full bg-white animate-fade-in-up delay-500">
