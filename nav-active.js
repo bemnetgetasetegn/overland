@@ -63,6 +63,22 @@ const highlightLinks = (matcher, links, isSub = false) => {
     try {
       const u = new URL(href, origin);
       if (matcher(u)) {
+        // Special-case: when an "about" subpage (company profile, terms) matches,
+        // prefer highlighting the parent "About us" button instead of underlining the sub-link.
+        const path = (u.pathname || '').toLowerCase();
+        const isAboutSubpage = path.includes('/about-') || (path.includes('/about') && !path.endsWith('/about.html'));
+        if (isAboutSubpage) {
+          // Find parent group button (desktop) or mobile parent (if any)
+          const parentGroup = a.closest('.relative.group');
+          if (parentGroup) {
+            const parentBtn = parentGroup.querySelector('button');
+            if (parentBtn) {
+              addActive(parentBtn, false);
+              continue; // don't add active to the link itself
+            }
+          }
+        }
+
         addActive(a, isSub);
         // removed break to allow multiple links to be highlighted
       }

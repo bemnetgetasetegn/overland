@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overland Ethiopia Tours</title>
+    <title>Overland Ethiopia Tours | Company Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -11,29 +11,74 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Style the main content area with a custom scrollbar */
-        #main-content-container {
-            overflow-y: auto;
-            scrollbar-width: thin; /* Firefox */
-            scrollbar-color: #ffffff #ffffff; /* }
-
-        #main-content-container::-webkit-scrollbar {
-            width: 8px; /* WebKit/Blink */
+        /* Responsive Hero Section */
+        .hero-section {
+            background-image: url('/pictures/5bg.jpg');
+            background-position: center;
+            min-height:400px;
+            position: relative;
         }
 
-        #main-content-container::-webkit-scrollbar-track {
-            background: #F7FAFC; /* WebKit/Blink */
+        /* Hero Text Container */
+        .hero-text {
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            padding: 1rem;
+            max-width: 500px;
         }
 
-        #main-content-container::-webkit-scrollbar-thumb {
-            background-color: #A0AEC0; /* WebKit/Blink */
+        /* Responsive Mobile Menu Button */
+        #mobile-menu-toggle {
+            transition: transform 0.3s ease;
         }
-        #content-image.opacity-0 {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 100% 100%;
-    animation: loading 1.5s infinite;
-}
- a {
+
+        #mobile-menu-toggle.active svg {
+            transform: rotate(90deg);
+        }
+
+        /* Tab Transition Animation */
+        .tab-content {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .tab-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Simple fade-in animation for content */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Horizontal scrolling for mobile tabs */
+        .tabs-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .tabs-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+        
+        .tab-button {
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tab-button.active {
+        background-color: #ee3054;
+        color: white;
+        }
+
+         a {
             text-transform: uppercase;
         }
         span {
@@ -41,173 +86,41 @@
             /* white-space: nowrap; */
         }
 
-@keyframes loading {
-    0% {
-        background-position: 200% 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
-}/* Add these styles to your existing style section */
-#main-content-container {
-    transition: all 0.3s ease;
-}
-
-#content-image {
-    transition: transform 0.5s ease;
-
-}
-
-#content-image:hover {
-    transform: scale(1.02);
-}
-
-.logo-container {
+        .logo-container {
             position: relative; /* Needed for absolute positioning of children */
             z-index: 10; /* Ensure it's above other elements */
             margin-top: 1px; /* Adjust as needed to move into the hero section */
             margin-left: -10px; /* fine-tune the placement */
         }
 
-
-
-/* Improve list items in sidebar */
-.divide-y.divide-gray-200 li {
-    transition: background-color 0.2s ease;
-}
-
-.divide-y.divide-gray-200 li:hover {
-    background-color: #f9fafb;
-}
-
-/* Refine section headers */
-.bg-gray-700 {
-    background: linear-gradient(135deg, #4b5563 0%, #374151 100%) !important;
-}
+      
     </style>
 </head>
-<body class="bg-gray-100 antialiased">
-
- 
-<script id="site-data" type="application/json">
-{
-    "activities": {
-        "bikingAndCycling": {
-            "title": "Biking And",
-            "highlight": "Cycling",
-                        "image": "/overlandpics/biking.jpg",
-
-            "content": "Ethiopia biking and cycling adventures from Addis Ababa through one of the outskirt of the capital for long as well as short duration across the high plateau and into the gorge of the horn of Africa is unforgettable experience for unique adventure travel seekers. This tour passes through some spectacular countryside and traverses some the culturally rich territory of the Ethiopia ethnic groups including Amhara, Oromo, Gurage and more people of the Abyssinian highlands, and samples some of the wonderful hospitality of the country. Overland biking through this ancient wonderful country one can meet and experience the culturally diverse people and the scenery seem to get more and more wonderful every day. For those looking for the challenge and adventure of a lifetime and want to explore and ride overland through some of Ethiopia's most rugged and spectacular countryside by bike OVERLAND Ethiopia Tours offers bicycle tour to Ethiopia. Participants will be exhilarated by the rich culture 3000 years of history thriving agricultural; and geographical and environmental diversity of the country. Ethiopia is mélanges of industrious cities and vast rural populations that reflect traditional culture and values. Travelers will have opportunities to meet rural villagers, craftsmen, educators and officials to learn about the day to day life and the changing role of women; to attend and shop in local vibrant markets; to wander in historical, cultural and archeological sites of empires and kingdoms dating back many centuries and to enjoy the extraordinary friendliness of the people and inspirational beauty of the Abyssinian highlands. This awe-inspiring corner of Africa is virtually undiscovered by Westerners."
-        },
-        "birdWatching": {
-            "title": "Bird",
-            "highlight": "Watching",
-            "image": "/overlandpics/bird_watching_ethiopia_.jpg",
-            "content": "There is perhaps no region of the world, which harbors so many varieties of birds, several of them, unique or endemic as Ethiopia's highlands and lowlands. Ethiopia has emerged as one of the foremost birding destinations on the African continent, boasting more than 850 known species, of which 16 are endemic to Ethiopia. Habitats supporting bird life are the Rift Valley lakes, the highland massif, forests and the lowlands. The Rift Valley is scattered with lakes that offer an enormous diversity of bird life; more than half of all Ethiopia's species have been recorded at both Awash National Park and Abijata - Shalla Lakes National Park. Lake Langano and Nechisar National Park are also excellent birding sites and commonly seen are kingfishers, storks, pelicans, flamingos and fish eagles. The highland escarpments form the most typical of Ethiopian habitats for birds and offer a number of species not found elsewhere in sub - Saharan Africa, like the Golden Eagle, Red - Billed Chough and Ruddy Shelduck; other endemics include Rouget's Rail and the Spot - breasted Lapwing. More than 50 species of birds inhabit the Simiens Mountains National Park, including the impressive Bearded Vulture, or Lammergeyer, with its 10-foot (3 meters) wingspan. Bale Mountains National Park in the highlands is another popular birdwatchers' paradise. The south of the country also affords superb birding opportunities with sought after endemics like the Prince Ruspoli's Turaco, Degodi Larks and Stresemann's Bush Crow. October to December is the best months to come and have a look on various species of birds."
-        },
-        "coffeeCeremony": {
-            "title": "Coffee",
-            "highlight": "Ceremony",
-                        "image": "/overlandpics/cofeeceremoney.jpg",
-
-            "content": "No visit to Ethiopia is complete without participating the elaborate; Ethiopia's coffee ceremony, which is an integral part of Ethiopians social and cultural life. An invitation to attend a coffee ceremony is considered a mark of friendship and respect and is an excellent example of Ethiopian hospitality. Performing the ceremony is almost obligatory in the presence of a visitor, whatever the time of day. Don't be in a hurry though this special ceremony can take a few hours, so sit back and enjoy because it is most definitely not instant. Ethiopian homage to coffee is sometimes ornate, and always beautifully ceremony. The coffee ceremony is usually conducted by one young woman, dressed in the traditional Ethiopian costume of a white dress with colored woven borders. The long-involved process starts with the ceremonial apparatus being arranged upon a bed and scattered freshly cut grass on the arranged bed floor. Then, the roasting of the coffee beans will commence by shaking them on a concave pan to tern them and roast them evenly. When the coffee beans have turned, black and shining and the aromatic oil is coaxed out of them, she brings the pan with the roasted beans to shaking it in front of each guest, to give all the pleasure of smelling the fragrant odor. Then she will go into the nether regions of the house, from where the sound of pounding comes as the beans are ground by mortar and pestle. The lady who is conducting the ceremony gently, will come back with the ground coffee and slowly stirred into the black clay coffee pot locally known as 'Jebena' in Amharic, which is round at the bottom with a straw lid. After she put the ground coffee flour into the coffee pot, she mixes with water then brings all to a boil for, which takes 10 – 15 minutes, then after she puts down from the fire and hang about sometimes, then she pours the coffee into little handless cups, adds sugar and then bring a cup of coffee first to the eldest in the room and then to the others, who have waited and watched the procedure for the past half hour. The coffee is delicious, full of bodied but not the least bitter and often accompaniments by a traditional snack food, such as dough bread, popcorn, peanuts or roasted barley. After everyone has drunk and enjoyed she collects the cups, then adds more water on the pot and brews the second round using the same ground and this continue up to the third round. The traditional Ethiopian coffee ceremony is the main social event within the village and a time to discuss about the communal issues, politics, life and about who did what with whom. If one invited into a home to take part of the ceremony, mind it, is impolite to retire until you have consumed up until the third round, as the third round is considered to bestow a blessing. Transformation of the spirit is said to take place during the coffee ceremony through the completion of 'Abol', the first round, 'Tona', second round and 'Baraka', third round."
-        },
-        "fishing": {
-            "title": "Fishing",
-            "highlight": "",
-                        "image": "/overlandpics/Fishery.jpg",
-
-            "content": "Conditions for sport fishing could hardly be better than they are in Ethiopia. Rivers and lakes are full of a wide variety of fishes some of extra ordinary size. Less than one hundredth of one percent of the country's population is anglers. A typical day's fishing may also include the bonus of seeing giant Crocodiles, families of Hippos, Pink Clouds of Flamingos, and exotic tropical fruits ripening on the trees near the water. Ethiopia boasts more than 200 species of freshwater fish including Nile Perch, immense Catfish, Tiger fish, and brown and rainbow trout. Anglers techniques that may be used include fly fishing thread line, spinning, bait fishing with float and lager free lining, and even trolling facilities however are limited. Those planning a trip need to be a self contained as possible. The largest of Ethiopia's lakes, Lake Tana is one place to start a fishing safari, the lake shore enabling you to fish in comfort for the Barbus, Catfish and Tilapia as so numerous here. Tilapia and Barbus are the main species of fish in the beautiful rift valley lakes of Ziway and Langano. Further south in rift, Chamo and Abaya lakes near the town of Arba Minch also offer good fishing. The Baro River in the west of Ethiopia with access gained at the town of Gambela is noted for the giant size of Nile Perch and the great density of crocodile population as well."
-        },
-        "greatEthiopianRun": {
-            "title": "Great",
-            "highlight": "Ethiopian Run",
-                        "image": "/overlandpics/run.jpg",
-
-            "content": "GREAT ETHIOPIAN RUN: RACE WITH THE BESTS ON THE ROOF OF AFRICA. At between 2200 and 2500 meters above sea level, Addis Ababa is the third highest capital of the world. On Sunday November 26, 2017, you can join the world's best and 45,000 Ethiopian runners in a 10km race through Ethiopia's capital city main streets. The famous and great runner Haile Gebre Selassie has been the main mover behind this very exciting event, which has taken place every year since 2001, and has used the race to raise consciousness about the terrible threat posed by AIDS. The date of this year's international 10km race is Sunday 26th November 2017. More than 30,000 participants took part in the 2016 race and this makes it the biggest race ever on the African continent by participant numbers. The race's ambassador is Haile Gebre Selassie who has been instrumental in the success of the event managing organization known as Great Ethiopian Run, credited with the birth of mass participation running in Ethiopia. This is Africa's biggest road race, and along with the elite athletes there is a huge variety of runners, from young kids to pioneers, and there's a wonderful atmosphere. A registration cost is USD 20.00 and our company can arrange airport transfer and hotels reservation services. In addition to this, we can provide a variety of long or short trips around Ethiopia. For detail information, as well as available sample packages please refer the tour package section."
-        },
-        "honeymoon": {
-            "title": "Honey",
-            "highlight": "Moon",
-            "image": "/overlandpics/honeymoon.jpg",
-            "content": "Your honeymoon will provide lasting memories of your special occasion. Assuming you and your spouse have not agreed on a location, or planned out your honeymoon just yet, here are some tips that may help you to have the perfect trip. As you start making plans for your honeymoon destination, Ethiopia is truly ideal destination for romantic and unforgettable honeymoon excursions. Romance requires a perfect backdrop, and when it comes to honeymoons, Ethiopia honeymoon packages will bring an extra touch of sparkle to make them unforgettable occasions. The country provides an ideal base from which to explore the renowned food, wines and natural attractions of the region. Ethiopia can be full of romance. Come with your lover and enjoy the precious moment of just you two. Sweet memories start from here!"
-        },
-        "horseRiding": {
-            "title": "Horse",
-            "highlight": "Riding",
-            "image": "/overlandpics/horseriding-_-Ethiopia.webp",
-            "content": "Discover the Abyssinian highlands on horseback; riding in traditional as well as luxurious style on local horses through various ecosystems and dramatic scenery and National Parks which is inhabited by many rare endemic species of wildlife. All in all, Ethiopia is a land of diverse natural wonders, vast ancient history as well as a land of welcoming and fun loving people. It is a perfect destination for any adventure holiday. 'BUT WHY BY HORSE'? Because the high plateaus of the country have to rate as some of the best riding ground in the world; since Ethiopians who live among these plateaus are still to this day a people of the horse; because you will get to see the country like no one else; and because its inhabitants will receive you like their own when they see you riding like them. Forget the images of a parched and dried up land: this is the quintessential Ethiopia of babbling brooks, yellow flowers and smiling pastors. Our mounts, a mixture of the famed Abyssinian ponies renowned to this day for their polo playing abilities and of the descendants of Emperor Haile Selassie's stable of Lipizzaner, Arabs and race horses, will whisk you over the plains, from Orthodox monastery to rural settlements, from picturesque mountains to dramatic gorges and more. This is sure to be an amazing way to see a land barely changed from biblical times. Rides are available for all levels even if you are a non-rider. Each holiday can be tailor-made to your exact requirements with flights, car rental, non-riding extensions and horse riding holiday travel insurance as you wish. Relax in luxury and experience an adventurous safari on horseback. Let's explore and ride together over the unique, stunning and remarkable highland of Abyssinia!"
-        },
-        "rafting": {
-            "title": "Rafting",
-            "highlight": "",
-            "image": "/overlandpics/rafting.jpg",
-            "content": "White water rafting has expanded rapidly to be came a hugely popular period enjoyed on all the continents. Ethiopia's rivers, perhaps surprisingly played an important role in the internationalization of this blend of sport, ecotourism and adventure. OMO RIVER: The most rewarding and adventure white water rafting can be done over the Omo River, as it is too the way to reach south Omo region. The river is high enough navigable during September and October for most of its length. Along this adventure explorers will raft passing through the 1500-meter-deep serenity canyon, as well as admiring magnificent Wolita villages, water falls, swimming holes and hot springs. In addition to these hippos, crocodiles, monkey, various antelopes as well as lion as a bonus are often encountered on the way. The short days rafting trip can be end at the bridge on the Sodo – Jimma road, while the longest trip will continue in to south Omo valley, offering contacts with the Nyangatom, Bodi, Mursi and Kwegu tribal groups. The majority of the journey is on flat water, and no experience is required. red NILE RIVER: White water rafting is also can be done on the famous red Nile River, where attracting various well organized and successful rafting expeditions, crossing through the dramatic and magnificent red Nile gorge the largest cited canyon in Africa, and often comparable with the America's Grand Canyon and the Namibia's Fish River Canyon. AWASH RIVER: Bordering and traverses the Awash National park, some twenty-eight kilometers (17 miles) stretch of the Awash River offers outstanding short day rafting vacation, featuring lots of spirited rapids, wildlife and impressive rugged cliffs and side canyons. The trip starts at the Awash falls, with paddling drill in the foaming pool below and the rapids follow one often another with sharp drops, narrow channels, and fast currents. Colobus and vervet monkeys stare from the tamarinds and figs lining the banks, and baboons, waterbucks' warthog and lesser kudu come down to the river and monitor lizards scurry along the banks. A sacred hot spring, where the Kereyu ethnic group offerings of colored string, cloth, brass bangles and cowries in the gnarled trees that shade the bath temperature rock pool is a great place for a camping overnight."
-        },
-        "trekkingInEthiopia": {
-            "title": "Trekking In",
-            "highlight": "Ethiopia",
-            "image": "/overlandpics/hiking-early-ethiopia.jpg",
-            "content": "Ethiopia with a temperate climate, grand mountain scenery and a tradition of generous hospitality, all in all the Ethiopia highlands offer suburb trekking opportunities. Horses, Mules, Camels and Donkeys are universal means of transport, so horse, mule and camel trekking has been a natural development. Trekking can be interpreted in many ways, but it is usually walking or riding a Horse, Mule or Camel, or a combination of the two. The animals can be used just for carrying a load or can be ridden part of the time, and the usual group will have pack animals for baggage and some riding animals the group can be used in turn. Trekking in Ethiopia does not involve any necessary skill, although it obviously is best if you are physically fit. The terrain is usually steep for only short period, when walking rather than riding may be necessary. Much of the time it will be walking, although this may be at an altitude as high as 4000 meters (13,120 feet). A slow pace is recommended, which is not difficult as there is so much to see and wonder at. Trips can be tailored to meet and fulfill individuals' needs or requirements, weather they need day trips around Dinsho, the headquarters of the Bale Mountains National Park or at Sankaber of the Simien Mountains National Park or ten or more days to explore the untouched stunning African land. The principal well established areas for trekking are the Simien and Bale Mountains National Parks. More recent lesser known trekking areas, some only recently reconnoitered including the community based hiking trail around Lalibela, Bale Mountains, trekking from Lake Ashenge to Meqdela and the remote southwest highlands and west of Omo valley, where strong and colorful cultures complement the appeal of scenery, floral and fauna can be spotted. Other suitable and beautiful areas include the mountain trekking through the Tigrain region to visit some ancient rock churches and desert trekking in the Afar lowlands. Treks have been organized on and off in Simien and Bale Mountains for the last three decades. In Simien one can trek through stunning attractions includes spectacular views from the northern escarpment with a chance to spot the Endemic Walia Ibex, Ethiopian Wolf and Gelada Baboon, as well climb Ethiopia's highest peak Ras Dashen at 4620 meter which is stand adjacent to the Park. In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala, Menelik's Bushbuck, Ethiopian Wolf and some fabulous birds many of them endemic to Ethiopia. For keen hiker, Bale has offered Tullu Deemtu the second highest mountain of the country at an elevation of 4,477 meter (14,553 feet) and mount Batu at 4,207 meter (13,799 feet) although there are just the highest 'bumps' in already very high Sanetti plateau. The best time to explore and arrange trips varies slightly, depending on where you are going, but in general it is wise to avoid the rains. In Simien Mountains October through April is a reliable dry period and December to February is the best season to trek in Bale, while in the southwest highlands, which are more temperate than the Bale and Simien mountains, anytime between October and March is good."
-        },
-        "trekkingToMeqdela": {
-            "title": "Trekking To",
-            "highlight": "Meqdela",
-            "image": "/overlandpics/trekking-in-meqdela-2-scaled.jpg",
-            "content": "The trek from Lake Ashenge to Meqdela is an outstanding and exceptional route for the adventure seeker and trekker. It takes us upto the top of Maqdala Amba, where an embattled and embittered emperor Tewodros II retreated in 1867, as his dream of unified Ethiopia crumbled under the strain of internal and external pressure, most significantly his own growing unpopularity with his subject. Maqdala was once a stronghold of military for the former King Tewodros II. The power of the Gondarine Empire was eventually weakened by the presence of the Oromo, as well as by the doctrinal disputes that had undermined the Church. Real power passed to regional warlords in what is called the Era of the Princes, the decades of civil war that ended in 1855 when Kasa Haylu defeated his rivals and became the emperor Tewodros II and he made his capital at Maqdela. The siege at Maqdela in 1867 and was the main reason for the journey made by General Napier. He began at the Red Sea Coast traveling about 390 miles from Kumayli, across Eritrea into Ethiopia via Lake Ashenge and up to Meqdela. Negotiation between emperor Tewodros II and the British Government failed to reach an agreement. Finally, in August 1867, the cabinet granted 2 million pounds to mount an expedition, led by General Napier to rescue the British hostages held captive by emperor Tewodros II at Meqdela. Soldiers from four regiments, the Artillery, Cavalry, Engineers and Infantry took part. Over 35,000 pack animals including camels, together with 44 elephants made the difficult journey. Emperor Tewodros II of Ethiopia committed suicide in 1867 after being defatted by the British troops. The Historical perspective adds another dimension to the trek. Our trek begins from Lake Ashenge and covers about 150 miles, following the same route taken by General Napier. This will enable travelers to experience and enjoy the truly varied topography and landscape, unspoiled and rarely visited areas. At Meqdela, besides its beautiful scenery, one can visit the Sebastopol Canyon, the old church and Emperor Tewodros II graveyard. It is one of the best places both for trekkers and historians."
-        }
-    }
-}
-</script>
-</script>
-
-    <!-- Header: Fixed at the top -->
+<body>
+    <!-- Header: copied from index.html with routes adjusted for pages/ -->
     <header class="bg-white fixed w-full top-0 left-0 z-50 shadow-sm">
         <div class="w-full bg-gray-900 text-white text-sm">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-2 gap-2 md:gap-0">
-            
-            <!-- Left side: Phone & Email -->
             <div class="flex flex-col md:flex-row items-center gap-4">
                 <div class="flex items-center gap-2">
-                    <!-- Phone SVG (Fixed) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                     <span>+251 911 444 601</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <!-- Email SVG (Fixed) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     <span>info@overlandethiopiatours.com</span>
                 </div>
             </div>
-
-            <!-- Right side: Social & Link -->
             <div class="hidden md:flex items-center gap-6">
                 <div class="flex gap-3">
-                    <!-- Facebook SVG -->
-                    <a href="#" class="hover:text-[#ee3054] transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg>
-                    </a>
-                    <!-- Google Plus SVG (Fixed) -->
-                    <a href="#" class="hover:text-[#ee3054] transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7.635 10.909v2.619h4.335c-.173 1.125-1.31 3.295-4.331 3.295-2.604 0-4.731-2.16-4.731-4.823 0-2.662 2.122-4.822 4.728-4.822 1.485 0 2.479.633 3.045 1.178l2.073-1.994c-1.33-1.245-3.056-1.995-5.115-1.995C3.412 4.365 0 7.785 0 12s3.414 7.635 7.635 7.635c4.41 0 7.332-3.098 7.332-7.461 0-.501-.054-.885-.12-1.265H7.635zm16.365 0h-2.183v-2.183h-2.183v2.183h-2.182v2.181h2.184v2.184h2.189V13.09H24"/>
-                        </svg>
-                    </a>
+                    <a href="#" class="hover:text-[#ee3054] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="#" class="hover:text-[#ee3054] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7.635 10.909v2.619h4.335c-.173 1.125-1.31 3.295-4.331 3.295-2.604 0-4.731-2.16-4.731-4.823 0-2.662 2.122-4.822 4.728-4.822 1.485 0 2.479.633 3.045 1.178l2.073-1.994c-1.33-1.245-3.056-1.995-5.115-1.995C3.412 4.365 0 7.785 0 12s3.414 7.635 7.635 7.635c4.41 0 7.332-3.098 7.332-7.461 0-.501-.054-.885-.12-1.265H7.635zm16.365 0h-2.183v-2.183h-2.183v2.183h-2.182v2.181h2.184v2.184h2.189V13.09H24"/></svg></a>
                 </div>
                 <a href="./facts.html" class="hover:text-[#ee3054] transition-colors">Ethiopia Travel Facts</a>
             </div>
         </div>
-
-        <!-- Bottom red line -->
         <!-- <div class="h-0.5 bg-[#ee3054]"></div> -->
     </div>
-
     <nav class="flex flex-col md:flex-row md:items-center justify-between max-w-7xl mx-auto p-2 md:p-2">
         <!-- Top Nav Row (Logo & Icons) -->
         <div class="flex items-center justify-between w-full md:relative">
@@ -649,271 +562,82 @@
                 </div>
             </nav>
     </header>
-<script>
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
-    const mobileMenu = document.getElementById('mobile-menu'); 
-    
-    if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() { 
-            mobileMenu.classList.toggle('hidden'); 
-        }); 
-    }
-    
-    // Handle dropdown toggles - consolidated version
-    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle, .nested-dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            // Prevent event from bubbling if it's a nested toggle
-            if (this.classList.contains('nested-dropdown-toggle')) {
-                e.stopPropagation();
-            }
-            
-            const content = this.nextElementSibling;
-            if (content) {
-                content.classList.toggle('hidden');
-                
-                // Only toggle active class for mobile dropdowns
-                if (this.classList.contains('mobile-dropdown-toggle')) {
-                    content.classList.toggle('active');
-                }
-                
-                // Rotate arrow icon if present
-                const icon = this.querySelector('svg');
-                if (icon) {
-                    icon.classList.toggle('rotate-90');
-                }
+
+    <script>
+        // Simple mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
         });
-    });
-</script>
-<div class="flex flex-col md:flex-row gap-6">
-        <!-- This is a placeholder for the main content of your pageoverflow-y-auto max-h-[calc(100vh-9rem)]  -->
-  <!-- Replace the current main content section with this -->
-<main class="pt-32 pb-12 max-w-7xl mx-auto px-4 md:px-8">
-  <div id="main-content-container" class="bg-white  shadow-xl overflow-hidden p-6 md:p-10">
-        <div class="grid grid-cols-1 gap-12 items-start">
-      
-                    <!-- Image Section (moved above text for stacked layout) -->
-                            <div class="relative w-full rounded overflow-hidden shadow-md bg-gray-100 h-64 md:h-80 lg:h-96">
-                                <!-- Use object-cover and set object-position to keep the cyclist in frame (tighter, nicer crop) -->
-                                <img id="content-image" src="" alt="" 
-                                         class="w-full h-full object-cover transition-opacity duration-500 opacity-0" style="object-position:40% 20%;">
-                        <p id="image-caption" 
-                             class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent text-white text-sm md:text-base p-4">
-                        </p>
-                    </div>
+    </script>
 
-            <!-- Text Section -->
-            <div>
-                <h1 id="content-title" 
-                        class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 pb-4 border-b-2 border-gray-150">
-                </h1>
-                <p id="content-text" 
-                     class="text-base md:text-sm text-justify text-gray-700 leading-relaxed overflow-y-auto max-h-[calc(90vh-18rem)] pr-2">
-                </p>
-            </div>
-      
+    <section class="hero-section text-white flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mt-12 mb-4">Company <span class="text-[#ee3054]">Profile</span></h1>
         </div>
-  </div>
-</main>
+    </section>
 
-</div>
- <!-- Professional Footer Section -->
-    <footer class="bg-black py-12 px-4 sm:px-6 lg:px-8">
-                
+    <section class="container mx-auto px-4 md:py-16">
+        <div class="max-w-6xl mx-auto bg-white shadow-xl overflow-hidden rounded-xl">
+            <div class="p-6 md:p-10 text-gray-700 text-sm leading-relaxed">
+                <h2 class="text-2xl font-bold text-[#ee3054] mb-4">Company Profile</h2>
+                <p class="mb-4"><strong>Destination Management Company in Ethiopia</strong></p>
+                <p class="mb-4">OVERLAND Ethiopia Tours is one of the well-organized tour operators and destination Management Company in Ethiopia, providing quality tailor-made tours and travel services for groups and individual travelers from all over the world.</p>
+                <p class="mb-4">With headquarters in Addis Ababa and satellite offices along the historic route, OVERLAND Ethiopia Tours is a fully licensed inbound tour operator by the Federal Democratic Republic of Ethiopia Ministry of Culture and Tourism as well as by the Federal Democratic Republic of Ethiopia Ministry of Trade. Our company is working with different outbound tour operators from different parts of the world and we are active members in sustainable projects, with diverse associations and foundations.</p>
 
-           <!-- Footer Links Grid -->
-<!-- Footer Links Grid -->
-<div class="mt-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-    <!-- Column 1: Links -->
-    <div class="space-y-4 capitalize">
-        <p class="text-gray-200 text-sm font-semibold uppercase tracking-wider">Links</p>
-        <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="../index.html" class="hover:underline hover:text-gray-300">Home</a></li>
-            <li><a href="./Ethiopia.html?section=earliestHistory" class="hover:underline hover:text-gray-300">Ethiopia Travel Facts</a></li>
-            <li><a href="./about.html?tab=who-we-are" class="hover:underline hover:text-gray-300">Who We Are</a></li>
-            <li><a href="./about.html?tab=company-profile" class="hover:underline hover:text-gray-300">Company Profile</a></li>
-            <li><a href="./About.html?section=testimonials" class="hover:underline hover:text-gray-300">Testimonials</a></li>
-            <li><a href="./contact.html" class="hover:underline hover:text-gray-300">Contact Us</a></li>
-        </ul>
-    </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Vision</h3>
+                <p class="mb-4">To be innovators, leaders and creative in the concepts of travel; positioning ourselves in the market within the best tourism companies in Ethiopia, being recognized for our professionalism and high quality products.</p>
 
-    <!-- Column 2: Activities -->
-    <div class="space-y-4">
-        <p class="text-gray-200 text-sm font-semibold uppercase tracking-wider">Activities in Ethiopia</p>
-        <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="./Activities.html?section=bikingAndCycling" class="hover:underline hover:text-gray-300">Biking & Cycling</a></li>
-            <li><a href="./Activities.html?section=birdWatching" class="hover:underline hover:text-gray-300">Bird Watching</a></li>
-            <li><a href="./Activities.html?section=coffeeCeremony" class="hover:underline hover:text-gray-300">Coffee Ceremony</a></li>
-            <li><a href="./Activities.html?section=fishing" class="hover:underline hover:text-gray-300">Fishing</a></li>
-            <li><a href="./Activities.html?section=greatEthiopianRun" class="hover:underline hover:text-gray-300">Great Ethiopian Run</a></li>
-            <li><a href="./Activities.html?section=honeymoon" class="hover:underline hover:text-gray-300">Honeymoon</a></li>
-            <li><a href="./Activities.html?section=horseRiding" class="hover:underline hover:text-gray-300">Horse Riding</a></li>
-            <li><a href="./Activities.html?section=rafting" class="hover:underline hover:text-gray-300">Rafting</a></li>
-            <li><a href="./Activities.html?section=trekkingInEthiopia" class="hover:underline hover:text-gray-300">Trekking</a></li>
-            <li><a href="./Activities.html?section=trekkingToMeqdela" class="hover:underline hover:text-gray-300">Trekking to Meqdela</a></li>
-        </ul>
-    </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Mission</h3>
+                <p class="mb-4">Provide our client's unforgettable travel, enjoyable with guaranteed services that exceed their expectations, and also contribute to our sustainable tourism destinations.</p>
 
-    <!-- Column 3: Attractions -->
-    <div class="space-y-4">
-         <p class="text-gray-200 text-sm font-semibold uppercase lg:whitespace-nowrap">Attractions in Ethiopia</p>
-        <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="./Attraction.html?section=historical.addisAbaba" class="hover:underline hover:text-gray-300">Addis Ababa</a></li>
-            <li><a href="./Attraction.html?section=historical.historicRoute" class="hover:underline hover:text-gray-300">Historic Route</a></li>
-            <li><a href="./Attraction.html?section=historical.rockChurchesOfTigray" class="hover:underline hover:text-gray-300">Rock Churches of Tigray</a></li>
-            <li><a href="./Attraction.html?section=festivalAndHolidays.timketEthiopianEpiphany" class="hover:underline hover:text-gray-300">Timket Festival</a></li>
-            <li><a href="./Attraction.html?section=natural.nationalParks" class="hover:underline hover:text-gray-300">National Parks</a></li>
-            <li><a href="./Attraction.html?section=natural.naturalWonders" class="hover:underline hover:text-gray-300">Natural Wonders</a></li>
-        </ul>
-    </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Value</h3>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li>Direct and open communication</li>
+                    <li>Speed</li>
+                    <li>Teamwork</li>
+                    <li>Flexibility and willingness to accept change</li>
+                    <li>Recognizing and learning from mistakes</li>
+                    <li>Risk-taking</li>
+                    <li>Quality care</li>
+                </ul>
 
-    <!-- Column 4: Tailor-Made Tours -->
-    <div class="space-y-4">
-        <p class="text-gray-200 text-sm font-semibold uppercase tracking-wider">Tailor-Made Tours</p>
-        <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="./tailormadetour.html?tour=budget-holidays" class="hover:underline hover:text-gray-300">Budget Holidays</a></li>
-            <li><a href="./tailormadetour.html?tour=family-holidays" class="hover:underline hover:text-gray-300">Family Holidays</a></li>
-            <li><a href="./tailormadetour.html?tour=group-adventure" class="hover:underline hover:text-gray-300">Group Adventure</a></li>
-            <li><a href="./tailormadetour.html?tour=luxury-holidays" class="hover:underline hover:text-gray-300">Luxury Holidays</a></li>
-            <li><a href="./tailormadetour.html?tour=solo-travelers" class="hover:underline hover:text-gray-300">Solo Travelers</a></li>
-            <li><a href="./tailormadetour.html?tour=student-vacations" class="hover:underline hover:text-gray-300">Student Vacations</a></li>
-        </ul>
-    </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Team</h3>
+                <p class="mb-4">We believe that no matter how great a place is; only an experienced travel expert can help you discover its unique and amazing qualities. OVERLAND Ethiopia team of specialists works with great passion, discipline and knowledge not only to show you the best of Ethiopia, but to allow you to feel it with all your senses. The professional and experienced guides of the company speak different languages such us English, Germany, Spanish, Italian, French, Russian and Chinese. They have deep knowledge on the country's history, culture, geography, wildlife and resort areas.</p>
 
-    <!-- Column 5: Tour Packages -->
-    <div class="space-y-4">
-        <p class="text-gray-200 text-sm font-semibold uppercase tracking-wider">Tour Packages</p>
-        <ul class="space-y-2 text-xs text-gray-400">
-            <li><a href="./tourfinal.html?category=bird-watching" class="hover:underline hover:text-gray-300">Bird Watching</a></li>
-            <li><a href="./tourfinal.html?category=city-tour" class="hover:underline hover:text-gray-300">City Tours</a></li>
-            <li><a href="./tourfinal.html?category=combinations" class="hover:underline hover:text-gray-300">Combination Tours</a></li>
-            <li><a href="./tourfinal.html?category=day-trips" class="hover:underline hover:text-gray-300">Day Trips</a></li>
-            <li><a href="./tourfinal.html?category=festival-tour" class="hover:underline hover:text-gray-300">Fixed Departures</a></li>
-            <li><a href="./tourfinal.html?category=historic-route" class="hover:underline hover:text-gray-300">Historic Route</a></li>
-            <li><a href="./tourfinal.html?category=bale-mountains" class="hover:underline hover:text-gray-300">Bale Mountains</a></li>
-            <li><a href="./tourfinal.html?category=omo-valley" class="hover:underline hover:text-gray-300">Omo Valley</a></li>
-        </ul>
-    </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Transportation</h3>
+                <p class="mb-4">Our priority is to ensure our clients a 100% safe and comfortable trip. This is why we continually invest in flotillas of Toyota mini buses, Toyota Coaster Buses and 4WD Toyota Land Cruisers which are equipped with Microphone, seat belts and comprehensive insurance and maintained on a daily basis. Our experienced drivers know the Ethiopian roads pretty well and drive with strict safety measures.</p>
 
-    <!-- Column 6: New Column with Two Stacked Elements -->
-    <div class="space-y-4">
-        <p class="text-white text-sm font-semibold uppercase tracking-wider">Extra Info</p>
-        <div class="">
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Accommodation</h3>
+                <p class="mb-4">We only feature hotels and lodges that we have stayed in and we believe to be the best in their area, always looking for value, character, and good service. In some of the secluded and undeveloped regions, the obvious trappings of comfort may not be immediately apparent, but something special is everywhere: a unique style, a remarkable setting, wholesome comforts, and a dedication to protect their natural setting and to please every guest.</p>
 
-            
-            <!-- RECOMMENDED ON -->
-            <div class="space-y-4">
-                <p class="text-sm font-medium text-gray-400">RECOMMENDED ON</p>
-                <div class="flex flex-col gap-4">
-                    <!-- Google Reviews -->
-                    <a href="https://your-review-page-url.com" target="_blank" class="block">
-                        <img src="/pictures/google-reviews.png"
-                        alt="Google Reviews Badge"
-                        class="w-26 h-20 rounded hover:shadow-md transition-shadow bg-gray-300">
-                    </a>
-                    <!-- Tripadvisor -->
-                    <a href="https://your-review-page-url.com" target="_blank" class="block rounded bg-gray-300 w-[130px]">
-                        <img src="/pictures/Tripadvisor-Logo.png"
-                        alt="Tripadvisor Badge"
-                        class="w-26 h-20 rounded hover:shadow-md transition-shadow">
-                    </a>
-                </div>
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Sustainable Tourism</h3>
+                <p class="mb-4">OVERLAND Ethiopia Tours believes in the right of future generations having a healthy environment and natural resources that contribute to a better quality of life. No matter where you go or how you travel, you will have an effect on the environment and the people you visit. Our company also believes that you can have a more authentic and meaningful trip when sustainable tourism practices are applied.</p>
+
+                <h3 class="text-xl font-semibold text-[#ee3054] mt-6 mb-2">Our Trips</h3>
+                <p>Our trips are carefully designed to combine historical, cultural and natural riches with comfort, safety, luxury and adventure to create trips our guests will talk about for a long time. We have 4 key components; discovery, value, pace and choice.</p>
             </div>
         </div>
-        
-    </div>
-</div>
-
-
-<!-- Copyright section -->
-<div class="pt-6 text-center">
-                <!-- FIND US ON -->
-                <div class="space-y-4 mb-5"> <h3 class="text-xl font-semibold text-white">FIND US ON</h3> <div class="flex justify-center align-items gap-4"> <!-- Facebook icon (SVG) --> <a href="#" class="w-8 h-8 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:bg-[#166FE5] transition-colors"> <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/> </svg> </a> <!-- Twitter/X icon (SVG) --> <a href="#" class="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white hover:bg-gray-800 transition-colors"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/> </svg> </a> <!-- Instagram icon (SVG) --> <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-r from-[#405DE6] via-[#833AB4] to-[#C13584] hover:from-[#405DE6] hover:via-[#833AB4] hover:to-[#E1306C] transition-colors"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/> </svg> </a> <!-- LinkedIn icon (SVG) --> <a href="#" class="w-8 h-8 rounded-full bg-[#0A66C2] flex items-center justify-center text-white hover:bg-[#004182] transition-colors"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/> </svg> </a> </div> </div>
-                <p class="text-sm text-gray-400 ">&copy; 2025 Overland. All rights reserved. Hosted By Gravity Technologies</p>
-            </div>
-        </div>
-    </footer>
-   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get the JSON data from the script tag
-        const dataScript = document.getElementById('site-data');
-        const websiteData = JSON.parse(dataScript.textContent);
-        const activities = websiteData.activities;
-
-        // Get the main content elements
-        const contentTitle = document.getElementById('content-title');
-        const contentText = document.getElementById('content-text');
-
-     // Update the loadContent function
-// Update the loadContent function
-const loadContent = (periodKey) => {
-    const content = activities[periodKey];
-    if (content) {
-        // Set the main title (keep original color styling if you want)
-        contentTitle.innerHTML = `${content.title} <span class="text-[#ee3054] capitalize">${content.highlight || ''}</span>`;
-
-        // Set the main text
-        contentText.textContent = content.content;
-
-        // Handle the image
-        const contentImage = document.getElementById('content-image');
-        const imageCaption = document.getElementById('image-caption');
-
-        if (content.image) {
-            contentImage.src = content.image;
-            contentImage.alt = content.title;
-
-            // Combine title and highlight in the image caption
-            imageCaption.textContent = `${content.title} ${content.highlight || ''}`.trim();
-
-            // Fade in image when loaded
-            contentImage.onload = function() {
-                contentImage.classList.remove('opacity-0');
-                contentImage.classList.add('opacity-100');
-            };
-        } else {
-            // Fallback image
-            contentImage.src = '/images/default-activity.jpg';
-            contentImage.alt = 'Ethiopia Activities';
-            imageCaption.textContent = 'Explore Ethiopia';
-        }
-    } else {
-        contentTitle.textContent = "Content Not Found";
-        contentText.textContent = "Please select a different topic from the menu.";
-    }
-};
-
-
-
-        // Set up event listeners for content links
-        const contentLinks = document.querySelectorAll('.change-content');
-        contentLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent page reload
-                const period = link.getAttribute('data-period');
-                loadContent(period);
-                // Hide the mobile menu after clicking a link
-                document.getElementById('mobile-menu').classList.add('hidden');
-                document.getElementById('hamburger-icon').classList.remove('hidden');
-                document.getElementById('close-icon').classList.add('hidden');
-                
-                // Update URL with the section parameter
-                const urlParams = new URLSearchParams(window.location.search);
-                urlParams.set('section', period);
-                window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
-            });
+    </section>
+    <script src="../nav-active.js"></script>
+    <script>
+        // Force top-level About us active, not submenu
+        document.addEventListener('DOMContentLoaded', function () {
+            // Remove active class from any About submenu links
+            document.querySelectorAll('a[href*="about"], a[href*="about-company"], a[href*="about-terms"]').forEach(a => a.classList.remove('nav-active'));
+            // Add to the About button in the navbar
+            const aboutSpan = Array.from(document.querySelectorAll('.relative.group > button span')).find(s => /about us/i.test(s.textContent));
+            if (aboutSpan) {
+                aboutSpan.parentElement.classList.add('nav-active');
+            }
         });
-
-       
-        // Load content based on URL parameter or default to bikingAndCycling
-        const urlParams = new URLSearchParams(window.location.search);
-        const sectionParam = urlParams.get('section');
-        loadContent(sectionParam || 'bikingAndCycling');
-    });
-</script>
-<script src="../nav-active.js"></script>
+    </script>
 </body>
 </html>
+
