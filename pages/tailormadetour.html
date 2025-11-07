@@ -778,13 +778,13 @@ html{
             <div class="flex flex-col md:flex-row md:space-x-8">
                 <!-- Left side: Title and description -->
                 <div class="md:w-1/2 mb-6 md:mb-0">
-                    <h2 class="text-4xl font-extrabold text-[#ee3054] mb-4">${tour.title}</h2>
+                    <h2 class="text-4xl font-extrabold mb-4">${tour.title}</h2>
                     <p class="text-lg text-gray-600 leading-relaxed">${tour.description}</p>
                 </div>
 
                 <!-- Right side: The form itself -->
                 <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold text-[#ee3054] mb-4">${tour.formTitle}</h3>
+                    <h3 class="text-2xl font-bold mb-4">${tour.formTitle}</h3>
                     <p class="text-sm text-gray-500 mb-6">${tour.formDescription}</p>
                     ${createFormHtml(tourId)}
                 </div>
@@ -1073,17 +1073,8 @@ html{
         }
     });
 
-    // Initial setup on page load
+        // Initial setup on page load
     document.addEventListener('DOMContentLoaded', () => {
-        // Populate the desktop menu
-        for (const id in tourData) {
-            if (tourData.hasOwnProperty(id)) {
-                const title = tourData[id].title;
-                const link = createLink(id, title);
-                tailorMadeMenu.appendChild(link);
-            }
-        }
-
         // Check for URL parameter and navigate to the specific tour
         const tourParam = getUrlParameter('tour');
         if (tourParam && tourData[tourParam]) {
@@ -1097,7 +1088,6 @@ html{
             // Render the first form by default if no parameter
             renderForm("budget-holidays");
         }
-
     });
 </script>
 <script src="../nav-active.js"></script>
