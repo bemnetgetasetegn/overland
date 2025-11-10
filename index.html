@@ -340,6 +340,14 @@
             display: none; /* Hidden by default, JS will toggle */
             transition: all 0.3s ease-in-out;
         }
+          .nav-active {
+            background-color: #ef4444 !important; /* red-500 */
+            color: white !important;
+        }
+        .nav-active:hover {
+            background-color: #d12b2b !important; /* red-600 on hover */
+            color: white !important;
+        }
      /* Add these animation keyframes */
 @keyframes fadeInUp {
     from {
@@ -423,12 +431,23 @@
     overflow: hidden;
 }
 
+/* Apply overlay to split-grid to match base background */
+.split-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .split-cell {
     position: absolute;
     transform-style: preserve-3d;
     transform-origin: center;
     backface-visibility: hidden;
     perspective: 800px;
+    z-index: 2;
 }
 
 .split-face {
@@ -449,7 +468,7 @@
     animation-name: cellFlip;
     animation-duration: var(--dur, 800ms);
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(.2,.8,.2,1);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* smoother easing */
 }
 
 @keyframes cellFlip {
@@ -525,15 +544,15 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
                     <div class="relative group/historical">
-                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-nowrap text-sm">Antique Ethiopia</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Antique Ethiopia</span>
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words capitalize">
                             <a href="./pages/Ethiopia.html?section=earliestHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Earliest History</a>
                             <a href="./pages/Ethiopia.html?section=ancientEthiopia" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ancient Ethiopia</a>
                             <a href="./pages/Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Kingdom of Axum</a>
@@ -545,13 +564,13 @@
                         </div>
                     </div>
                     <div class="relative group/historical">
-                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-nowrap text-sm">Modern Ethiopia</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Modern Ethiopia</span>
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
                             <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Leaving The Medival World</a>
                             <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Recent History</a>
                             <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Derg Period</a>
@@ -571,7 +590,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
                     <a href="./pages/about.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Who we are</a>
                     <a href="./pages/about-company-profile.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Our companys profile</a>
                     <a href="./pages/about-terms-and-conditions.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Terms and conditions</a>
@@ -588,27 +607,27 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
                     <div class="relative group/historical capitalize-nav">
-                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Cultural</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words capitalize">
                             <a href="./pages/Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Omo valley</a>
                             <a href="./pages/Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Tribes of the omo valley</a>
                         </div>
                     </div>
                     <div class="relative group/historical">
-                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-nowrap text-sm">Festival & holidays</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Festival & holidays</span>
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-2 whitespace-normal break-words capitalize">
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian NewYear</a>
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Finding of the True Cross</a>
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Feast of Saint Gabriel Kulubi Gabriel </a>
@@ -621,11 +640,11 @@
                     <div class="relative group/historical">
                         <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Historical</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
                             <a href="./pages/Attraction.html?section=historical.addisAbaba" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Addis Ababa</a>
                             <a href="./pages/Attraction.html?section=historical.historicRoute" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Historic Route Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=historical.rockChurchesOfTigray" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Rock Churches Of Tigray</a>
@@ -634,11 +653,11 @@
                     <div class="relative group/historical">
                         <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Natural</span>
-                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
                             <a href="./pages/Attraction.html?section=natural.endemicBirds" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Endemic Birds Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=natural.westernHighlands" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Western HighLands Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=natural.riftValleyLakes" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RiftValley Lakes In Ethiopia</a>
@@ -669,7 +688,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
                     <a href="./pages/Activities.html?section=bikingAndCycling" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Biking and cycling</a>
                     <a href="./pages/Activities.html?section=birdWatching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird watching</a>
                     <a href="./pages/Activities.html?section=coffeeCeremony" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Coffee ceremony</a>
@@ -693,7 +712,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
                     <a href="./pages/tourfinal.html?category=bird-watching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching</a>
                     <a href="./pages/tourfinal.html?category=city-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">City Tours</a>
                     <a href="./pages/tourfinal.html?category=combinations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
@@ -716,7 +735,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
+                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
                     <a href="./pages/tailormadetour.html?tour=budget-holidays" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Budget Holidays</a>
                     <a href="./pages/tailormadetour.html?tour=family-holidays" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Family Holidays</a>
                     <a href="./pages/tailormadetour.html?tour=group-adventure" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Group Adventure In Ethiopia</a>
@@ -748,7 +767,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Attractions</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -757,7 +776,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Cultural</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -771,7 +790,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Festival & holidays</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -789,7 +808,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Historical</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -804,7 +823,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Natural</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -825,7 +844,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Ethiopia</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -834,7 +853,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Antique Ethiopia</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -854,7 +873,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Modern Ethiopia</span>
-                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -872,7 +891,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Activities</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -894,7 +913,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Tailor-made Tours</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -912,7 +931,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Tour Packages</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -934,7 +953,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>About us</span>
-                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -1014,7 +1033,7 @@
 
 
 <script> 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () { 
         // Get references to the elements
         const heroBg = document.getElementById('hero-bg'); 
         const heroHeading = document.getElementById('hero-heading');
@@ -1025,24 +1044,24 @@
            { 
                 image: './overlandpics/NATURE/danakil_3.jpg', 
                heading: 'Journey to the Danakil Depression', 
-    subheading: 'Explore one of Earth\'s most extreme landscapes, where lava lakes, salt flats, and colorful mineral springs create a surreal adventure.' 
+    subheading: 'Explore one of Earth’s most extreme landscapes, where lava lakes, salt flats, and colorful mineral springs create a surreal adventure.' 
 },
             { 
                 image: './overlandpics/simen-mounain-national-park-chelada-baboon-1.jpg', 
                heading: 'Explore Simien Mountains ', 
-    subheading: 'Trek dramatic cliffs, spot endemic wildlife, and experience Ethiopia\'s breathtaking highlands.' 
+    subheading: 'Trek dramatic cliffs, spot endemic wildlife, and experience Ethiopia’s breathtaking highlands.' 
 },
             { 
                 image: './overlandpics/BIKE/p5pb12815168.jpg', 
-                 heading: 'Cycle Through Ethiopia\'s Hidden Trails', 
+                 heading: 'Cycle Through Ethiopia’s Hidden Trails', 
     subheading: 'Ride across highlands, valleys, and cultural landscapes on two wheels.' 
 },
             { 
                 image: './overlandpics/ARCHAEOLOGY/3512931332_f0c1e0d15f_o.jpg', 
                heading: 'Marvel at Aksumite Architecture', 
-    subheading: 'Discover ancient obelisks, royal tombs, and timeless stonework that shaped Ethiopia\'s legacy.' 
+    subheading: 'Discover ancient obelisks, royal tombs, and timeless stonework that shaped Ethiopia’s legacy.' 
 },
-        ];
+        ]; 
         
         // Preload hero images and set the initial slide immediately
         heroContent.forEach(item => { const img = new Image(); img.src = item.image; });
@@ -1052,158 +1071,270 @@
             heroSubheading.textContent = heroContent[0].subheading;
         }
 
-        let currentImageIndex = 0;
-        let isAnimating = false;
+        let currentImageIndex = 0; 
+  
+         
+            
+            
+        
+        // Function to change both the background and the text using a split-square grid animation
+        // Preload images already done above; set initial content earlier
 
-        // Optimized split grid animation function
+        // playSplitGrid: animate small cells flipping to reveal next image
         function playSplitGrid(currentImageUrl, nextImageUrl, opts = {}) {
             return new Promise((resolve) => {
-                // Use fewer squares for better performance
-                const rows = opts.rows || 3;
-                const cols = opts.cols || 4;
-                const dur = opts.duration || 600;
-                
+                // Larger squares: fewer rows/cols for better performance
+                const rows = opts.rows || Math.max(2, Math.floor(window.innerHeight / 320));
+                const cols = opts.cols || Math.max(3, Math.floor(window.innerWidth / 320));
+                const dur = opts.duration || 1000; // Slightly longer for smoother animation
+
+                // Sync background image before animation starts
+                heroBg.style.backgroundImage = `url('${currentImageUrl}')`;
+
                 const rect = heroBg.getBoundingClientRect();
                 const grid = document.createElement('div');
                 grid.className = 'split-grid';
-                
-                // Pre-set the next background
-                heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
-                
+                grid.style.setProperty('--dur', dur + 'ms');
+
                 const cellW = Math.ceil(rect.width / cols);
                 const cellH = Math.ceil(rect.height / rows);
-                
-                // Create fragment for batch DOM insertion
-                const fragment = document.createDocumentFragment();
-                
+
                 for (let r = 0; r < rows; r++) {
                     for (let c = 0; c < cols; c++) {
                         const cell = document.createElement('div');
-                        cell.className = 'split-cell optimized-cell';
+                        cell.className = 'split-cell';
                         cell.style.width = cellW + 'px';
                         cell.style.height = cellH + 'px';
                         cell.style.left = (c * cellW) + 'px';
                         cell.style.top = (r * cellH) + 'px';
-                        
+                        cell.style.position = 'absolute';
+
                         const bgX = -(c * cellW) + 'px';
                         const bgY = -(r * cellH) + 'px';
-                        
-                        // Create only one face (simpler)
-                        const face = document.createElement('div');
-                        face.className = 'split-face optimized-face';
-                        face.style.backgroundImage = `url('${currentImageUrl}')`;
-                        face.style.backgroundPosition = `${bgX} ${bgY}`;
-                        face.style.backgroundSize = `${rect.width}px ${rect.height}px`;
-                        
-                        cell.appendChild(face);
-                        
-                        // Stagger animation with simpler calculation
-                        const delay = (r * cols + c) * 0.05;
+
+                        cell.style.setProperty('--bg-w', rect.width + 'px');
+                        cell.style.setProperty('--bg-h', rect.height + 'px');
+
+                        const front = document.createElement('div');
+                        front.className = 'split-face front';
+                        front.style.backgroundImage = `url('${currentImageUrl}')`;
+                        front.style.setProperty('--bg-x', bgX);
+                        front.style.setProperty('--bg-y', bgY);
+
+                        const back = document.createElement('div');
+                        back.className = 'split-face back';
+                        back.style.backgroundImage = `url('${nextImageUrl}')`;
+                        back.style.setProperty('--bg-x', bgX);
+                        back.style.setProperty('--bg-y', bgY);
+
+                        cell.appendChild(front);
+                        cell.appendChild(back);
+
+                        // Smoother delay distribution - reduce random spread and use more predictable pattern
+                        const baseDelay = (r + c) * 0.015; // More predictable base delay
+                        const randomOffset = Math.random() * 0.2; // Reduced random spread
+                        const delay = baseDelay + randomOffset;
                         cell.style.animationDelay = delay + 's';
-                        
-                        fragment.appendChild(cell);
+                        cell.style.setProperty('--dur', dur + 'ms');
+
+                        grid.appendChild(cell);
                     }
                 }
-                
-                grid.appendChild(fragment);
+
                 heroBg.appendChild(grid);
-                
-                // Start animations
-                setTimeout(() => {
-                    const cells = grid.querySelectorAll('.optimized-cell');
-                    cells.forEach(cell => {
-                        cell.classList.add('animating');
-                    });
-                }, 50);
-                
-                // Cleanup
-                setTimeout(() => {
-                    if (grid.parentNode) {
-                        grid.parentNode.removeChild(grid);
+                // trigger reflow
+                void grid.offsetWidth;
+
+                const cells = grid.querySelectorAll('.split-cell');
+                let ended = false;
+                cells.forEach((cell, idx) => {
+                    cell.classList.add('animating');
+                    if (idx === cells.length - 1) {
+                        cell.addEventListener('animationend', function onEnd() {
+                            if (ended) return;
+                            ended = true;
+                            // Update background image immediately after animation
+                            heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
+                            if (grid && grid.parentNode) grid.parentNode.removeChild(grid);
+                            resolve();
+                            cell.removeEventListener('animationend', onEnd);
+                        });
                     }
+                });
+
+                // fallback timeout
+                setTimeout(() => {
+                    if (!ended) {
+                        heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
+                        if (grid && grid.parentNode) grid.parentNode.removeChild(grid);
+                        resolve();
+                    }
+                }, dur + 1000);
+            });
+        }
+
+        // Pixel Dissolve: many tiny squares fade out/in to reveal the next image
+        function playPixelDissolve(currentImageUrl, nextImageUrl, opts = {}) {
+            return new Promise((resolve) => {
+                const rows = opts.rows || Math.max(8, Math.floor(window.innerHeight / 40));
+                const cols = opts.cols || Math.max(12, Math.floor(window.innerWidth / 40));
+                const dur = opts.duration || 1000;
+
+                const rect = heroBg.getBoundingClientRect();
+                const grid = document.createElement('div');
+                grid.className = 'split-grid';
+                grid.style.setProperty('--dur', dur + 'ms');
+
+                const cellW = Math.ceil(rect.width / cols);
+                const cellH = Math.ceil(rect.height / rows);
+
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        const cell = document.createElement('div');
+                        cell.className = 'split-cell';
+                        cell.style.width = cellW + 'px';
+                        cell.style.height = cellH + 'px';
+                        cell.style.left = (c * cellW) + 'px';
+                        cell.style.top = (r * cellH) + 'px';
+                        cell.style.position = 'absolute';
+
+                        const bgX = -(c * cellW) + 'px';
+                        const bgY = -(r * cellH) + 'px';
+
+                        cell.style.setProperty('--bg-w', rect.width + 'px');
+                        cell.style.setProperty('--bg-h', rect.height + 'px');
+
+                        const front = document.createElement('div');
+                        front.className = 'split-face front';
+                        front.style.backgroundImage = `url('${currentImageUrl}')`;
+                        front.style.setProperty('--bg-x', bgX);
+                        front.style.setProperty('--bg-y', bgY);
+
+                        const back = document.createElement('div');
+                        back.className = 'split-face back';
+                        back.style.backgroundImage = `url('${nextImageUrl}')`;
+                        back.style.setProperty('--bg-x', bgX);
+                        back.style.setProperty('--bg-y', bgY);
+
+                        // dissolve uses opacity instead of rotate
+                        front.style.transition = `opacity ${dur}ms ease-in-out`;
+                        back.style.transition = `opacity ${dur}ms ease-in-out`;
+                        back.style.opacity = '0';
+
+                        cell.appendChild(front);
+                        cell.appendChild(back);
+
+                        const delay = Math.random() * 0.6 * (dur / 1000);
+                        cell.style.transitionDelay = `${delay}s`;
+
+                        grid.appendChild(cell);
+                    }
+                }
+
+                heroBg.appendChild(grid);
+                // sync initial bg to avoid dark/misaligned perception
+                heroBg.style.backgroundImage = `url('${currentImageUrl}')`;
+
+                requestAnimationFrame(() => {
+                    grid.querySelectorAll('.split-cell').forEach((cell) => {
+                        const [front, back] = cell.children;
+                        front.style.opacity = '0';
+                        back.style.opacity = '1';
+                    });
+                });
+
+                setTimeout(() => {
+                    if (grid && grid.parentNode) grid.parentNode.removeChild(grid);
                     resolve();
-                }, dur + (rows * cols * 50) + 100);
+                }, dur + 700);
             });
         }
 
-        // Check if we should use simple animation for performance
-        function shouldUseSimpleAnimation() {
-            // Check for mobile devices or slow connections
-            return window.innerWidth <= 768 || 
-                   (navigator.connection && (
-                       navigator.connection.saveData ||
-                       navigator.connection.effectiveType === 'slow-2g' ||
-                       navigator.connection.effectiveType === '2g'
-                   ));
-        }
+        // 3D Background Flip: whole background flips like a card
+        function playBackgroundFlip(currentImageUrl, nextImageUrl, opts = {}) {
+            return new Promise((resolve) => {
+                const dur = opts.duration || 900;
+                const container = document.createElement('div');
+                container.style.position = 'absolute';
+                container.style.inset = '0';
+                container.style.perspective = '1200px';
+                container.style.zIndex = '4';
+                const rect = heroBg.getBoundingClientRect();
 
-        // Preload images function
-        function preloadHeroImages() {
-            heroContent.forEach(item => {
-                const img = new Image();
-                img.src = item.image;
-                img.decoding = 'async';
+                const card = document.createElement('div');
+                card.style.width = '100%';
+                card.style.height = '100%';
+                card.style.transformStyle = 'preserve-3d';
+                card.style.transition = `transform ${dur}ms ease-in-out`;
+
+                const front = document.createElement('div');
+                front.className = 'split-face front';
+                front.style.backgroundImage = `url('${currentImageUrl}')`;
+                front.style.transform = 'rotateY(0deg) translateZ(1px)';
+                front.style.backfaceVisibility = 'hidden';
+                front.style.setProperty('--bg-w', rect.width + 'px');
+                front.style.setProperty('--bg-h', rect.height + 'px');
+                front.style.setProperty('--bg-x', '0px');
+                front.style.setProperty('--bg-y', '0px');
+
+                const back = document.createElement('div');
+                back.className = 'split-face back';
+                back.style.backgroundImage = `url('${nextImageUrl}')`;
+                back.style.transform = 'rotateY(180deg) translateZ(1px)';
+                back.style.backfaceVisibility = 'hidden';
+                back.style.setProperty('--bg-w', rect.width + 'px');
+                back.style.setProperty('--bg-h', rect.height + 'px');
+                back.style.setProperty('--bg-x', '0px');
+                back.style.setProperty('--bg-y', '0px');
+
+                card.appendChild(front);
+                card.appendChild(back);
+                container.appendChild(card);
+                heroBg.appendChild(container);
+
+                // sync initial to current
+                heroBg.style.backgroundImage = `url('${currentImageUrl}')`;
+
+                requestAnimationFrame(() => {
+                    card.style.transform = 'rotateY(180deg)';
+                });
+
+                setTimeout(() => {
+                    heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
+                    if (container && container.parentNode) container.parentNode.removeChild(container);
+                    resolve();
+                }, dur + 50);
             });
         }
 
-        // Main content change function
+        // (removed) curtain/wipe function
+
         async function changeHeroContent() {
-            if (isAnimating) return;
-            
-            isAnimating = true;
             const nextIndex = (currentImageIndex + 1) % heroContent.length;
             const currentImage = heroContent[currentImageIndex].image;
             const next = heroContent[nextIndex];
-            
-            try {
-                if (shouldUseSimpleAnimation()) {
-                    // Use simple crossfade on slow devices
-                    heroBg.style.transition = 'opacity 0.8s ease-in-out';
-                    heroBg.style.opacity = '0.7';
-                    
-                    setTimeout(() => {
-                        heroBg.style.backgroundImage = `url('${next.image}')`;
-                        heroHeading.textContent = next.heading;
-                        heroSubheading.textContent = next.subheading;
-                        heroBg.style.opacity = '1';
-                        currentImageIndex = nextIndex;
-                        
-                        setTimeout(() => {
-                            heroBg.style.transition = '';
-                            isAnimating = false;
-                        }, 100);
-                    }, 400);
-                } else {
-                    // Use optimized split grid
-                    await playSplitGrid(currentImage, next.image, { 
-                        duration: 600,
-                        rows: 3,
-                        cols: 4
-                    });
-                    
-                    heroHeading.textContent = next.heading;
-                    heroSubheading.textContent = next.subheading;
-                    currentImageIndex = nextIndex;
-                    isAnimating = false;
-                }
-            } catch (error) {
-                console.error('Animation error:', error);
-                // Fallback to simple transition
-                heroBg.style.backgroundImage = `url('${next.image}')`;
-                heroHeading.textContent = next.heading;
-                heroSubheading.textContent = next.subheading;
-                currentImageIndex = nextIndex;
-                isAnimating = false;
+
+            // Use only Split-Square Grid animation with larger cells
+            await playSplitGrid(currentImage, next.image, { duration: 1000 });
+
+            currentImageIndex = nextIndex;
+            heroBg.style.backgroundImage = `url('${next.image}')`;
+            heroHeading.textContent = next.heading;
+            heroSubheading.textContent = next.subheading;
+
+            if (currentImageIndex % 2 === 0) {
+                heroBg.classList.remove('pan-right-bottom');
+                heroBg.classList.add('pan-left-top');
+            } else {
+                heroBg.classList.remove('pan-left-top');
+                heroBg.classList.add('pan-right-bottom');
             }
         }
 
-        // Initialize preloading
-        preloadHeroImages();
-            
-        // Start the slider (less frequent for better performance)
-        setInterval(changeHeroContent, 8000);
+        // Start the slider (slightly less frequent for smoother performance)
+        setInterval(changeHeroContent, 6500);
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle (from original code, kept for completeness)
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); 
         const mobileMenu = document.getElementById('mobile-menu'); 
         if (mobileMenuToggle && mobileMenu) {
@@ -1211,8 +1342,7 @@
                 mobileMenu.classList.toggle('hidden'); 
             }); 
         }
-
-        function setActiveNav() {
+ function setActiveNav() {
             // Remove any existing active classes
             document.querySelectorAll('.nav-active').forEach(item => {
                 item.classList.remove('nav-active');
@@ -1227,27 +1357,16 @@
             // Check each link to see if it matches current URL
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
-
+                
                 // Handle index.html and root path
-                if ((href === '/index.html' || href === '/') &&
+                if ((href === '/index.html' || href === '/') && 
                     (currentUrl.endsWith('/index.html') || currentUrl.endsWith('/') || currentUrl.endsWith('/#'))) {
                     link.classList.add('nav-active');
                     return;
                 }
-
+                
                 // Handle other pages
                 if (href !== '/index.html' && href !== '/' && currentUrl.includes(href)) {
-                    // If this link is inside a dropdown group (e.g., About us submenu), prefer
-                    // to add the active class to the parent button instead of the individual link.
-                    const parentGroup = link.closest('.relative.group');
-                    if (parentGroup) {
-                        const parentBtn = parentGroup.querySelector('button');
-                        if (parentBtn) {
-                            parentBtn.classList.add('nav-active');
-                            return;
-                        }
-                    }
-
                     link.classList.add('nav-active');
                 }
             });}
@@ -1265,8 +1384,7 @@
                     icon.classList.toggle('rotate-90');
                 });
             });
-        
-        // Mobile Dropdown Toggles
+        // Mobile Dropdown Toggles (from original code, kept for completeness)
         const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle'); 
         mobileDropdownToggles.forEach(toggle => { 
             toggle.addEventListener('click', function() { 
@@ -1276,10 +1394,7 @@
                     this.querySelector('svg').classList.toggle('rotate-90'); 
                 }
             }); 
-        });
-
-        // Initialize active nav
-        setActiveNav();
+        }); 
     }); 
 </script>
     <!-- about us section -->
@@ -1912,8 +2027,8 @@
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
           <div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900">Over 35 years of adventure</h3>
-            <p class="text-gray-600 text-sm md:text-base">We’re adventure travel experts with decades of trips and experiences across Ethiopia.</p>
+            <h3 class="text-lg md:text-xl font-semibold ">Over 35 years of adventure</h3>
+            <p class="">We’re adventure travel experts with decades of trips and experiences across Ethiopia.</p>
           </div>
         </div>
 
@@ -1925,7 +2040,7 @@
           </svg>
           <div>
             <h3 class="text-lg md:text-xl font-semibold text-gray-900">Flexible bookings</h3>
-            <p class="text-gray-600 text-sm md:text-base">Plans change—we’re here to help with flexible options tailored to your needs.</p>
+            <p class="">Plans change—we’re here to help with flexible options tailored to your needs.</p>
           </div>
         </div>
 
@@ -1939,7 +2054,7 @@
           </svg>
           <div>
             <h3 class="text-lg md:text-xl font-semibold text-gray-900">Like-minded travellers</h3>
-            <p class="text-gray-600 text-sm md:text-base">Share experiences with a community of spirited explorers who care about the planet.</p>
+            <p class="">Share experiences with a community of spirited explorers who care about the planet.</p>
           </div>
         </div>
 
@@ -1951,7 +2066,7 @@
           </svg>
           <div>
             <h3 class="text-lg md:text-xl font-semibold text-gray-900">The right trip for you</h3>
-            <p class="text-gray-600 text-sm md:text-base">Local-led, unforgettable experiences with everything taken care of from start to finish.</p>
+            <p class="">Local-led, unforgettable experiences with everything taken care of from start to finish.</p>
           </div>
         </div>
       </div>
@@ -2238,7 +2353,7 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
     </div>
 
     <!-- Subtitle -->
-    <p class="mt-2 text-gray-500 text-center max-w-xs md:max-w-md leading-relaxed">
+    <p class="mt-2 text-center max-w-xs md:max-w-md leading-relaxed">
         Real stories from travelers who explored Ethiopia with us.
     </p>
 </header>
@@ -2274,7 +2389,7 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
                     <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#ee3054]">
                         <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
                     </svg>
-                    <p id="main-quote" class="mt-4 text-lg md:text-sm text-justify text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p id="main-quote" class="mt-4  text-justify  leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="mt-6">
                     <p class="font-semibold text-gray-800">

@@ -1,5 +1,48 @@
 // nav-active.js
 (() => {
+  // Global CSS fixes injected on every page to prevent text overflow
+  try {
+    const style = document.createElement('style');
+    style.setAttribute('data-global-fixes', 'true');
+    style.textContent = `
+      /* Ensure padding/border are counted in width to avoid spillover */
+      *, *::before, *::after { box-sizing: border-box; }
+
+      /* Keep media inside their containers */
+      img, video, canvas, svg, iframe { max-width: 100%; height: auto; }
+
+      /* Wrap long words/URLs so text stays inside its box on all pages */
+      p, li, h1, h2, h3, h4, h5, h6, blockquote, figcaption {
+        overflow-wrap: anywhere; /* modern */
+        word-break: break-word;  /* fallback */
+        hyphens: auto;
+      }
+
+      /* Common content ids/classes used across pages */
+      #content-text { white-space: normal; }
+
+      /* Navigation dropdown panels: force wrapping and safe sizing */
+      nav .relative.group > .absolute,
+      nav .group .absolute.left-0,
+      nav .group .absolute.left-full {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        hyphens: auto;
+        z-index: 50;
+        width: max-content;
+        min-width: 14rem; /* ~min-w-56 */
+        max-width: 20rem; /* ~max-w-xs */
+      }
+
+      /* Multi-line row support: keep label+arrow aligned when wrapping */
+      nav .group .absolute button { align-items: flex-start !important; gap: 0.75rem; }
+      nav .group .absolute button span { white-space: normal !important; }
+
+    `;
+    document.head && document.head.appendChild(style);
+  } catch (_) { /* no-op */ }
+
   // Cache DOM elements and computed values
   let cachedElements = null;
   let cachedPathname = '';
