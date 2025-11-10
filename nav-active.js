@@ -48,6 +48,13 @@
         margin-left: 0.25rem; /* ~ml-1 */
       }
 
+      /* Center-align dropdown contents (desktop panels and mobile lists) */
+      nav .group .absolute { text-align: center !important; }
+      nav .group .absolute a { text-align: center !important; }
+      nav .group .absolute button > span { flex: 1 1 auto; text-align: center !important; }
+      nav .mobile-dropdown-content,
+      nav .mobile-dropdown-content a { text-align: center !important; }
+
     `;
     document.head && document.head.appendChild(style);
   } catch (_) { /* no-op */ }
