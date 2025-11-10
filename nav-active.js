@@ -39,6 +39,15 @@
       nav .group .absolute button { align-items: flex-start !important; gap: 0.75rem; }
       nav .group .absolute button span { white-space: normal !important; }
 
+      /* Top-level nav arrows (desktop + mobile): unify size and prevent shrinking */
+      nav .relative.group > button > svg,
+      nav button.mobile-dropdown-toggle > svg {
+        width: 1rem !important; /* ~h-4 */
+        height: 1rem !important; /* ~w-4 */
+        flex: 0 0 auto;
+        margin-left: 0.25rem; /* ~ml-1 */
+      }
+
     `;
     document.head && document.head.appendChild(style);
   } catch (_) { /* no-op */ }
