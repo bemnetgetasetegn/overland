@@ -219,14 +219,6 @@ function renderMainTour(tour) {
                 <div class="mb-4 sm:mb-0">
                     <p class="text-lg font-semibold text-gray-800">Tour Code: ${tour.id}</p>
                 </div>
-                <div class="flex space-x-4">
-                    <button class="px-6 py-2 bg-[#ee3054] text-white rounded-lg hover:bg-red-700 transition-colors duration-300 font-medium">
-                        Book This Tour
-                    </button>
-                    <button class="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-300 font-medium">
-                        Download Itinerary
-                    </button>
-                </div>
             </div>
         </div>
     `;
