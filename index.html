@@ -431,23 +431,12 @@
     overflow: hidden;
 }
 
-/* Apply overlay to split-grid to match base background */
-.split-grid::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    pointer-events: none;
-}
-
 .split-cell {
     position: absolute;
     transform-style: preserve-3d;
     transform-origin: center;
     backface-visibility: hidden;
     perspective: 800px;
-    z-index: 2;
 }
 
 .split-face {
@@ -468,7 +457,7 @@
     animation-name: cellFlip;
     animation-duration: var(--dur, 800ms);
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* smoother easing */
+    animation-timing-function: cubic-bezier(.2,.8,.2,1);
 }
 
 @keyframes cellFlip {
@@ -544,15 +533,15 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
                     <div class="relative group/historical">
-                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Antique Ethiopia</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-nowrap text-sm">Antique Ethiopia</span>
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap capitalize">
                             <a href="./pages/Ethiopia.html?section=earliestHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Earliest History</a>
                             <a href="./pages/Ethiopia.html?section=ancientEthiopia" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ancient Ethiopia</a>
                             <a href="./pages/Ethiopia.html?section=kingdomOfAxum" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Kingdom of Axum</a>
@@ -564,13 +553,13 @@
                         </div>
                     </div>
                     <div class="relative group/historical">
-                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Modern Ethiopia</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-nowrap text-sm">Modern Ethiopia</span>
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
                             <a href="./pages/Ethiopia.html?section=leavingMedievalWorld" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Leaving The Medival World</a>
                             <a href="./pages/Ethiopia.html?section=recentHistory" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Recent History</a>
                             <a href="./pages/Ethiopia.html?section=dergPeriod" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">The Derg Period</a>
@@ -590,7 +579,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
                     <a href="./pages/about.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Who we are</a>
                     <a href="./pages/about-company-profile.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Our companys profile</a>
                     <a href="./pages/about-terms-and-conditions.html" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Terms and conditions</a>
@@ -607,27 +596,27 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
                     <div class="relative group/historical capitalize-nav">
-                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Cultural</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap capitalize">
                             <a href="./pages/Attraction.html?section=cultural.omoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Omo valley</a>
                             <a href="./pages/Attraction.html?section=cultural.tribesOfOmoValley" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200 ">Tribes of the omo valley</a>
                         </div>
                     </div>
                     <div class="relative group/historical">
-                        <button class="flex items-start justify-between w-full gap-3 py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
-                            <span class="whitespace-normal break-words text-sm leading-snug pr-2">Festival & holidays</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                            <span class="whitespace-nowrap text-sm">Festival & holidays</span>
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-2 whitespace-normal break-words capitalize">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-lg border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto w-56 bg-white shadow-lg p-2 capitalize">
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.ethiopianNewYear" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Ethiopian NewYear</a>
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.findingOfTrueCross" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Finding of the True Cross</a>
                             <a href="./pages/Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Feast of Saint Gabriel Kulubi Gabriel </a>
@@ -640,11 +629,11 @@
                     <div class="relative group/historical">
                         <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Historical</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
                             <a href="./pages/Attraction.html?section=historical.addisAbaba" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Addis Ababa</a>
                             <a href="./pages/Attraction.html?section=historical.historicRoute" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Historic Route Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=historical.rockChurchesOfTigray" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Rock Churches Of Tigray</a>
@@ -653,11 +642,11 @@
                     <div class="relative group/historical">
                         <button class="flex items-center justify-between w-full py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">
                             <span>Natural</span>
-                            <svg class="h-4 w-4 ml-2 shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="h-3 w-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-max max-w-xs bg-white shadow-lg p-3 whitespace-normal break-words">
+                        <div class="absolute left-full top-0 mt-0 opacity-0 group-hover/historical:opacity-100 transition-opacity duration-300 delay-200 z-50 rounded-xl border border-gray-200 pointer-events-none group-hover/historical:pointer-events-auto min-w-56 w-auto bg-white shadow-lg p-3 whitespace-nowrap">
                             <a href="./pages/Attraction.html?section=natural.endemicBirds" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Endemic Birds Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=natural.westernHighlands" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Western HighLands Of Ethiopia</a>
                             <a href="./pages/Attraction.html?section=natural.riftValleyLakes" class="block py-2 px-3 text-xs text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">RiftValley Lakes In Ethiopia</a>
@@ -688,7 +677,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
                     <a href="./pages/Activities.html?section=bikingAndCycling" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Biking and cycling</a>
                     <a href="./pages/Activities.html?section=birdWatching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird watching</a>
                     <a href="./pages/Activities.html?section=coffeeCeremony" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Coffee ceremony</a>
@@ -712,7 +701,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words capitalize z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap capitalize">
                     <a href="./pages/tourfinal.html?category=bird-watching" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Bird Watching</a>
                     <a href="./pages/tourfinal.html?category=city-tour" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">City Tours</a>
                     <a href="./pages/tourfinal.html?category=combinations" class="block py-2 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Combinations</a>
@@ -735,7 +724,7 @@
                 </button>
                 <div class="absolute left-0 mt-2 min-w-48 w-auto bg-white border border-gray-200 rounded-xl shadow-lg 
                     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 ease-out p-3 whitespace-normal break-words z-50">
+                    transition-all duration-300 ease-out p-3 whitespace-nowrap">
                     <a href="./pages/tailormadetour.html?tour=budget-holidays" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Budget Holidays</a>
                     <a href="./pages/tailormadetour.html?tour=family-holidays" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Family Holidays</a>
                     <a href="./pages/tailormadetour.html?tour=group-adventure" class="block py-2.5 px-3 text-sm text-gray-800 hover:bg-gray-100 rounded-md transition-colors duration-200">Group Adventure In Ethiopia</a>
@@ -767,7 +756,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Attractions</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -776,7 +765,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Cultural</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -790,7 +779,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Festival & holidays</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -808,7 +797,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Historical</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -823,7 +812,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Natural</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -844,7 +833,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Ethiopia</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -853,7 +842,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Antique Ethiopia</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -873,7 +862,7 @@
                         <div class="relative border-b border-gray-200">
                             <button class="nested-dropdown-toggle w-full text-left py-2 px-6 text-xs text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                                 <span>Modern Ethiopia</span>
-                                <svg class="h-4 w-4 shrink-0 transform transition-transform text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <svg class="h-3 w-3 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -891,7 +880,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Activities</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -913,7 +902,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Tailor-made Tours</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -931,7 +920,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>Tour Packages</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -953,7 +942,7 @@
                 <div class="relative border-b border-gray-100">
                     <button class="mobile-dropdown-toggle w-full text-left py-3 px-4 text-sm text-gray-800 hover:bg-gray-100 flex justify-between items-center">
                         <span>About us</span>
-                        <svg class="h-4 w-4 transform transition-transform shrink-0 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <svg class="h-4 w-4 transform transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                         </svg>
                     </button>
@@ -1086,10 +1075,7 @@
                 // Larger squares: fewer rows/cols for better performance
                 const rows = opts.rows || Math.max(2, Math.floor(window.innerHeight / 320));
                 const cols = opts.cols || Math.max(3, Math.floor(window.innerWidth / 320));
-                const dur = opts.duration || 1000; // Slightly longer for smoother animation
-
-                // Sync background image before animation starts
-                heroBg.style.backgroundImage = `url('${currentImageUrl}')`;
+                const dur = opts.duration || 800;
 
                 const rect = heroBg.getBoundingClientRect();
                 const grid = document.createElement('div');
@@ -1130,10 +1116,7 @@
                         cell.appendChild(front);
                         cell.appendChild(back);
 
-                        // Smoother delay distribution - reduce random spread and use more predictable pattern
-                        const baseDelay = (r + c) * 0.015; // More predictable base delay
-                        const randomOffset = Math.random() * 0.2; // Reduced random spread
-                        const delay = baseDelay + randomOffset;
+                        const delay = (Math.random() * 0.45 + (r + c) * 0.008);
                         cell.style.animationDelay = delay + 's';
                         cell.style.setProperty('--dur', dur + 'ms');
 
@@ -1153,8 +1136,6 @@
                         cell.addEventListener('animationend', function onEnd() {
                             if (ended) return;
                             ended = true;
-                            // Update background image immediately after animation
-                            heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
                             if (grid && grid.parentNode) grid.parentNode.removeChild(grid);
                             resolve();
                             cell.removeEventListener('animationend', onEnd);
@@ -1165,11 +1146,10 @@
                 // fallback timeout
                 setTimeout(() => {
                     if (!ended) {
-                        heroBg.style.backgroundImage = `url('${nextImageUrl}')`;
                         if (grid && grid.parentNode) grid.parentNode.removeChild(grid);
                         resolve();
                     }
-                }, dur + 1000);
+                }, dur + 900);
             });
         }
 
@@ -1315,7 +1295,7 @@
             const next = heroContent[nextIndex];
 
             // Use only Split-Square Grid animation with larger cells
-            await playSplitGrid(currentImage, next.image, { duration: 1000 });
+            await playSplitGrid(currentImage, next.image, { duration: 800 });
 
             currentImageIndex = nextIndex;
             heroBg.style.backgroundImage = `url('${next.image}')`;
@@ -1533,30 +1513,30 @@
         const destinations = [
            
             {
-                imageUrl: "./pictures/Christmas-Festival-Celebration-in-Lalibela-Overland-Ethiopia-Tours.jpg",
-                title: "CHRISTMAS FESTIVAL CELEBRATION IN LALIBELA",
-                discription: "This historical route tour is designed in such a way to coincide with the colorful festival celebration of Ethiopia Christmas on 7 January in Lalibela."
-            },
-            {
                 imageUrl: "./pictures/Photography-Tours-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
                 title: "Photography Tours In Ethiopia",
                 discription: "Ethiopia photography tours cater to photography enthusiasts of all levels of expertise. Most tours have only ten participants per departure."
             },
             {
-                imageUrl: "./overlandpics/saintmary.jpg",
-                title: "Tour of Saint Mary of Zion Festival Celebration in Axum",
-                discription: "This package focuses on the annual celebration of Saint Mary at Axum fall on 30th of November, the festival that is attended by tens of thousands of people from all over Ethiopia."
+                imageUrl: "./overlandpics/AAEAAQAAAAAAAAUQAAAAJDZmN2RhNjZjLTM1NDYtNDMyYi1iNTk3LTUzMmY2ZjBjNDUyMg.jpg",
+                title: "Short Tour Danakil Depression",
+                discription: "The northern portion of the route leads us to still drier country, the fascinating Erta Ale absolutely unique Lava Lake erupting 24 hours and the lowest part of Danakil Depression."
+            },
+            // {
+                //     imageUrl: "./overlandpics/saintmary.jpg",
+                //     title: "Tour of Saint Mary of Zion Festival Celebration in Axum",
+                //     discription: "This package focuses on the annual celebration of Saint Mary at Axum fall on 30th of November, the festival that is attended by tens of thousands of people from all over Ethiopia."
+                // },
+            {
+            imageUrl: "./pictures/Christmas-Festival-Celebration-in-Lalibela-Overland-Ethiopia-Tours.jpg",
+            title: "CHRISTMAS FESTIVAL CELEBRATION IN LALIBELA",
+            discription: "This historical route tour is designed in such a way to coincide with the colorful festival celebration of Ethiopia Christmas on 7 January in Lalibela."
             },
            
             {
                 imageUrl: "./overlandpics/140 Abyssinian Roller, Awash NP, Ethiopie, LS.jpg",
                 title: "Bird Watching Tours In Ethiopia",
                 discription: "The highland escarpments form the most typical of Ethiopian habitats for birds and offer a number of species not found elsewhere in sub – Saharan Africa."
-            },
-            {
-                imageUrl: "./overlandpics/AAEAAQAAAAAAAAUQAAAAJDZmN2RhNjZjLTM1NDYtNDMyYi1iNTk3LTUzMmY2ZjBjNDUyMg.jpg",
-                title: "Short Tour Danakil Depression",
-                discription: "The northern portion of the route leads us to still drier country, the fascinating Erta Ale absolutely unique Lava Lake erupting 24 hours and the lowest part of Danakil Depression."
             },
             {
                 imageUrl: "./pictures/Community-Tourism-In-Ethiopia-Overland-Ethiopia-Tours.jpg",
@@ -1734,7 +1714,7 @@
                     shortDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
                     longDescription: 'In Bale, you can trek all the way through richer mosaic of high altitude plateau, heather moorlands and dense juniper forest with as easily seen population of Mountain Nyala.',
                     location: 'Ethiopia',
-                    duration: '14 Days',
+                    duration: '10 Days',
                 },
                 {
                     id: '5',
@@ -1743,7 +1723,7 @@
                     shortDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
                     longDescription: 'Ethiopian tour packages focus on a tribal adventure travel trip, overland into the depths of the Rift Valley, visiting amazing rift valley lakes and meeting the local tribal people.',
                     location: 'Ethiopia',
-                    duration: '16 Days',
+                    duration: '14 Days',
                 },
                 {
                     id: '8',
@@ -1761,7 +1741,7 @@
                     shortDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
                     longDescription: 'In this adventure, you will explore Erta Ale, absolutely unique Lava Lake erupting 24 hours and Dallol, the lowest part of Danakil Depression.',
                     location: 'Ethiopia',
-                    duration: '22 Days',
+                    duration: '14 Days',
                 },
                 {
                     id: '1',
@@ -1770,7 +1750,7 @@
                     shortDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
                     longDescription: 'This Ethiopian tour leads to the rich historical sites of Ethiopia passes through scenic highlands, gorges and spectacular panoramas.',
                     location: 'Ethiopia',
-                    duration: '10 Days',
+                    duration: '24 Days',
                 },
                 {
                     id: '2',
@@ -1788,7 +1768,7 @@
                     shortDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
                     longDescription: 'The Omo Valley in southern Ethiopia is a little visited area of Ethiopia containing some of the most colorful tribes and ethnic groups.',
                     location: 'Ethiopia',
-                    duration: '24 Days',
+                    duration: '17 Days',
                 },
                 {
                     id: '6',
@@ -1797,7 +1777,7 @@
                     shortDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
                     longDescription: 'Simien Mountains is a registered National Park by UNESCO as a World Heritage site and there are over 20 peaks towering 4000 m.',
                     location: 'Ethiopia',
-                    duration: '12 Days',
+                    duration: '14 Days',
                 },
             ];
 
@@ -1842,7 +1822,7 @@
                         </div>
                         
                         <!-- Description -->
-                        <p class=" mb-6 flex-grow">${data.shortDescription}</p>
+                        <p class=" mb-6 text-justify flex-grow">${data.shortDescription}</p>
                         
                         <!-- Bottom part of the content: Duration and Location -->
                         <div class="mt-auto pt-4 border-t border-gray-300">
@@ -1992,87 +1972,110 @@
 <section class="bg-gray-50 py-16">
 
   <!-- Section Intro Title -->
-  <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-16 text-center mb-12">
-    <h2 class="text-4xl font-extrabold mb-4">
+  <div class="max-w-3xl mx-auto px-6 text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
       Discover <span class="text-[#ee3054]">Ethiopia</span> With Us
     </h2>
-    <p class="text-gray-600 text-lg">
+    <p class="text-gray-600 text-lg md:text-xl">
       Creating unforgettable journeys filled with adventure, culture, and connection.
     </p>
   </div>
 
-  <!-- Video + Feature Card (stacked like reference) -->
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 gap-0 items-start">
-
-    <!-- Video (full width on all screens) -->
-    <div class="w-full h-64 md:h-[420px] overflow-hidden rounded-t-2xl shadow-lg ring-1 ring-gray-100">
-      <iframe 
-        src="https://www.youtube.com/embed/yXxwa4BVLjA?autoplay=1&mute=1&loop=1&playlist=yXxwa4BVLjA" 
-        title="Discover Ethiopia - Overland Ethiopia Tours"
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        class="w-full h-full">
-      </iframe>
-    </div>
-    <!-- Features Card (2x2 items inside rounded white card) -->
-    <div class="bg-white rounded-b-2xl rounded-t-none -mt-[1px] shadow-lg ring-1 ring-gray-100 p-6 md:p-10">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Over 35 years of adventure -->
-        <div class="flex items-start gap-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#ee3054] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <div>
-            <h3 class="text-lg md:text-xl font-semibold ">Over 35 years of adventure</h3>
-            <p class="">We’re adventure travel experts with decades of trips and experiences across Ethiopia.</p>
-          </div>
+  <!-- MAIN CONTENT BOX -->
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+      
+      <!-- VIDEO + FEATURES GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-8">
+        
+        <!-- VIDEO -->
+        <div class="w-full h-64 md:h-[400px] overflow-hidden rounded-xl">
+          <iframe 
+            src="https://www.youtube.com/embed/yXxwa4BVLjA?autoplay=1&mute=1&loop=1&playlist=yXxwa4BVLjA" 
+            title="Discover Ethiopia - Overland Ethiopia Tours"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            class="w-full h-full">
+          </iframe>
         </div>
 
-        <!-- Flexible bookings -->
-        <div class="flex items-start gap-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#ee3054] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <path d="M16 2v4M8 2v4M3 10h18"></path>
-          </svg>
-          <div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900">Flexible bookings</h3>
-            <p class="">Plans change—we’re here to help with flexible options tailored to your needs.</p>
+        <!-- FEATURES GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Feature 1 -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#ee3054]/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Over 35 years of adventure</h3>
+              <p class="text-gray-600 text-sm">We're adventure travel experts with decades of trips and experiences across Ethiopia.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Like-minded travellers -->
-        <div class="flex items-start gap-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#ee3054] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900">Like-minded travellers</h3>
-            <p class="">Share experiences with a community of spirited explorers who care about the planet.</p>
+          <!-- Feature 2 -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#ee3054]/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <path d="M16 2v4M8 2v4M3 10h18"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Flexible bookings</h3>
+              <p class="text-gray-600 text-sm">Plans change—we're here to help with flexible options tailored to your needs.</p>
+            </div>
           </div>
-        </div>
 
-        <!-- The right trip for you -->
-        <div class="flex items-start gap-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#ee3054] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900">The right trip for you</h3>
-            <p class="">Local-led, unforgettable experiences with everything taken care of from start to finish.</p>
+          <!-- Feature 3 -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#ee3054]/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Like-minded travellers</h3>
+              <p class="text-gray-600 text-sm">Share experiences with a community of spirited explorers who care about the planet.</p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#ee3054]/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#ee3054]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-2">The right trip for you</h3>
+              <p class="text-gray-600 text-sm">Local-led, unforgettable experiences with everything taken care of from start to finish.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- NARRATION - Full width within the container -->
+      <div class="bg-[#ee3054] p-6 md:p-8 rounded-xl text-white">
+        <p class="text-lg leading-relaxed">
+          Ethiopia is a land of ancient wonders and breathtaking landscapes. From the rock-hewn churches of Lalibela to the dramatic Simien Mountains, our journeys connect you with the soul of this remarkable country. We've spent decades crafting authentic experiences that go beyond tourism, creating meaningful connections with local communities and preserving the rich cultural heritage that makes Ethiopia truly unique.
+        </p>
+      </div>
+
     </div>
   </div>
+
 </section>
+
 
 
 <!-- Counter Animation Script -->
@@ -2353,7 +2356,7 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
     </div>
 
     <!-- Subtitle -->
-    <p class="mt-2 text-center max-w-xs md:max-w-md leading-relaxed">
+    <p class="mt-2 text-gray-500 text-center max-w-xs md:max-w-md leading-relaxed">
         Real stories from travelers who explored Ethiopia with us.
     </p>
 </header>
@@ -2389,7 +2392,7 @@ Discover Ethiopia with our Fixed Departure Tour Packages  </p>
                     <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#ee3054]">
                         <path d="M15.5324 36C12.3532 36 9.4676 34.8633 6.8756 32.5899C4.2836 30.3165 2.9876 27.518 2.9876 24.1942C2.9876 20.4029 4.1332 16.8345 6.4244 13.4892C8.7156 10.1439 12.014 6.02158 16.3196 1.1223L20.6252 5.03597C16.8836 9.56835 14.588 12.9137 13.738 15.0719C15.938 14.5468 17.918 14.7986 19.678 15.8273C21.438 16.8561 22.318 18.4101 22.318 20.4892C22.318 23.3813 21.2724 25.8058 19.1812 27.7626C17.0899 29.7194 14.5908 30.6978 11.6836 30.6978V30.2302C13.8836 30.0432 15.6436 30.4317 16.9636 31.3957C18.2836 32.3597 18.9436 33.8489 18.9436 35.7842L15.5324 36ZM39.5324 36C36.3532 36 33.4676 34.8633 30.8756 32.5899C28.2836 30.3165 26.9876 27.518 26.9876 24.1942C26.9876 20.4029 28.1332 16.8345 30.4244 13.4892C32.7156 10.1439 36.014 6.02158 40.3196 1.1223L44 5.03597C40.2584 9.56835 37.9628 12.9137 37.1128 15.0719C39.3128 14.5468 41.2928 14.7986 43.0528 15.8273C44.8128 16.8561 45.6928 18.4101 45.6928 20.4892C45.6928 23.3813 44.6472 25.8058 42.556 27.7626C40.4648 29.7194 37.9656 30.6978 35.0584 30.6978V30.2302C37.2584 30.0432 39.0184 30.4317 40.3384 31.3957C41.6584 32.3597 42.3184 33.8489 42.3184 35.7842L39.5324 36Z" fill="currentColor"/>
                     </svg>
-                    <p id="main-quote" class="mt-4  text-justify  leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p id="main-quote" class="mt-4 text-lg md:text-sm text-justify text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="mt-6">
                     <p class="font-semibold text-gray-800">
