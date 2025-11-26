@@ -101,6 +101,20 @@ html{
         .tour-image:hover {
             transform: scale(1.05);
         }
+
+        .hero-section {
+            background-position: center;
+            min-height:320px;
+            position: relative;
+        }
+
+        .gallery-image {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-montserrat">
@@ -632,29 +646,110 @@ html{
 </script>
 
         <!-- Main Content -->
-    <main class="pt-32 pb-16 px-4 max-w-7xl mx-auto">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Bird Watching Tours</h1>
-        
-        <!-- New Tour Layout -->
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Sidebar with tour list -->
-            <div class="w-full lg:w-1/3 xl:w-1/4">
-                <div class="bg-white rounded-xl shadow-md p-4 sticky top-32">
-                    <h2 class="text-xl font-bold text-gray-800 mb-4">Available Tours</h2>
-                    <div id="tour-sidebar" class="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto">
-                        <!-- Tour previews will be dynamically populated here -->
+<main class="px-4 mx-auto">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Bird Watching Tours</h1>
+    
+    <!-- Main Container -->
+    <div class="flex flex-col mt-16 p-2 min-h-screen">
+
+        <!-- Image Section: Full Width, Big Height -->
+        <section id="content-image-section" class="hero-section relative mb-4"></section>
+
+        <!-- Content Section: Below Image -->
+        <div class="w-full pt-2 flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Main Content Section -->
+            <div class="w-full lg:w-3/4">
+                <main class="flex-grow">
+                    <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8 capitalize">Tours<span id="content-highlight" class="text-[#ee3054] capitalize"></span></h1>
+                    <p id="content-text" class="leading-relaxed text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8"></p>
+                    <!-- Action Buttons -->
+                    <div class="flex sm:flex-row mb-12">
+                        <a href="./Activities.html" class="bg-[#ee3054] text-white font-semibold mr-4 p-2 md:py-3 md:px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">EXPLORE Activities</a>
+                        <a href="./tailormadetour.html" class="bg-white text-black font-semibold md:py-3 p-2 md:px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">TAILOR-MADE TOURS</a>
                     </div>
+                </main>
+            </div>
+
+            <!-- Right Sidebar Section - All Tour Packages in One Box -->
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Tour Packages</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="./tourfinal.html?category=bird-watching" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Bird Watching
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=city-tour" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                City Tours
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=combinations" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Combinations
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=day-trips" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Day Trips
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=festival-holidays" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Festival & Holidays
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=festival-tour" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Fixed Departure
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=historic-route" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Historic Route
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=bale-mountains" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Bale Mountains
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=omo-valley" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Omo Valley
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./tourfinal.html?category=trekking-hiking" 
+                               class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                                Trekking & Hiking
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Main tour content -->
-            <div class="w-full lg:w-2/3 xl:w-3/4">
-                <div id="tour-main" class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
-                    <!-- Main tour content will be dynamically populated here -->
-                </div>
+        </div>
+
+        <!-- Gallery Section (for content with multiple images) -->
+        <div id="content-gallery" class="mt-16">
+            <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery items will be inserted here dynamically -->
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
    <!-- Professional Footer Section -->
      <!-- Professional Footer Section -->
@@ -772,6 +867,59 @@ html{
             </div>
         </div>
     </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the JSON data from the script tag
+    // The tours data is already defined as birdWatchingTours, but actually it's allTours or something. Wait, in the file it's birdWatchingTours, but there are multiple categories.
+
+    // Actually, the data is in birdWatchingTours, but there are tours from different categories mixed in.
+
+    // For simplicity, let's assume we load based on category parameter.
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'bird-watching';
+
+    // Find tours by category
+    const tours = birdWatchingTours.filter(tour => tour.category === category);
+
+    if (tours.length > 0) {
+        const tour = tours[0]; // Take the first one, or could be based on id
+
+        // Set the image
+        const imageSection = document.getElementById('content-image-section');
+        imageSection.style.backgroundImage = `url('${tour.image}')`;
+        imageSection.style.backgroundSize = 'cover';
+        imageSection.style.backgroundPosition = 'center';
+
+        // Set title
+        const titleElement = document.getElementById('content-title');
+        titleElement.childNodes[0].textContent = tour.title;
+        document.getElementById('content-highlight').textContent = '';
+
+        // Set description
+        document.getElementById('content-text').textContent = tour.description;
+
+        // Populate gallery with days
+        const galleryContainer = document.getElementById('gallery-container');
+        galleryContainer.innerHTML = '';
+        tour.days.forEach(day => {
+            const dayItem = document.createElement('div');
+            dayItem.className = 'bg-white rounded-lg shadow-md overflow-hidden gallery-image';
+            dayItem.innerHTML = `
+                <img src="${day.image}" alt="${day.title}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-[#ee3054] mb-2">Day ${day.day}: ${day.title}</h3>
+                    <div class="text-xs text-gray-600 h-16 overflow-y-auto">${day.description}</div>
+                </div>
+            `;
+            galleryContainer.appendChild(dayItem);
+        });
+
+        // Show gallery
+        document.getElementById('content-gallery').classList.remove('hidden');
+    }
+});
+</script>
 <script src="../nav-active.js"></script>
     <script>
         // JSON data for bird watching tours

@@ -653,31 +653,170 @@
     
        
  <!-- Main Container -->
-    <div class="flex flex-col mt-20 p-4 min-h-screen">
+<div class="flex flex-col mt-20 p-4 min-h-screen">
+    <!-- Image Section: Full Width, Not Full Height -->
+    <div class="w-full h-64 md:h-80 relative mb-8">
+        <img id="content-image-landscape" src="" alt="Historical Landscape" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 p-8 md:p-12 text-white bg-gradient-to-t from-black/60 to-transparent w-full">
+            <h3 id="content-year" class="text-4xl font-serif font-medium"></h3>
+            <p id="content-snippet" class="mt-2 max-w-md text-sm"></p>
+        </div>
+    </div>
 
-        <!-- Image Section: Full Width, Not Full Height -->
-        <div class="w-full h-96 md:h-[500px] relative mb-8">
-            <img id="content-image-landscape" src="" alt="Historical Landscape" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 text-white bg-gradient-to-t from-black/60 to-transparent w-full">
-                <h3 id="content-year" class="text-4xl font-serif font-medium"></h3>
-                <p id="content-snippet" class="mt-2 max-w-md text-sm"></p>
+    <!-- Content Section: Below Image -->
+    <div class="w-full pt-4 flex flex-col lg:flex-row gap-8">
+        <!-- Main Content -->
+        <div class="w-full lg:w-3/4">
+            <main class="flex-grow">
+                <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8"></h1>
+                <p id="content-text" class="leading-relaxed text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8"></p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row mb-12 gap-4">
+                    <button class="bg-[#ee3054] text-white font-semibold py-3 px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                        EXPLORE Activities
+                    </button>
+                    <button class="bg-white text-black font-semibold py-3 px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                        TAILOR-MADE TOURS
+                    </button>
+                </div>
+            </main>
+        </div>
+        <!-- Sidebar Navigation -->
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Historical Periods</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Ethiopia.html?section=earliestHistory" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Earliest History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=ancientEthiopia" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Ancient Ethiopia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=kingdomOfAxum" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Kingdom of Axum
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=ethiopianDarkAges" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            The Ethiopian Dark Ages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=zagweDynasty" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            The Zagwe Dynasty
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=ethiopianEmpire" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Ethiopian Empire
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=abyssinianAdalWar" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            The Abyssinian Adal War
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=eraOfPrinces" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            The Era of Princes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=leavingMedievalWorld" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Leaving The Medieval World
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=recentHistory" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Recent History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=dergPeriod" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            The Derg Period
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Ethiopia.html?section=postDergPeriod" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500">
+                            Post Derg Period
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- Content Section: Below Image -->
-        <div class="w-full pt-4 flex flex-col content-column">
-           
-            <main class="flex-grow">
-                <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8"></h1>
-                <p id="content-text" class="leading-relaxed md:pr-5 mr-2 text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8 " ></p>
-          <!-- Action Buttons -->
-                    <div class="flex sm:flex-row mb-12">
-                        <button class="bg-[#ee3054] text-white font-semibold mr-4 p-2 md:py-3 md:px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">EXPLORE Activities</button>
-                        <button class="bg-white text-black font-semibold md:py-3 p-2 md:px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">TAILOR-MADE TOURS</button>
-                    </div>
-            </main>
-        </div>
+        
     </div>
+</div>
+
+<!-- Your existing footer code remains the same -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the JSON data from the script tag
+        const dataScript = document.getElementById('site-data');
+        const websiteData = JSON.parse(dataScript.textContent);
+        const historicalPeriods = websiteData.historicalPeriods;
+        const landscapeImage = document.getElementById('content-image-landscape');
+
+        // Get the main content elements
+        const contentTitle = document.getElementById('content-title');
+        const contentText = document.getElementById('content-text');
+
+        // Function to load and display content
+        const loadContent = (periodKey) => {
+            const content = historicalPeriods[periodKey];
+            if (content) {
+                contentTitle.textContent = content.title;
+                contentText.textContent = content.content;
+                landscapeImage.src = content.landscapeImgSrc;
+
+                // Update active state in sidebar
+                document.querySelectorAll('.sidebar-link').forEach(link => {
+                    link.classList.remove('border-red-500', 'bg-red-50', 'text-red-600');
+                    link.classList.add('border-transparent', 'text-gray-700');
+                });
+                
+                const activeLink = document.querySelector(`[href="./Ethiopia.html?section=${periodKey}"]`);
+                if (activeLink) {
+                    activeLink.classList.remove('border-transparent', 'text-gray-700');
+                    activeLink.classList.add('border-red-500', 'bg-red-50', 'text-red-600');
+                }
+            } else {
+                contentTitle.textContent = "Content Not Found";
+                contentText.textContent = "Please select a different topic from the menu.";
+            }
+        };
+
+        // Add sidebar-link class to all navigation links
+        document.querySelectorAll('.bg-white.rounded-lg.shadow-md a').forEach(link => {
+            link.classList.add('sidebar-link');
+        });
+
+        // Load content based on URL parameter or default to earliestHistory
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionParam = urlParams.get('section');
+        loadContent(sectionParam || 'earliestHistory');
+    });
+</script>
     
 
 

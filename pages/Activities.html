@@ -64,11 +64,17 @@
 }
 
 .logo-container {
-            position: relative; /* Needed for absolute positioning of children */
-            z-index: 10; /* Ensure it's above other elements */
-            margin-top: 1px; /* Adjust as needed to move into the hero section */
-            margin-left: -10px; /* fine-tune the placement */
-        }
+    position: relative; /* Needed for absolute positioning of children */
+    z-index: 10; /* Ensure it's above other elements */
+    margin-top: 1px; /* Adjust as needed to move into the hero section */
+    margin-left: -10px; /* fine-tune the placement */
+}
+
+.hero-section {
+    background-position: center;
+    min-height:400px;
+    position: relative;
+}
 
 
 
@@ -707,23 +713,93 @@
 <div class="flex flex-col mt-20 p-4 min-h-screen">
     
     <!-- Image Section: Full Width, Not Full Height -->
-    <div class="w-full h-96 md:h-[500px] relative mb-8">
-        <img id="content-image" src="" alt="" 
-             class="w-full h-full object-cover transition-opacity duration-500 opacity-0">
-    </div>
+    <section id="content-image-section" class="hero-section relative mb-8"></section>
 
     <!-- Content Section: Below Image -->
-    <div class="w-full pt-4 flex flex-col content-column">
-       
-        <main class="flex-grow">
-            <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8"></h1>
-            <p id="content-text" class="text-gray-700 leading-relaxed text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8"></p>
-      <!-- Action Buttons -->
+    <div class="w-full pt-4 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Left Main Content Section -->
+        <div class="w-full lg:w-3/4">
+            <main class="flex-grow">
+                <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8"></h1>
+                <p id="content-text" class="leading-relaxed text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8"></p>
+                <!-- Action Buttons -->
                 <div class="flex sm:flex-row mb-12">
                     <button class="bg-[#ee3054] text-white font-semibold mr-4 p-2 md:py-3 md:px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">EXPLORE Activities</button>
                     <button class="bg-white text-black font-semibold md:py-3 p-2 md:px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">TAILOR-MADE TOURS</button>
                 </div>
-        </main>
+            </main>
+        </div>
+
+        <!-- Right Sidebar Section - All Activities in One Box -->
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Activities</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Activities.html?section=bikingAndCycling" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Biking and Cycling
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=birdWatching" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Bird Watching
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=coffeeCeremony" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Coffee Ceremony
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=fishing" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Fishing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=greatEthiopianRun" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Great Ethiopian Run
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=honeymoon" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Honeymoon
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=horseRiding" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Horse Riding
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=rafting" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Rafting
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=trekkingInEthiopia" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Trekking in Ethiopia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Activities.html?section=trekkingToMeqdela" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Trekking to Meqdela
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
     </div>
 </div>
  <!-- Professional Footer Section -->
@@ -851,6 +927,7 @@
         // Get the main content elements
         const contentTitle = document.getElementById('content-title');
         const contentText = document.getElementById('content-text');
+        const contentImageSection = document.getElementById('content-image-section');
 
      // Update the loadContent function
 // Update the loadContent function
@@ -864,21 +941,11 @@ const loadContent = (periodKey) => {
         contentText.textContent = content.content;
 
         // Handle the image
-        const contentImage = document.getElementById('content-image');
-
         if (content.image) {
-            contentImage.src = content.image;
-            contentImage.alt = content.title || 'Activity Image';
-
-            // Fade in image when loaded
-            contentImage.onload = function() {
-                contentImage.classList.remove('opacity-0');
-                contentImage.classList.add('opacity-100');
-            };
+            contentImageSection.style.backgroundImage = `url(${content.image})`;
         } else {
             // Fallback image
-            contentImage.src = '/images/default-activity.jpg';
-            contentImage.alt = 'Ethiopia Activities';
+            contentImageSection.style.backgroundImage = `url('/images/default-activity.jpg')`;
         }
     } else {
         contentTitle.textContent = "Content Not Found";

@@ -39,11 +39,17 @@
             margin-top: 1px; /* Adjust as needed to move into the hero section */
             margin-left: -10px; /* fine-tune the placement */
         }
-        
+
+        .hero-section {
+            background-position: center;
+            min-height:400px;
+            position: relative;
+        }
+
         .gallery-image {
             transition: transform 0.3s ease;
         }
-        
+
         .gallery-image:hover {
             transform: scale(1.02);
         }
@@ -1300,40 +1306,177 @@
 
 
 
-<!-- Main Container -->
-    <div class="flex flex-col mt-20 p-4 min-h-screen">
+<div class="flex flex-col mt-20 p-4 min-h-screen">
+    <!-- Image Section: Full Width, Not Full Height -->
+    <section id="content-image-section" class="hero-section relative mb-8"></section>
 
-        <!-- Image Section: Full Width, Not Full Height -->
-        <div class="w-full h-96 md:h-[500px] relative mb-8">
-            <img id="content-image" src="" 
-                 alt="Attraction Image" 
-                 class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://placehold.co/400x500/6b7280/ffffff?text=Image';">
-        </div>
-
-        <!-- Content Section: Below Image -->
-        <div class="w-full pt-4 flex flex-col content-column">
-           
+    <!-- Content Section: Below Image -->
+    <div class="w-full pt-4 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Left Main Content Section -->
+        <div class="w-full lg:w-3/4">
             <main class="flex-grow">
                 <h1 id="content-title" class="text-4xl md:text-5xl uppercase font-medium mb-8 capitalize">Reels<span id="content-highlight" class="text-[#ee3054] capitalize"></span></h1>
                 <p id="content-text" class="leading-relaxed text-justify overflow-y-auto max-h-[calc(80vh-9rem)] mb-8"></p>
-          <!-- Action Buttons -->
-                    <div class="flex sm:flex-row mb-12">
-                        <a href="./Activities.html" class="bg-[#ee3054] text-white font-semibold mr-4 p-2 md:py-3 md:px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">EXPLORE Activities</a>
-                        <a href="./tourfinal.html" class="bg-white text-black font-semibold md:py-3 p-2 md:px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">TAILOR-MADE TOURS</a>
-                    </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex sm:flex-row mb-12">
+                    <a href="./Activities.html" class="bg-[#ee3054] text-white font-semibold mr-4 p-2 md:py-3 md:px-8 rounded shadow-md hover:bg-red-400 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">EXPLORE Activities</a>
+                    <a href="./tourfinal.html" class="bg-white text-black font-semibold md:py-3 p-2 md:px-8 rounded border border-gray-300 hover:bg-gray-100 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">TAILOR-MADE TOURS</a>
+                </div>
             </main>
         </div>
-        
-        <!-- Gallery Section (for content with multiple images) -->
-        <div id="content-gallery" class="mt-16">
-            <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery items will be inserted here dynamically -->
-                <!-- Example of a gallery item for styling purposes -->
-               
+
+        <!-- Right Sidebar Section - All Attractions in Separate Boxes -->
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0 space-y-6">
+            
+            <!-- Cultural Box -->
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Cultural</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Attraction.html?section=cultural.omoValley" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Omo Valley
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=cultural.tribesOfOmoValley" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Tribes of Omo Valley
+                        </a>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Festival & Holidays Box -->
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Festival & Holidays</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.ethiopianNewYear" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Ethiopian New Year
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.findingOfTrueCross" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Finding of True Cross
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.feastOfSaintGabriel" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Feast of Saint Gabriel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.ethiopianChristmas" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Ethiopian Christmas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.timketEthiopianEpiphany" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Timket Ethiopian Epiphany
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=festivalAndHolidays.ethiopianEaster" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Ethiopian Easter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Historical Box -->
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Historical</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Attraction.html?section=historical.addisAbaba" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Addis Ababa
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=historical.historicRoute" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Historic Route of Ethiopia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=historical.rockChurchesOfTigray" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Rock Churches of Tigray
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Natural Box -->
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Natural</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="./Attraction.html?section=natural.endemicBirds" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Endemic Birds of Ethiopia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.westernHighlands" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Western Highlands
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.riftValleyLakes" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Rift Valley Lakes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.nationalParks" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            National Parks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.naturalWonders" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Natural Wonders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.ethiopianCoffee" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Ethiopian Coffee
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Attraction.html?section=natural.endemicMammals" 
+                           class="block py-2 px-3 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 border-l-4 border-transparent hover:border-red-500 text-sm">
+                            Endemic Mammals
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </div>
+    
+    <!-- Gallery Section (for content with multiple images) -->
+    <div id="content-gallery" class="mt-16">
+        <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery items will be inserted here dynamically -->
         </div>
     </div>
+</div>
 
 
 
@@ -1470,15 +1613,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const attractions = websiteData.attractions;
     
    // Get the main content elements
-const contentTitle = document.getElementById('content-title');
-const contentHighlight = document.getElementById('content-highlight');
-const contentText = document.getElementById('content-text');
-const contentImage = document.getElementById('content-image');
-const contentGallery = document.getElementById('content-gallery');
-const galleryContainer = document.getElementById('gallery-container');
+   const contentTitle = document.getElementById('content-title');
+   const contentHighlight = document.getElementById('content-highlight');
+   const contentText = document.getElementById('content-text');
+   const contentGallery = document.getElementById('content-gallery');
+   const galleryContainer = document.getElementById('gallery-container');
 // Get the single image elements
 const singleImageSection = document.getElementById('single-image-section');
 const imageCaption = document.getElementById('image-caption');
+const contentImageSection = document.getElementById('content-image-section');
 
 // Function to update the right bubbles dynamically
 function updateRightBubbles(content) {
@@ -1499,12 +1642,36 @@ function updateRightBubbles(content) {
     }
 }
 
+function showSidebar(category) {
+    // Hide all sidebars
+    document.querySelectorAll('#cultural-sidebar, #festival-sidebar, #historical-sidebar, #natural-sidebar').forEach(sidebar => {
+        sidebar.classList.add('hidden');
+    });
+    
+    // Show the selected sidebar
+    const sidebarId = `${category}-sidebar`;
+    const sidebar = document.getElementById(sidebarId);
+    if (sidebar) {
+        sidebar.classList.remove('hidden');
+    }
+}
+
 // Function to load and display content
 const loadContent = (periodKey) => {
     // Split the key to access nested properties (e.g., "cultural.omoValley")
     const keys = periodKey.split('.');
     let content = attractions;
     
+     if (periodKey.startsWith('cultural.')) {
+        showSidebar('cultural');
+    } else if (periodKey.startsWith('festivalAndHolidays.')) {
+        showSidebar('festival');
+    } else if (periodKey.startsWith('historical.')) {
+        showSidebar('historical');
+    } else if (periodKey.startsWith('natural.')) {
+        showSidebar('natural');
+    }
+
     // Traverse through the nested structure
     for (const key of keys) {
         if (content && content[key]) {
@@ -1525,14 +1692,7 @@ contentHighlight.textContent = content.highlight;
         
         // Always set the single image properties if they exist
         if (content.imageSrc) {
-            contentImage.src = content.imageSrc;
-            contentImage.alt = content.title;
-            
-            // Show the image once loaded
-            contentImage.onload = function() {
-                contentImage.classList.remove('opacity-0');
-                contentImage.classList.add('opacity-100');
-            };
+            contentImageSection.style.backgroundImage = `url(${content.imageSrc})`;
         }
 
          updateRightBubbles(content);
